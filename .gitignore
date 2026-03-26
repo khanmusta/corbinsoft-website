@@ -1,0 +1,10 @@
+# Local project memory
+.claude/
+
+# Source documents (not needed in deployment)
+*.docx
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini

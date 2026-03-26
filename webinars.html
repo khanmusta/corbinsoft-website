@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recorded Webinars | Corbinsoft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,300&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="webinars.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="corbinsoft%20logo%20text%20new.svg" alt="Corbinsoft — The ALM Experts" class="nav__logo-img" />
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html#services" class="nav__link">Services</a></li>
+        <li><a href="index.html#industries" class="nav__link">Industries</a></li>
+        <li><a href="index.html#about" class="nav__link">About</a></li>
+        <li><a href="webinars.html" class="nav__link active">Webinars</a></li>
+        <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+      </ul>
+      <a href="upcoming-webinars.html" class="btn btn--nav">Upcoming Webinars</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero__bg"></div>
+    <div class="container page-hero__inner">
+      <div class="page-hero__content reveal-up">
+        <span class="section-label">Knowledge Hub</span>
+        <h1 class="page-hero__title">Recorded <em>Webinars</em></h1>
+        <p class="page-hero__sub">Deep-dive sessions on Polarion ALM, compliance, Agile, and DevOps — delivered by our experts. Watch at your own pace, free on demand.</p>
+        <div class="page-hero__meta">
+          <div class="meta-stat"><span>7</span><p>Sessions</p></div>
+          <div class="meta-stat__div"></div>
+          <div class="meta-stat"><span>5+</span><p>Hours of Content</p></div>
+          <div class="meta-stat__div"></div>
+          <div class="meta-stat"><span>Free</span><p>On Demand</p></div>
+        </div>
+      </div>
+      <a href="upcoming-webinars.html" class="page-hero__cta reveal-up">
+        <div class="cta-card">
+          <div class="cta-card__icon">📅</div>
+          <div>
+            <strong>Upcoming Live Sessions</strong>
+            <p>3 webinars scheduled for 2026</p>
+          </div>
+          <span class="cta-card__arrow">→</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <div class="container filter-bar__inner">
+      <div class="filter-bar__label">Filter by topic:</div>
+      <div class="filter-bar__pills" id="filterPills">
+        <button class="filter-pill active" data-filter="all">All Sessions</button>
+        <button class="filter-pill" data-filter="medical">Medical Devices</button>
+        <button class="filter-pill" data-filter="agile">Agile / SAFe</button>
+        <button class="filter-pill" data-filter="devops">DevOps</button>
+        <button class="filter-pill" data-filter="migration">Migration</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEBINAR GRID -->
+  <section class="webinars-section">
+    <div class="container">
+      <div class="webinars-grid" id="webinarsGrid">
+
+        <!-- 1 — IMDRF Compliance -->
+        <article class="webinar-card reveal-up" data-category="medical" data-delay="0">
+          <div class="webinar-card__thumb thumb--teal">
+            <div class="thumb__play"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="white" stroke-width="1.5" opacity="0.6"/><path d="M13 10.5l10 5.5-10 5.5V10.5z" fill="white"/></svg></div>
+            <span class="thumb__duration">~30 min</span>
+            <span class="thumb__category">Medical · Compliance</span>
+          </div>
+          <div class="webinar-card__body">
+            <div class="webinar-card__date">
+              <span class="date-icon">📅</span> On Demand
+            </div>
+            <h3>How to Bypass Excel for IMDRF Compliance</h3>
+            <p>Learn how to manage IMDRF Annex content in Polarion and build regulatory norms into your Risk Management process — eliminating error-prone Excel quasi-databases.</p>
+            <div class="webinar-card__speaker">
+              <div class="speaker-avatar">CS</div>
+              <div>
+                <strong>Corbinsoft Experts</strong>
+                <span>Polarion ALM Consultants</span>
+              </div>
+            </div>
+            <a href="webinar-imdrf-compliance.html" class="btn btn--watch">
+              <svg viewBox="0 0 20 20" fill="none"><polygon points="6,4 17,10 6,16" fill="currentColor"/></svg>
+              Watch Recording
+            </a>
+          </div>
+        </article>
+
+        <!-- 2 — Getting started with Agile and SAFe -->
+        <article class="webinar-card reveal-up" data-category="agile" data-delay="100">
+          <div class="webinar-card__thumb thumb--blue">
+            <div class="thumb__play"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="white" stroke-width="1.5" opacity="0.6"/><path d="M13 10.5l10 5.5-10 5.5V10.5z" fill="white"/></svg></div>
+            <span class="thumb__duration">On Demand</span>
+            <span class="thumb__category">Agile · SAFe</span>
+          </div>
+          <div class="webinar-card__body">
+            <div class="webinar-card__date">
+              <span class="date-icon">📅</span> On Demand
+            </div>
+            <h3>Getting Started with Agile and SAFe</h3>
+            <p>Discover how to implement Essential SAFe in Polarion ALM — moving software planning, requirements, and Agile iterations off the whiteboard and into a global collaboration tool.</p>
+            <div class="webinar-card__speaker">
+              <div class="speaker-avatar">CS</div>
+              <div>
+                <strong>Corbinsoft Experts</strong>
+                <span>Polarion ALM Consultants</span>
+              </div>
+            </div>
+            <a href="webinar-agile-safe-intro.html" class="btn btn--watch">
+              <svg viewBox="0 0 20 20" fill="none"><polygon points="6,4 17,10 6,16" fill="currentColor"/></svg>
+              Watch Recording
+            </a>
+          </div>
+        </article>
+
+        <!-- 3 — Crack SAFe and get on the Agile Release Train -->
+        <article class="webinar-card reveal-up" data-category="agile" data-delay="200">
+          <div class="webinar-card__thumb thumb--slate">
+            <div class="thumb__play"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="white" stroke-width="1.5" opacity="0.6"/><path d="M13 10.5l10 5.5-10 5.5V10.5z" fill="white"/></svg></div>
+            <span class="thumb__duration">On Demand</span>
+            <span class="thumb__category">Agile · SAFe</span>
+          </div>
+          <div class="webinar-card__body">
+            <div class="webinar-card__date">
+              <span class="date-icon">📅</span> On Demand
+            </div>
+            <h3>Crack SAFe and Get on the Agile Release Train</h3>
+            <p>A live case study of a team using Polarion ALM with SAFe to produce software at the pace of market demands — with a 20–50% productivity increase and 30–75% faster time-to-market.</p>
+            <div class="webinar-card__speaker">
+              <div class="speaker-avatar">CS</div>
+              <div>
+                <strong>Corbinsoft Experts</strong>
+                <span>Polarion ALM Consultants</span>
+              </div>
+            </div>
+            <a href="webinar-crack-safe-art.html" class="btn btn--watch">
+              <svg viewBox="0 0 20 20" fill="none"><polygon points="6,4 17,10 6,16" fill="currentColor"/></svg>
+              Watch Recording
+            </a>
+          </div>
+        </article>
+
+        <!-- 4 — Accelerating RPA -->
+        <article class="webinar-card reveal-up" data-category="devops" data-delay="0">
+          <div class="webinar-card__thumb thumb--dark">
+            <div class="thumb__play"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="white" stroke-width="1.5" opacity="0.6"/><path d="M13 10.5l10 5.5-10 5.5V10.5z" fill="white"/></svg></div>
+            <span class="thumb__duration">On Demand</span>
+            <span class="thumb__category">DevOps · RPA</span>
+          </div>
+          <div class="webinar-card__body">
+            <div class="webinar-card__date">
+              <span class="date-icon">📅</span> On Demand
+            </div>
+            <h3>Accelerating RPA in the Practical World</h3>
+            <p>How Polarion ALM acts as the safety net for Robotic Process Automation — centralising change management, end-to-end testing, and rapid defect response across your digital workforce.</p>
+            <div class="webinar-card__speaker">
+              <div class="speaker-avatar">CS</div>
+              <div>
+                <strong>Corbinsoft Experts</strong>
+                <span>Polarion ALM Consultants</span>
+              </div>
+            </div>
+            <a href="webinar-rpa-practical.html" class="btn btn--watch">
+              <svg viewBox="0 0 20 20" fill="none"><polygon points="6,4 17,10 6,16" fill="currentColor"/></svg>
+              Watch Recording
+            </a>
+          </div>
+        </article>
+
+        <!-- 5 — Medical Device Intelligent Design Control -->
+        <article class="webinar-card reveal-up" data-category="medical" data-delay="100">
+          <div class="webinar-card__thumb thumb--auto">
+            <div class="thumb__play"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="white" stroke-width="1.5" opacity="0.6"/><path d="M13 10.5l10 5.5-10 5.5V10.5z" fill="white"/></svg></div>
+            <span class="thumb__duration">40–60 min</span>
+            <span class="thumb__category">Medical · Design Control</span>
+          </div>
+          <div class="webinar-card__body">
+            <div class="webinar-card__date">
+              <span class="date-icon">📅</span> On Demand
+            </div>
+            <h3>Medical Device Intelligent Design Control</h3>
+            <p>An in-depth overview of Intelligent Design Control for mechatronic medical devices — building an electronic Design History File (eDHF) with full traceability from risk to verification in Polarion.</p>
+            <div class="webinar-card__speaker">
+              <div class="speaker-avatar">DM</div>
+              <div>
+                <strong>David Merrill</strong>
+                <span>CTO, Corbinsoft — 30+ yrs experience</span>
+              </div>
+            </div>
+            <a href="webinar-medical-device-design-control.html" class="btn btn--watch">
+              <svg viewBox="0 0 20 20" fill="none"><polygon points="6,4 17,10 6,16" fill="currentColor"/></svg>
+              Watch Recording
+            </a>
+          </div>
+        </article>
+
+        <!-- 6 — Pragmatic DevOps -->
+        <article class="webinar-card reveal-up" data-category="devops" data-delay="200">
+          <div class="webinar-card__thumb thumb--aero">
+            <div class="thumb__play"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="white" stroke-width="1.5" opacity="0.6"/><path d="M13 10.5l10 5.5-10 5.5V10.5z" fill="white"/></svg></div>
+            <span class="thumb__duration">On Demand</span>
+            <span class="thumb__category">DevOps · Compliance</span>
+          </div>
+          <div class="webinar-card__body">
+            <div class="webinar-card__date">
+              <span class="date-icon">📅</span> On Demand
+            </div>
+            <h3>Pragmatic DevOps</h3>
+            <p>See how Polarion ALM builds a certified process compliance framework addressing 5 focus areas of successful DevOps: Culture, People, Process, Technology, and Automation.</p>
+            <div class="webinar-card__speaker">
+              <div class="speaker-avatar">CS</div>
+              <div>
+                <strong>Corbinsoft Experts</strong>
+                <span>Polarion ALM Consultants</span>
+              </div>
+            </div>
+            <a href="webinar-pragmatic-devops.html" class="btn btn--watch">
+              <svg viewBox="0 0 20 20" fill="none"><polygon points="6,4 17,10 6,16" fill="currentColor"/></svg>
+              Watch Recording
+            </a>
+          </div>
+        </article>
+
+        <!-- 7 — Polarion Survival Kit for DOORS -->
+        <article class="webinar-card reveal-up" data-category="migration" data-delay="0">
+          <div class="webinar-card__thumb thumb--blue">
+            <div class="thumb__play"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="white" stroke-width="1.5" opacity="0.6"/><path d="M13 10.5l10 5.5-10 5.5V10.5z" fill="white"/></svg></div>
+            <span class="thumb__duration">~60 min</span>
+            <span class="thumb__category">Migration · DOORS</span>
+          </div>
+          <div class="webinar-card__body">
+            <div class="webinar-card__date">
+              <span class="date-icon">📅</span> On Demand
+            </div>
+            <h3>Polarion Survival Kit for DOORS</h3>
+            <p>Transition IBM DOORS modules into vibrant Polarion LiveDocs with Agile and SAFe concepts — establishing unparalleled end-to-end traceability from requirements to test results.</p>
+            <div class="webinar-card__speaker">
+              <div class="speaker-avatar">CS</div>
+              <div>
+                <strong>Corbinsoft Experts</strong>
+                <span>Polarion ALM Consultants</span>
+              </div>
+            </div>
+            <a href="webinar-doors-survival-kit.html" class="btn btn--watch">
+              <svg viewBox="0 0 20 20" fill="none"><polygon points="6,4 17,10 6,16" fill="currentColor"/></svg>
+              Watch Recording
+            </a>
+          </div>
+        </article>
+
+      </div><!-- /grid -->
+
+      <p class="no-results" id="noResults" style="display:none;">
+        No webinars found for this filter.
+        <button id="resetFilter">Clear filter</button>
+      </p>
+    </div>
+  </section>
+
+  <!-- UPCOMING CTA BANNER -->
+  <section class="upcoming-banner">
+    <div class="container upcoming-banner__inner reveal-up">
+      <div class="upcoming-banner__text">
+        <span class="section-label">Live &amp; Interactive</span>
+        <h2>Join our upcoming webinars</h2>
+        <p>3 live sessions scheduled for 2026 — ask questions, get answers, and go deeper with our Polarion experts.</p>
+      </div>
+      <div class="upcoming-banner__actions">
+        <a href="upcoming-webinars.html" class="btn btn--primary">View Upcoming Sessions</a>
+        <a href="index.html#contact" class="btn btn--ghost">Request a Topic</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo-link">
+          <img src="corbinsoft%20logo%20text%20new.svg" alt="Corbinsoft" class="footer__logo-img" />
+        </a>
+        <p>Certified Siemens Digital Industries Software Partner. Polarion ALM implementation, validation, and technical consulting for regulated industries worldwide.</p>
+      </div>
+      <div class="footer__links">
+        <div class="footer__col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="index.html#services">Polarion Implementation</a></li>
+            <li><a href="index.html#services">Compliance &amp; Validation</a></li>
+            <li><a href="index.html#services">Digital Thread</a></li>
+            <li><a href="index.html#services">DOORS Migration</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="webinars.html">Recorded Webinars</a></li>
+            <li><a href="upcoming-webinars.html">Upcoming Webinars</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#team">Our Experts</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Corbinsoft. All rights reserved.</p>
+      <div class="footer__bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="webinars.js"></script>
+</body>
+</html>
