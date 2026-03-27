@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redline Report Widget | Corbinsoft Products</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,300&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="products.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="corbinsoft-logo.svg" alt="Corbinsoft — The ALM Experts" class="nav__logo-img" />
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html#services" class="nav__link">Services</a></li>
+        <li><a href="index.html#industries" class="nav__link">Industries</a></li>
+        <li><a href="index.html#what-is-alm" class="nav__link">Why ALM</a></li>
+        <li><a href="index.html#about" class="nav__link">About</a></li>
+        <li><a href="index.html#process" class="nav__link">Process</a></li>
+        <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+        <li><a href="webinars.html" class="nav__link">Webinars</a></li>
+        <li><a href="blog-compliance-advantage.html" class="nav__link">Blog</a></li>
+        <li class="nav__dropdown">
+          <a href="products.html" class="nav__link nav__dropdown-link active">Products <svg class="nav__caret" viewBox="0 0 10 6" fill="none" width="10" height="10"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <ul class="nav__submenu">
+            <li><a href="product-redline-report-widget.html">Redline Report Widget</a></li>
+            <li><a href="product-cvss-calculator.html">CVSS Calculator <span class="nav__coming-soon">Soon</span></a></li>
+            <li><a href="product-java21-save-hook.html">Java 21 Save Hook <span class="nav__coming-soon">Soon</span></a></li>
+          </ul>
+        </li>
+      </ul>
+      <a href="index.html#contact" class="btn btn--nav">Request a Consultation</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ① HERO -->
+  <section class="product-hero">
+    <div class="product-hero__bg"></div>
+    <div class="container">
+      <div class="product-hero__inner reveal-up">
+        <a href="products.html" class="product-hero__back">← Products</a>
+        <span class="product-hero__badge">Polarion ALM Widget</span>
+        <h1 class="product-hero__title">Redline Report Widget</h1>
+        <p class="product-hero__sub">Multi-level traceability comparison and change visualisation powered by Apache Velocity. Compare any two collection baselines — instantly see what changed, at every level of your requirements hierarchy.</p>
+        <div class="product-hero__metrics">
+          <div class="metric-item">
+            <span class="metric-item__num">80%</span>
+            <span class="metric-item__label">Reduction in audit effort</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-item__num">5-level</span>
+            <span class="metric-item__label">Traceability chain</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-item__num">5</span>
+            <span class="metric-item__label">Regulated industries</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ② WHAT IT IS -->
+  <section class="section product-intro">
+    <div class="container">
+      <div class="product-intro__grid">
+        <div class="product-intro__text reveal-left">
+          <span class="section-label">Executive Summary</span>
+          <h2>Enterprise-grade change visualisation for Polarion</h2>
+          <p>The Redline Report Widget is a powerful, enterprise-grade change visualisation and traceability comparison tool built on the Apache Velocity template engine within the Siemens Polarion ALM platform.</p>
+          <p>It delivers real-time, side-by-side comparison of work item hierarchies across multiple collection revisions, making it an indispensable component for organisations operating under rigorous quality management, regulatory compliance, and parallel development workflows.</p>
+          <p>Changes are rendered using a redline approach — additions highlighted in green, deletions highlighted in red with strikethrough. The widget reduces manual audit effort by up to 80%, enabling teams to identify specification drift within seconds instead of hours.</p>
+        </div>
+        <div class="product-intro__diagram reveal-right">
+          <!-- SVG diagram: two collection boxes pointing to comparison output -->
+          <svg viewBox="0 0 480 340" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+            <!-- Background -->
+            <rect width="480" height="340" rx="12" fill="#f4f8fd"/>
+
+            <!-- Collection A box -->
+            <rect x="20" y="40" width="140" height="100" rx="8" fill="white" stroke="#c8dde9" stroke-width="1.5"/>
+            <rect x="20" y="40" width="140" height="28" rx="8" fill="#e8f4fb"/>
+            <rect x="20" y="56" width="140" height="12" rx="0" fill="#e8f4fb"/>
+            <text x="90" y="59" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#1d9fd5" font-weight="600">COLLECTION A</text>
+            <text x="90" y="73" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#7a9ab2">Baseline v1.0</text>
+            <!-- Rows in A -->
+            <rect x="32" y="82" width="116" height="14" rx="3" fill="#f4f8fd"/>
+            <text x="40" y="93" font-family="Manrope, sans-serif" font-size="9" fill="#4a6778">SWR-001: Login feature</text>
+            <rect x="32" y="100" width="116" height="14" rx="3" fill="#f4f8fd"/>
+            <text x="40" y="111" font-family="Manrope, sans-serif" font-size="9" fill="#4a6778">SWR-002: Auth module</text>
+            <rect x="32" y="118" width="116" height="14" rx="3" fill="#f4f8fd"/>
+            <text x="40" y="129" font-family="Manrope, sans-serif" font-size="9" fill="#4a6778">SWR-003: Reporting</text>
+
+            <!-- Collection B box -->
+            <rect x="20" y="180" width="140" height="100" rx="8" fill="white" stroke="#c8dde9" stroke-width="1.5"/>
+            <rect x="20" y="180" width="140" height="28" rx="8" fill="#e6f9f7"/>
+            <rect x="20" y="196" width="140" height="12" rx="0" fill="#e6f9f7"/>
+            <text x="90" y="199" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#00a898" font-weight="600">COLLECTION B</text>
+            <text x="90" y="213" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#7a9ab2">Baseline v2.0</text>
+            <!-- Rows in B -->
+            <rect x="32" y="222" width="116" height="14" rx="3" fill="#f4f8fd"/>
+            <text x="40" y="233" font-family="Manrope, sans-serif" font-size="9" fill="#4a6778">SWR-001: Login feature</text>
+            <rect x="32" y="240" width="116" height="14" rx="3" fill="#f4f8fd"/>
+            <text x="40" y="251" font-family="Manrope, sans-serif" font-size="9" fill="#4a6778">SWR-002: Auth module v2</text>
+            <rect x="32" y="258" width="116" height="14" rx="3" fill="#f4f8fd"/>
+            <text x="40" y="269" font-family="Manrope, sans-serif" font-size="9" fill="#4a6778">SWR-004: Dashboard</text>
+
+            <!-- Arrows from A and B to comparison engine -->
+            <path d="M162 90 L230 160" stroke="#1d9fd5" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-blue)"/>
+            <path d="M162 230 L230 200" stroke="#00a898" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-teal)"/>
+
+            <!-- Comparison engine circle -->
+            <circle cx="255" cy="170" r="26" fill="white" stroke="#c8dde9" stroke-width="1.5"/>
+            <text x="255" y="166" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#1d9fd5" font-weight="600">DIFF</text>
+            <text x="255" y="178" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#1d9fd5" font-weight="600">ENGINE</text>
+
+            <!-- Arrow to output -->
+            <path d="M282 170 L320 170" stroke="#1a2e42" stroke-width="1.5" marker-end="url(#arrow-dark)"/>
+
+            <!-- Output table -->
+            <rect x="322" y="80" width="138" height="180" rx="8" fill="white" stroke="#c8dde9" stroke-width="1.5"/>
+            <rect x="322" y="80" width="138" height="26" rx="8" fill="#1d9fd5"/>
+            <rect x="322" y="94" width="138" height="12" rx="0" fill="#1d9fd5"/>
+            <text x="391" y="97" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="white" font-weight="600">REDLINE REPORT</text>
+
+            <!-- Unchanged row -->
+            <rect x="330" y="116" width="122" height="18" rx="3" fill="#f4f8fd"/>
+            <text x="338" y="128" font-family="Manrope, sans-serif" font-size="8.5" fill="#4a6778">SWR-001: Login feature</text>
+
+            <!-- Modified row -->
+            <rect x="330" y="138" width="122" height="18" rx="3" fill="#fff3e0"/>
+            <text x="338" y="150" font-family="Manrope, sans-serif" font-size="8.5" fill="#e8a000">SWR-002: Auth module v2</text>
+
+            <!-- Added row (green) -->
+            <rect x="330" y="160" width="122" height="18" rx="3" fill="#e8f9f0"/>
+            <text x="338" y="172" font-family="Manrope, sans-serif" font-size="8.5" fill="#1a9e60">+ SWR-004: Dashboard</text>
+
+            <!-- Deleted row (red) -->
+            <rect x="330" y="182" width="122" height="18" rx="3" fill="#fef0f0"/>
+            <text x="338" y="193" font-family="Manrope, sans-serif" font-size="8" fill="#d94f4f" text-decoration="line-through">- SWR-003: Reporting</text>
+
+            <!-- Legend -->
+            <rect x="330" y="212" width="10" height="10" rx="2" fill="#e8f9f0" stroke="#1a9e60" stroke-width="1"/>
+            <text x="344" y="221" font-family="Manrope, sans-serif" font-size="8" fill="#4a6778">Added</text>
+            <rect x="380" y="212" width="10" height="10" rx="2" fill="#fef0f0" stroke="#d94f4f" stroke-width="1"/>
+            <text x="394" y="221" font-family="Manrope, sans-serif" font-size="8" fill="#4a6778">Removed</text>
+
+            <!-- Arrow markers -->
+            <defs>
+              <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L8,3 z" fill="#1d9fd5"/>
+              </marker>
+              <marker id="arrow-teal" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L8,3 z" fill="#00a898"/>
+              </marker>
+              <marker id="arrow-dark" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L8,3 z" fill="#1a2e42"/>
+              </marker>
+            </defs>
+
+            <!-- Platform label -->
+            <text x="240" y="318" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#adc3d4">Siemens Polarion ALM — Apache Velocity Engine</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ③ KEY FEATURES -->
+  <section class="section" style="background:var(--clr-bg);">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">Capabilities</span>
+        <h2 class="section-title">8 key features</h2>
+        <p class="section-sub">Every feature designed around the real-world needs of regulated engineering teams working with Polarion baselines.</p>
+      </div>
+      <div class="feature-grid">
+
+        <div class="feature-card reveal-up">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 32 32" fill="none" width="24" height="24" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="6" width="11" height="20" rx="2"/>
+              <rect x="18" y="6" width="11" height="20" rx="2"/>
+              <line x1="14" y1="16" x2="18" y2="16"/>
+            </svg>
+          </div>
+          <h3>Two-Version Collection Comparison</h3>
+          <p>Select any two collection revisions within Polarion and instantly generate a side-by-side structural comparison across the full work item hierarchy.</p>
+        </div>
+
+        <div class="feature-card reveal-up" data-delay="100">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 32 32" fill="none" width="24" height="24" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="8" width="24" height="5" rx="1.5" fill="rgba(26,158,96,0.15)" stroke="#1a9e60"/>
+              <rect x="4" y="17" width="24" height="5" rx="1.5" fill="rgba(217,79,79,0.12)" stroke="#d94f4f"/>
+              <line x1="8" y1="22" x2="20" y2="22" stroke="#d94f4f" stroke-dasharray="2,1.5"/>
+            </svg>
+          </div>
+          <h3>Redline Change Highlighting</h3>
+          <p>Additions appear in green, deletions in red with strikethrough, and both old and new values are shown for modifications — instantly communicating the nature of every change.</p>
+        </div>
+
+        <div class="feature-card reveal-up" data-delay="200">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 32 32" fill="none" width="24" height="24" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="4" width="24" height="24" rx="3"/>
+              <path d="M4 12h24"/>
+              <path d="M12 12v16"/>
+              <circle cx="22" cy="22" r="4" fill="rgba(29,159,213,0.12)"/>
+              <path d="M20 22l1.5 1.5L24 20"/>
+            </svg>
+          </div>
+          <h3>Dynamic Live Report Integration</h3>
+          <p>Renders directly within a Polarion Live Report page with no page reload required. Select collections from dropdowns and the table updates dynamically in real time.</p>
+        </div>
+
+        <div class="feature-card reveal-up" data-delay="300">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 32 32" fill="none" width="24" height="24" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="4" width="8" height="6" rx="1.5"/>
+              <rect x="12" y="13" width="8" height="6" rx="1.5"/>
+              <rect x="20" y="22" width="8" height="6" rx="1.5"/>
+              <path d="M8 10v3h8v3h8"/>
+            </svg>
+          </div>
+          <h3>Multi-Level Traceability Visualisation</h3>
+          <p>Presents the complete work item hierarchy from User Needs through System Requirements, Software Requirements, Test Cases, and Defects in a single unified table view.</p>
+        </div>
+
+        <div class="feature-card reveal-up">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 32 32" fill="none" width="24" height="24" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="16" cy="16" r="12"/>
+              <polyline points="16,9 16,16 20,20"/>
+              <path d="M8 8l-3-3M8 8h4M8 8v4"/>
+            </svg>
+          </div>
+          <h3>Revision Management &amp; Historical Navigation</h3>
+          <p>Navigate to any historical revision of any collection. Compare baseline-to-baseline, sprint-to-sprint, or release-to-release with full chronological flexibility.</p>
+        </div>
+
+        <div class="feature-card reveal-up" data-delay="100">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 32 32" fill="none" width="24" height="24" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="7"/>
+              <path d="M16 16l9 9"/>
+              <path d="M7 11h8M11 7v8"/>
+            </svg>
+          </div>
+          <h3>Query-Based Work Item Filtering</h3>
+          <p>Apply Lucene query syntax to narrow the comparison scope. Filter by type, severity, assignee, or any custom field — ensuring the report surfaces only the items that matter.</p>
+        </div>
+
+        <div class="feature-card reveal-up" data-delay="200">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 32 32" fill="none" width="24" height="24" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="6" width="24" height="20" rx="2"/>
+              <path d="M4 12h24"/>
+              <path d="M10 12v14"/>
+              <path d="M18 12v14"/>
+            </svg>
+          </div>
+          <h3>Customisable Primary Column Display</h3>
+          <p>Configure the primary column to support requirements-down analysis (User Needs first) or test-up analysis (Test Cases first). Adapts to your team's review workflow.</p>
+        </div>
+
+        <div class="feature-card reveal-up" data-delay="300">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 32 32" fill="none" width="24" height="24" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="4" width="24" height="24" rx="3"/>
+              <path d="M10 14l4 4 8-8"/>
+              <path d="M4 20h6"/>
+              <path d="M4 26h24"/>
+            </svg>
+          </div>
+          <h3>Interactive User Interface</h3>
+          <p>Expand and collapse hierarchy nodes, sort by any column, and drill down into individual work item changes — all within the familiar Polarion Live Report environment.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ④ WORK ITEM HIERARCHY -->
+  <section class="section" style="background:var(--clr-bg2);">
+    <div class="container">
+      <div class="section-header reveal-up" style="text-align:center;">
+        <span class="section-label">Traceability Depth</span>
+        <h2 class="section-title">Supported work item hierarchy</h2>
+        <p class="section-sub" style="margin:0 auto;">Five levels of requirements and verification traceability — tracked and compared in a single widget.</p>
+      </div>
+      <div class="hierarchy-chain reveal-up">
+        <div class="hierarchy-level">
+          <span class="hierarchy-level__num">Level 1</span>
+          <span class="hierarchy-level__title">User Needs / Stakeholder Requirements</span>
+          <span class="hierarchy-level__sub">Primary anchor</span>
+        </div>
+        <div class="hierarchy-level">
+          <span class="hierarchy-level__num">Level 2</span>
+          <span class="hierarchy-level__title">System Requirements</span>
+          <span class="hierarchy-level__sub">Derived from User Needs</span>
+        </div>
+        <div class="hierarchy-level">
+          <span class="hierarchy-level__num">Level 3</span>
+          <span class="hierarchy-level__title">Software Requirements</span>
+          <span class="hierarchy-level__sub">Allocated from System Reqs</span>
+        </div>
+        <div class="hierarchy-level">
+          <span class="hierarchy-level__num">Level 4</span>
+          <span class="hierarchy-level__title">Test Cases / Verification</span>
+          <span class="hierarchy-level__sub">Verification evidence</span>
+        </div>
+        <div class="hierarchy-level">
+          <span class="hierarchy-level__num">Level 5</span>
+          <span class="hierarchy-level__title">Defects / Issues</span>
+          <span class="hierarchy-level__sub">Linked change records</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑤ HOW IT WORKS -->
+  <section class="section" style="background:var(--clr-bg);">
+    <div class="container">
+      <div class="section-header reveal-up" style="text-align:center;">
+        <span class="section-label">Architecture</span>
+        <h2 class="section-title">How it works</h2>
+        <p class="section-sub" style="margin:0 auto;">Four clean architectural layers from configuration to rendered output.</p>
+      </div>
+      <div class="arch-steps reveal-up">
+        <div class="arch-step">
+          <div class="arch-step__num">01</div>
+          <div class="arch-step__title">Configuration Layer</div>
+          <p class="arch-step__desc">parameters.vm defines project work item types, hierarchy mapping, display fields, and query filters — a single file controls all widget behaviour.</p>
+        </div>
+        <div class="arch-step">
+          <div class="arch-step__num">02</div>
+          <div class="arch-step__title">Data Retrieval Layer</div>
+          <p class="arch-step__desc">The Polarion Collections API fetches work items from both selected collection revisions, applying configured Lucene query filters and type constraints.</p>
+        </div>
+        <div class="arch-step">
+          <div class="arch-step__num">03</div>
+          <div class="arch-step__title">Comparison Engine</div>
+          <p class="arch-step__desc">Field-level diff logic classifies every work item as unchanged, added, deleted, or modified — computing both old and new values for changed fields.</p>
+        </div>
+        <div class="arch-step">
+          <div class="arch-step__num">04</div>
+          <div class="arch-step__title">Rendering Layer</div>
+          <p class="arch-step__desc">Apache Velocity macros transform the diff output into HTML with colour-coded redline styling, injected directly into the Polarion Live Report page.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑥ INDUSTRY USE CASES -->
+  <section class="section" style="background:var(--clr-bg2);">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">Industry Applications</span>
+        <h2 class="section-title">Use cases across regulated industries</h2>
+        <p class="section-sub">Pre-configured hierarchy mappings for the five most common regulated engineering domains.</p>
+      </div>
+      <div class="use-cases-grid">
+
+        <div class="use-case-card reveal-up">
+          <div class="use-case-card__icon">⚕️</div>
+          <span class="use-case-card__std">FDA 21 CFR Part 11 / IEC 62304</span>
+          <h3>Medical Device</h3>
+          <ul class="use-case-card__hierarchy">
+            <li>User Needs</li>
+            <li>Design Inputs</li>
+            <li>Design Outputs</li>
+            <li>Verification</li>
+            <li>Validation</li>
+          </ul>
+        </div>
+
+        <div class="use-case-card reveal-up" data-delay="100">
+          <div class="use-case-card__icon">🚗</div>
+          <span class="use-case-card__std">ISO 26262 / ASPICE</span>
+          <h3>Automotive</h3>
+          <ul class="use-case-card__hierarchy">
+            <li>Safety Goals</li>
+            <li>Functional Safety Requirements</li>
+            <li>Technical Safety Requirements</li>
+            <li>Software Requirements</li>
+            <li>Tests</li>
+          </ul>
+        </div>
+
+        <div class="use-case-card reveal-up" data-delay="200">
+          <div class="use-case-card__icon">✈️</div>
+          <span class="use-case-card__std">DO-178C / ARP 4754A</span>
+          <h3>Aerospace</h3>
+          <ul class="use-case-card__hierarchy">
+            <li>System Requirements</li>
+            <li>Software High-Level Reqs</li>
+            <li>Software Low-Level Reqs</li>
+            <li>Software Test Cases</li>
+            <li>Test Results</li>
+          </ul>
+        </div>
+
+        <div class="use-case-card reveal-up">
+          <div class="use-case-card__icon">🧪</div>
+          <span class="use-case-card__std">GxP / CSV / CSA</span>
+          <h3>Pharma / Biotech</h3>
+          <ul class="use-case-card__hierarchy">
+            <li>User Requirements Spec (URS)</li>
+            <li>Functional Requirements Spec (FRS)</li>
+            <li>Design Spec</li>
+            <li>Test Protocols (IQ/OQ/PQ)</li>
+            <li>Deviation Records</li>
+          </ul>
+        </div>
+
+        <div class="use-case-card reveal-up" data-delay="100">
+          <div class="use-case-card__icon">💻</div>
+          <span class="use-case-card__std">Agile / SAFe</span>
+          <h3>Enterprise IT</h3>
+          <ul class="use-case-card__hierarchy">
+            <li>Epics / Business Objectives</li>
+            <li>Features</li>
+            <li>User Stories</li>
+            <li>Test Cases</li>
+            <li>Defects</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑦ COMPLIANCE FRAMEWORKS -->
+  <section class="section" style="background:var(--clr-bg);">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">Regulatory Coverage</span>
+        <h2 class="section-title">Compliance frameworks supported</h2>
+        <p class="section-sub">The widget's audit-trail output and bidirectional traceability directly support these regulatory requirements.</p>
+      </div>
+      <div class="compliance-table-wrap reveal-up">
+        <table class="compliance-table">
+          <thead>
+            <tr>
+              <th>Framework</th>
+              <th>Domain</th>
+              <th>Widget Capability</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="compliance-table__framework">FDA 21 CFR Part 11</td>
+              <td class="compliance-table__domain">Medical / Pharma</td>
+              <td>Audit-trail visual evidence; integrates with Polarion electronic records for electronic signature workflows</td>
+            </tr>
+            <tr>
+              <td class="compliance-table__framework">ISO 13485:2016</td>
+              <td class="compliance-table__domain">Medical Device QMS</td>
+              <td>Design history file (DHF) change documentation; controlled comparison records for design reviews</td>
+            </tr>
+            <tr>
+              <td class="compliance-table__framework">IEC 62304</td>
+              <td class="compliance-table__domain">Medical Device Software</td>
+              <td>Software requirement change tracking across versions; full traceability from user needs to test evidence</td>
+            </tr>
+            <tr>
+              <td class="compliance-table__framework">ISO 14971</td>
+              <td class="compliance-table__domain">Risk Management</td>
+              <td>Identifies new or changed risk controls across baselines; links defects to safety-critical requirements</td>
+            </tr>
+            <tr>
+              <td class="compliance-table__framework">ISO 26262</td>
+              <td class="compliance-table__domain">Automotive Safety</td>
+              <td>Safety requirement change impact analysis; ASIL allocation visibility across development baselines</td>
+            </tr>
+            <tr>
+              <td class="compliance-table__framework">DO-178C / DO-254</td>
+              <td class="compliance-table__domain">Aerospace</td>
+              <td>Software and hardware requirement change evidence for certification data packages and DER review</td>
+            </tr>
+            <tr>
+              <td class="compliance-table__framework">ASPICE</td>
+              <td class="compliance-table__domain">Automotive Process</td>
+              <td>Process-level traceability for SWE.1–SWE.6; baseline comparison supports maturity assessments</td>
+            </tr>
+            <tr>
+              <td class="compliance-table__framework">GxP / CSV / CSA</td>
+              <td class="compliance-table__domain">Pharma</td>
+              <td>Computerised system validation change evidence; URS-to-test-protocol traceability across releases</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑧ CONFIGURATION REFERENCE -->
+  <section class="section config-section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">Technical Reference</span>
+        <h2 class="section-title">Configuration reference</h2>
+        <p class="section-sub">All widget behaviour is controlled via a single <code style="font-family:var(--font-mono);font-size:13px;background:rgba(29,159,213,0.08);padding:2px 7px;border-radius:4px;color:var(--clr-blue);">parameters.vm</code> file, organised into four categories.</p>
+      </div>
+      <div class="config-blocks reveal-up">
+
+        <div class="config-block">
+          <div class="config-block__header">
+            <div class="config-block__header-dot"></div>
+            <h4>Collection Configuration</h4>
+          </div>
+          <div class="config-block__params">
+            <div class="config-param">
+              <span class="config-param__name">collectionIdA</span>
+              <p class="config-param__desc">Polarion collection ID for the first (older) baseline to compare. Accepts any valid collection identifier.</p>
+            </div>
+            <div class="config-param">
+              <span class="config-param__name">collectionIdB</span>
+              <p class="config-param__desc">Polarion collection ID for the second (newer) baseline. The diff output compares B against A.</p>
+            </div>
+            <div class="config-param">
+              <span class="config-param__name">collectionRevisionA / collectionRevisionB</span>
+              <p class="config-param__desc">Specific revision numbers within each collection. Supports any historical revision for point-in-time comparison.</p>
+            </div>
+            <div class="config-param">
+              <span class="config-param__name">projectId</span>
+              <p class="config-param__desc">The Polarion project identifier. Collections and work items are resolved within this project scope.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="config-block">
+          <div class="config-block__header">
+            <div class="config-block__header-dot"></div>
+            <h4>Work Item Type Configuration</h4>
+          </div>
+          <div class="config-block__params">
+            <div class="config-param">
+              <span class="config-param__name">primaryWorkItemType</span>
+              <p class="config-param__desc">The top-level work item type that anchors the hierarchy (e.g. userNeed, safetyGoal, systemRequirement).</p>
+            </div>
+            <div class="config-param">
+              <span class="config-param__name">traceabilityLevels</span>
+              <p class="config-param__desc">Ordered list of work item types forming the hierarchy chain. Supports up to 5 levels of parent-child traceability.</p>
+            </div>
+            <div class="config-param">
+              <span class="config-param__name">linkRoleMapping</span>
+              <p class="config-param__desc">Maps each hierarchy level transition to the Polarion link role used (e.g. refines, verifies, derives). Must match project configuration.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="config-block">
+          <div class="config-block__header">
+            <div class="config-block__header-dot"></div>
+            <h4>Display Configuration</h4>
+          </div>
+          <div class="config-block__params">
+            <div class="config-param">
+              <span class="config-param__name">displayFields</span>
+              <p class="config-param__desc">List of work item field IDs to include as columns in the redline table (e.g. title, description, severity, assignee).</p>
+            </div>
+            <div class="config-param">
+              <span class="config-param__name">columnLabels</span>
+              <p class="config-param__desc">Human-readable column header overrides mapped to each displayField ID.</p>
+            </div>
+            <div class="config-param">
+              <span class="config-param__name">showUnchanged</span>
+              <p class="config-param__desc">Boolean. When true, unchanged work items are included in the output table alongside changed items.</p>
+            </div>
+            <div class="config-param">
+              <span class="config-param__name">sortOrder / maxResults</span>
+              <p class="config-param__desc">Sort direction (asc/desc) by primary column, and maximum number of result rows to render per page.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="config-block">
+          <div class="config-block__header">
+            <div class="config-block__header-dot"></div>
+            <h4>Query Configuration</h4>
+          </div>
+          <div class="config-block__params">
+            <div class="config-param">
+              <span class="config-param__name">workItemQuery</span>
+              <p class="config-param__desc">Lucene query string applied to both collections before comparison. Filters the scope of work items included in the diff.</p>
+            </div>
+            <div class="config-param">
+              <span class="config-param__name">additionalFilters</span>
+              <p class="config-param__desc">Secondary filter expressions for further narrowing by severity, module, component, or any custom field. Supports AND/OR operators.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑨ DEPLOYMENT -->
+  <section class="section" style="background:var(--clr-bg);">
+    <div class="container">
+      <div class="section-header reveal-up" style="text-align:center;">
+        <span class="section-label">Getting Started</span>
+        <h2 class="section-title">Deployment in 5 steps</h2>
+        <p class="section-sub" style="margin:0 auto;">No additional infrastructure required. Runs entirely within your existing Polarion installation.</p>
+      </div>
+      <div class="deployment-steps reveal-up">
+        <div class="deployment-step">
+          <div class="deployment-step__num">1</div>
+          <div class="deployment-step__content">
+            <h4>Copy template files</h4>
+            <p>Copy the widget template files to your Polarion reporting extension directory. No server restart or additional installation required.</p>
+          </div>
+        </div>
+        <div class="deployment-step">
+          <div class="deployment-step__num">2</div>
+          <div class="deployment-step__content">
+            <h4>Configure parameters.vm</h4>
+            <p>Edit parameters.vm to match your project's work item types, hierarchy structure, traceability link roles, and display preferences.</p>
+          </div>
+        </div>
+        <div class="deployment-step">
+          <div class="deployment-step__num">3</div>
+          <div class="deployment-step__content">
+            <h4>Create or identify collections</h4>
+            <p>Ensure the two collection baselines you want to compare exist within your Polarion project. Any existing collections and their revision history are supported.</p>
+          </div>
+        </div>
+        <div class="deployment-step">
+          <div class="deployment-step__num">4</div>
+          <div class="deployment-step__content">
+            <h4>Add widget to Live Report page</h4>
+            <p>Insert the Redline Report Widget onto any Polarion Live Report page using the standard widget insertion workflow.</p>
+          </div>
+        </div>
+        <div class="deployment-step">
+          <div class="deployment-step__num">5</div>
+          <div class="deployment-step__content">
+            <h4>Select revisions and review</h4>
+            <p>Select two collection revisions from the widget dropdowns — the redline comparison table renders in real time with full colour-coded change highlighting.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:40px;padding:24px 28px;background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:var(--radius-md);max-width:760px;margin-left:auto;margin-right:auto;">
+        <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--clr-text-muted);margin-bottom:12px;">System Requirements</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;">
+          <span style="font-size:13px;color:var(--clr-text-mid);background:var(--clr-bg2);padding:6px 14px;border-radius:var(--radius-xs);border:1px solid var(--clr-border);">Polarion ALM 2304+</span>
+          <span style="font-size:13px;color:var(--clr-text-mid);background:var(--clr-bg2);padding:6px 14px;border-radius:var(--radius-xs);border:1px solid var(--clr-border);">Standard Polarion Server</span>
+          <span style="font-size:13px;color:var(--clr-text-mid);background:var(--clr-bg2);padding:6px 14px;border-radius:var(--radius-xs);border:1px solid var(--clr-border);">Modern Web Browser</span>
+          <span style="font-size:13px;color:var(--clr-text-mid);background:var(--clr-bg2);padding:6px 14px;border-radius:var(--radius-xs);border:1px solid var(--clr-border);">No additional infrastructure</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑩ BENEFITS -->
+  <section class="section" style="background:var(--clr-bg2);">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">Value Delivered</span>
+        <h2 class="section-title">Benefits across the organisation</h2>
+        <p class="section-sub">From the engineer at the workstation to the quality manager preparing for audit — every role gains from redline visibility.</p>
+      </div>
+      <div class="benefits-grid reveal-up">
+
+        <div class="benefits-col">
+          <div class="benefits-col__header">
+            <h3>Engineering Teams</h3>
+          </div>
+          <ul class="benefits-col__list">
+            <li>Instantly identifies changes between any two baselines without manual document comparison</li>
+            <li>Preserves full traceability context — no requirement change is ever isolated from its parent or child items</li>
+            <li>Supports parallel development by enabling fast comparison of diverged branches or feature baselines</li>
+            <li>Reduces design review preparation time from days to minutes</li>
+          </ul>
+        </div>
+
+        <div class="benefits-col">
+          <div class="benefits-col__header">
+            <h3>Quality &amp; Compliance</h3>
+          </div>
+          <ul class="benefits-col__list">
+            <li>Generates audit-ready visual evidence of every change between regulated baselines</li>
+            <li>Provides bidirectional traceability from requirements to test evidence in a single view</li>
+            <li>Supports regulatory submission packages with structured, timestamped change records</li>
+            <li>Integrates with Polarion electronic records for full 21 CFR Part 11 compliance</li>
+          </ul>
+        </div>
+
+        <div class="benefits-col">
+          <div class="benefits-col__header">
+            <h3>Project Management</h3>
+          </div>
+          <ul class="benefits-col__list">
+            <li>Real-time visibility into specification drift between planned and delivered requirements</li>
+            <li>Data-driven go/no-go decisions at release gates backed by quantified change evidence</li>
+            <li>Reduces risk of undocumented change slipping through to production</li>
+            <li>Supports executive reporting on requirement stability across programme milestones</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑪ CTA -->
+  <section class="section product-cta">
+    <div class="container">
+      <div class="product-cta__inner reveal-up">
+        <h2>Ready to add redline comparison to Polarion?</h2>
+        <p>Get in touch to request a live demo or discuss how the Redline Report Widget fits your Polarion configuration and regulatory context.</p>
+        <div class="product-cta__actions">
+          <a href="index.html#contact" class="btn btn--primary">Request a Demo</a>
+          <a href="products.html" class="btn btn--ghost">Back to Products</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo-link">
+          <img src="corbinsoft-logo.svg" alt="Corbinsoft — The ALM Experts" class="footer__logo-img" />
+        </a>
+        <p>Certified Siemens Digital Industries Software Partner. Polarion ALM implementation, validation, and technical consulting for regulated industries worldwide.</p>
+      </div>
+      <div class="footer__links">
+        <div class="footer__col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="index.html#services">Polarion Implementation</a></li>
+            <li><a href="index.html#services">Compliance &amp; Validation</a></li>
+            <li><a href="index.html#services">Digital Thread &amp; Scripting</a></li>
+            <li><a href="index.html#services">Training Programs</a></li>
+            <li><a href="index.html#services">DOORS Migration</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="product-redline-report-widget.html">Redline Report Widget</a></li>
+            <li><a href="product-cvss-calculator.html">CVSS Calculator</a></li>
+            <li><a href="product-java21-save-hook.html">Java 21 Save Hook</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html#what-is-alm">Why ALM</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#process">Our Process</a></li>
+            <li><a href="webinars.html">Webinars</a></li>
+            <li><a href="blog-compliance-advantage.html">Blog</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Corbinsoft. All rights reserved.</p>
+      <div class="footer__bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

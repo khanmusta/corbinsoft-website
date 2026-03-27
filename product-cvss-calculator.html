@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CVSS Calculator for Polarion | Corbinsoft Products</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,300&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="products.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="corbinsoft-logo.svg" alt="Corbinsoft — The ALM Experts" class="nav__logo-img" />
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html#services" class="nav__link">Services</a></li>
+        <li><a href="index.html#industries" class="nav__link">Industries</a></li>
+        <li><a href="index.html#what-is-alm" class="nav__link">Why ALM</a></li>
+        <li><a href="index.html#about" class="nav__link">About</a></li>
+        <li><a href="index.html#process" class="nav__link">Process</a></li>
+        <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+        <li><a href="webinars.html" class="nav__link">Webinars</a></li>
+        <li><a href="blog-compliance-advantage.html" class="nav__link">Blog</a></li>
+        <li class="nav__dropdown">
+          <a href="products.html" class="nav__link nav__dropdown-link active">Products <svg class="nav__caret" viewBox="0 0 10 6" fill="none" width="10" height="10"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <ul class="nav__submenu">
+            <li><a href="product-redline-report-widget.html">Redline Report Widget</a></li>
+            <li><a href="product-cvss-calculator.html">CVSS Calculator <span class="nav__coming-soon">Soon</span></a></li>
+            <li><a href="product-java21-save-hook.html">Java 21 Save Hook <span class="nav__coming-soon">Soon</span></a></li>
+          </ul>
+        </li>
+      </ul>
+      <a href="index.html#contact" class="btn btn--nav">Request a Consultation</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- COMING SOON PAGE -->
+  <div class="coming-soon-page">
+    <div class="coming-soon-page__bg"></div>
+    <a href="products.html" class="coming-soon-page__back">← Back to Products</a>
+
+    <div class="coming-soon-page__inner reveal-up">
+      <div class="cs-badge">Coming Soon</div>
+      <h1 class="coming-soon-page__title">CVSS Calculator<br/>for Polarion</h1>
+      <p class="coming-soon-page__desc">Calculate CVSS 3.1 and 4.0 vulnerability scores directly within Polarion work items. Link scores to requirements, risks, and test cases for complete security traceability — no external tools required.</p>
+
+      <!-- Feature Preview Cards -->
+      <div class="cs-features-grid">
+
+        <div class="cs-feature-card">
+          <div class="cs-feature-card__lock">🔒</div>
+          <div>
+            <h4>CVSS 3.1 / 4.0 Scoring Engine</h4>
+            <p>Full base, temporal, and environmental metric support for both CVSS 3.1 and the latest CVSS 4.0 specification.</p>
+          </div>
+        </div>
+
+        <div class="cs-feature-card">
+          <div class="cs-feature-card__lock">🔒</div>
+          <div>
+            <h4>Polarion Work Item Integration</h4>
+            <p>Scores calculated and stored directly in Polarion work item fields — no copy-paste, no external spreadsheets.</p>
+          </div>
+        </div>
+
+        <div class="cs-feature-card">
+          <div class="cs-feature-card__lock">🔒</div>
+          <div>
+            <h4>Risk Matrix Visualisation</h4>
+            <p>Live risk matrix view showing vulnerability distribution across severity bands within a project or module.</p>
+          </div>
+        </div>
+
+        <div class="cs-feature-card">
+          <div class="cs-feature-card__lock">🔒</div>
+          <div>
+            <h4>Automated Score Propagation</h4>
+            <p>Scores automatically linked to parent requirements and associated test cases, maintaining full security traceability.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Notify form -->
+      <div class="cs-notify">
+        <p class="cs-notify__label">Notify me when available</p>
+        <div class="cs-notify__form">
+          <input type="email" class="cs-notify__input" placeholder="you@company.com" />
+          <button type="button" class="btn btn--primary">Notify Me</button>
+        </div>
+        <p class="cs-notify__note">No spam. One email when the product launches.</p>
+      </div>
+
+      <a href="products.html" class="cs-back-link">← View all products</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo-link">
+          <img src="corbinsoft-logo.svg" alt="Corbinsoft — The ALM Experts" class="footer__logo-img" />
+        </a>
+        <p>Certified Siemens Digital Industries Software Partner. Polarion ALM implementation, validation, and technical consulting for regulated industries worldwide.</p>
+      </div>
+      <div class="footer__links">
+        <div class="footer__col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="index.html#services">Polarion Implementation</a></li>
+            <li><a href="index.html#services">Compliance &amp; Validation</a></li>
+            <li><a href="index.html#services">Digital Thread &amp; Scripting</a></li>
+            <li><a href="index.html#services">Training Programs</a></li>
+            <li><a href="index.html#services">DOORS Migration</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="product-redline-report-widget.html">Redline Report Widget</a></li>
+            <li><a href="product-cvss-calculator.html">CVSS Calculator</a></li>
+            <li><a href="product-java21-save-hook.html">Java 21 Save Hook</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html#what-is-alm">Why ALM</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#process">Our Process</a></li>
+            <li><a href="webinars.html">Webinars</a></li>
+            <li><a href="blog-compliance-advantage.html">Blog</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Corbinsoft. All rights reserved.</p>
+      <div class="footer__bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
