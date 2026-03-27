@@ -365,27 +365,67 @@ body::after {
   margin: 0 auto;
 }
 
-/* ── Hero logo centrepiece ── */
-.hero__logo-wrap {
-  margin-bottom: 32px;
+/* ── Hero standards cluster ── */
+.hero__standards {
+  margin-bottom: 28px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero__standards-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clr-text-dim);
+  margin: 0;
+}
+
+.hero__standards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   justify-content: center;
 }
 
-.hero__logo-img {
-  width: clamp(200px, 26vw, 340px);
-  height: auto;
-  object-fit: contain;
-  display: block;
-  /* Very subtle drop-shadow so it lifts gently off the white bg */
-  filter: drop-shadow(0 6px 24px rgba(15, 50, 80, 0.1))
-          drop-shadow(0 1px 4px rgba(15, 50, 80, 0.06));
-  transition: filter 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+.std-badge {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 5px 13px;
+  border-radius: 100px;
+  letter-spacing: 0.04em;
+  background: rgba(29, 159, 213, 0.07);
+  border: 1px solid rgba(29, 159, 213, 0.22);
+  color: rgba(29, 159, 213, 0.85);
+  transition: background 0.25s, border-color 0.25s, color 0.25s;
+  animation: stdGlow 4s ease-in-out infinite;
 }
-.hero__logo-img:hover {
-  filter: drop-shadow(0 10px 32px rgba(29, 159, 213, 0.18))
-          drop-shadow(0 2px 6px rgba(15, 50, 80, 0.08));
-  transform: translateY(-2px);
+
+.std-badge--teal {
+  background: rgba(0, 196, 180, 0.07);
+  border-color: rgba(0, 196, 180, 0.22);
+  color: rgba(0, 196, 180, 0.85);
+  animation: stdGlowTeal 4s ease-in-out infinite;
+}
+
+.std-badge:nth-child(2)  { animation-delay: 0.4s; }
+.std-badge:nth-child(3)  { animation-delay: 0.8s; }
+.std-badge:nth-child(4)  { animation-delay: 1.2s; }
+.std-badge:nth-child(5)  { animation-delay: 1.6s; }
+.std-badge:nth-child(6)  { animation-delay: 2.0s; }
+
+@keyframes stdGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(29, 159, 213, 0); }
+  50%       { box-shadow: 0 0 10px 1px rgba(29, 159, 213, 0.18); }
+}
+
+@keyframes stdGlowTeal {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 196, 180, 0); }
+  50%       { box-shadow: 0 0 10px 1px rgba(0, 196, 180, 0.18); }
 }
 
 .hero__badge {

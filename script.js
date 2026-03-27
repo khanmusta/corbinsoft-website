@@ -5,7 +5,15 @@
 // ------ Typed Text ------
 const typedEl = document.getElementById('typedText');
 if (typedEl) {
-  const phrases = ['Experts', 'Implementation', 'Validation', 'Digital Thread', 'Compliance'];
+  const phrases = [
+    'for Design Control',
+    'for Requirements Management',
+    'for Traceability',
+    'for ISO 26262',
+    'for Test Management',
+    'for CSV / CSA',
+    'for Risk Analysis',
+  ];
   let phraseIndex = 0, charIndex = 0, isDeleting = false, typedPause = false;
 
   const cursor = document.createElement('span');
