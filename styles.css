@@ -428,47 +428,55 @@ body::after {
   50%       { box-shadow: 0 0 10px 1px rgba(0, 196, 180, 0.18); }
 }
 
-.hero__badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--clr-teal);
-  background: rgba(0, 168, 152, 0.08);
-  border: 1px solid rgba(0, 168, 152, 0.25);
-  padding: 6px 18px;
-  border-radius: var(--radius-xs);
-  margin-bottom: 28px;
+.hero__title-wrap {
+  margin-bottom: 32px;
 }
 
 .hero__title {
   font-family: var(--font-display);
-  font-size: clamp(42px, 6.5vw, 82px);
+  font-size: clamp(44px, 6.5vw, 86px);
   font-weight: 900;
   font-style: normal;
   line-height: 1.05;
   color: var(--clr-text);
-  margin-bottom: 32px;
-  /* Fraunces has optical size — tighter at display scale */
+  margin: 0 0 10px;
   font-variation-settings: 'opsz' 72, 'WONK' 1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
-.typed-text { min-height: 1.05em; display: inline-block; }
+.hero__typed-line {
+  font-family: var(--font-body);
+  font-size: clamp(20px, 2.4vw, 30px);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  margin: 0;
+  /* enough vertical space so descenders (g, y, p) never clip */
+  padding-bottom: 0.2em;
+  min-height: 1.8em;
+}
+
+.typed-text {
+  display: inline;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
 .typed-cursor {
   display: inline-block;
-  width: 3px;
+  width: 2.5px;
   background: var(--clr-blue);
   animation: blink 0.9s step-end infinite;
-  vertical-align: text-bottom;
-  height: 0.78em;
+  vertical-align: baseline;
+  height: 0.85em;
   margin-left: 3px;
   border-radius: 1px;
+  /* keep cursor visible even inside a clipping context */
+  -webkit-text-fill-color: initial;
+  position: relative;
+  top: 0.05em;
 }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
