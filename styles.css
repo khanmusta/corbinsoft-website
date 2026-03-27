@@ -444,16 +444,28 @@ body::after {
   letter-spacing: -0.025em;
 }
 
-.hero__typed-line {
-  font-family: var(--font-body);
-  font-size: clamp(20px, 2.4vw, 30px);
-  font-weight: 600;
-  line-height: 1.5;
+.hero__typed-for {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 44px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.1;
+  margin: 2px 0 0;
+  color: var(--clr-text-muted);
   letter-spacing: -0.01em;
+  font-variation-settings: 'opsz' 48, 'WONK' 0;
+}
+
+.hero__typed-line {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 6.5vw, 86px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
   margin: 0;
-  /* enough vertical space so descenders (g, y, p) never clip */
-  padding-bottom: 0.2em;
-  min-height: 1.8em;
+  /* room for descenders on letters like g, y, p */
+  padding-bottom: 0.18em;
+  font-variation-settings: 'opsz' 72, 'WONK' 1;
 }
 
 .typed-text {

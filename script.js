@@ -6,13 +6,13 @@
 const typedEl = document.getElementById('typedText');
 if (typedEl) {
   const phrases = [
-    'for Design Control',
-    'for Requirements Management',
-    'for Traceability',
-    'for ISO 26262',
-    'for Test Management',
-    'for CSV / CSA',
-    'for Risk Analysis',
+    'Design Control',
+    'Requirements Management',
+    'Traceability',
+    'ISO 26262',
+    'Test Management',
+    'CSV / CSA',
+    'Risk Analysis',
   ];
   let phraseIndex = 0, charIndex = 0, isDeleting = false, typedPause = false;
 
