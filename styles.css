@@ -1924,7 +1924,8 @@ a.industry-card:hover .industry-card__arrow { gap: 10px; }
 
 /* ── Hero ────────────────────────────────────────────────── */
 .ind-hero {
-  background: #0d1c30;
+  background: var(--clr-bg2);
+  border-bottom: 1px solid var(--clr-border);
   padding: 130px 0 80px;
   position: relative;
   overflow: hidden;
@@ -1932,13 +1933,13 @@ a.industry-card:hover .industry-card__arrow { gap: 10px; }
 .ind-hero::before {
   content: '';
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse 70% 60% at 30% 50%, rgba(29,159,213,0.13) 0%, transparent 70%);
+  background: radial-gradient(ellipse 60% 80% at 0% 50%, rgba(29,159,213,0.07) 0%, transparent 65%);
   pointer-events: none;
 }
 .ind-hero__breadcrumb {
   font-family: var(--font-mono);
   font-size: 11px;
-  color: rgba(173,196,214,0.45);
+  color: var(--clr-text-muted);
   margin-bottom: 24px;
   display: flex; gap: 8px; align-items: center;
 }
@@ -1949,14 +1950,14 @@ a.industry-card:hover .industry-card__arrow { gap: 10px; }
   font-family: var(--font-mono);
   font-size: 10px; font-weight: 500;
   letter-spacing: 2.5px; text-transform: uppercase;
-  color: var(--clr-teal-light);
+  color: var(--clr-blue);
   margin-bottom: 14px;
 }
 .ind-hero__title {
   font-family: var(--font-display);
   font-size: clamp(30px, 4.5vw, 54px);
   font-weight: 800;
-  color: #ffffff;
+  color: var(--clr-text);
   line-height: 1.06;
   letter-spacing: -0.03em;
   margin-bottom: 20px;
@@ -1965,7 +1966,7 @@ a.industry-card:hover .industry-card__arrow { gap: 10px; }
 }
 .ind-hero__sub {
   font-size: 15.5px;
-  color: rgba(173,196,214,0.78);
+  color: var(--clr-text-mid);
   max-width: 560px;
   line-height: 1.72;
   margin-bottom: 30px;
@@ -1977,9 +1978,9 @@ a.industry-card:hover .industry-card__arrow { gap: 10px; }
 .ind-badge {
   font-family: var(--font-mono);
   font-size: 10.5px; font-weight: 500; letter-spacing: 0.4px;
-  color: rgba(173,196,214,0.8);
-  background: rgba(29,159,213,0.1);
-  border: 1px solid rgba(29,159,213,0.22);
+  color: var(--clr-blue-dark);
+  background: rgba(29,159,213,0.07);
+  border: 1px solid var(--clr-border-mid);
   padding: 5px 12px;
   border-radius: var(--radius-xs);
 }
