@@ -21,7 +21,7 @@
       <ul class="nav__links" id="navLinks">
         <li><a href="index.html#services" class="nav__link">Services</a></li>
         <li><a href="index.html#industries" class="nav__link">Industries</a></li>
-        <li><a href="index.html#what-is-alm" class="nav__link">Why ALM</a></li>
+        <li><a href="why-alm.html" class="nav__link">Why ALM</a></li>
         <li><a href="index.html#about" class="nav__link">About</a></li>
         <li><a href="index.html#process" class="nav__link">Process</a></li>
         <li><a href="index.html#contact" class="nav__link">Contact</a></li>
@@ -82,95 +82,7 @@
           <p>Changes are rendered using a redline approach — additions highlighted in green, deletions highlighted in red with strikethrough. The widget reduces manual audit effort by up to 80%, enabling teams to identify specification drift within seconds instead of hours.</p>
         </div>
         <div class="product-intro__diagram reveal-right">
-          <!-- SVG diagram: two collection boxes pointing to comparison output -->
-          <svg viewBox="0 0 480 340" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-            <!-- Background -->
-            <rect width="480" height="340" rx="12" fill="#f4f8fd"/>
-
-            <!-- Collection A box -->
-            <rect x="20" y="40" width="140" height="100" rx="8" fill="white" stroke="#c8dde9" stroke-width="1.5"/>
-            <rect x="20" y="40" width="140" height="28" rx="8" fill="#e8f4fb"/>
-            <rect x="20" y="56" width="140" height="12" rx="0" fill="#e8f4fb"/>
-            <text x="90" y="59" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#1d9fd5" font-weight="600">COLLECTION A</text>
-            <text x="90" y="73" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#7a9ab2">Baseline v1.0</text>
-            <!-- Rows in A -->
-            <rect x="32" y="82" width="116" height="14" rx="3" fill="#f4f8fd"/>
-            <text x="40" y="93" font-family="Manrope, sans-serif" font-size="9" fill="#4a6778">SWR-001: Login feature</text>
-            <rect x="32" y="100" width="116" height="14" rx="3" fill="#f4f8fd"/>
-            <text x="40" y="111" font-family="Manrope, sans-serif" font-size="9" fill="#4a6778">SWR-002: Auth module</text>
-            <rect x="32" y="118" width="116" height="14" rx="3" fill="#f4f8fd"/>
-            <text x="40" y="129" font-family="Manrope, sans-serif" font-size="9" fill="#4a6778">SWR-003: Reporting</text>
-
-            <!-- Collection B box -->
-            <rect x="20" y="180" width="140" height="100" rx="8" fill="white" stroke="#c8dde9" stroke-width="1.5"/>
-            <rect x="20" y="180" width="140" height="28" rx="8" fill="#e6f9f7"/>
-            <rect x="20" y="196" width="140" height="12" rx="0" fill="#e6f9f7"/>
-            <text x="90" y="199" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#00a898" font-weight="600">COLLECTION B</text>
-            <text x="90" y="213" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#7a9ab2">Baseline v2.0</text>
-            <!-- Rows in B -->
-            <rect x="32" y="222" width="116" height="14" rx="3" fill="#f4f8fd"/>
-            <text x="40" y="233" font-family="Manrope, sans-serif" font-size="9" fill="#4a6778">SWR-001: Login feature</text>
-            <rect x="32" y="240" width="116" height="14" rx="3" fill="#f4f8fd"/>
-            <text x="40" y="251" font-family="Manrope, sans-serif" font-size="9" fill="#4a6778">SWR-002: Auth module v2</text>
-            <rect x="32" y="258" width="116" height="14" rx="3" fill="#f4f8fd"/>
-            <text x="40" y="269" font-family="Manrope, sans-serif" font-size="9" fill="#4a6778">SWR-004: Dashboard</text>
-
-            <!-- Arrows from A and B to comparison engine -->
-            <path d="M162 90 L230 160" stroke="#1d9fd5" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-blue)"/>
-            <path d="M162 230 L230 200" stroke="#00a898" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-teal)"/>
-
-            <!-- Comparison engine circle -->
-            <circle cx="255" cy="170" r="26" fill="white" stroke="#c8dde9" stroke-width="1.5"/>
-            <text x="255" y="166" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#1d9fd5" font-weight="600">DIFF</text>
-            <text x="255" y="178" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#1d9fd5" font-weight="600">ENGINE</text>
-
-            <!-- Arrow to output -->
-            <path d="M282 170 L320 170" stroke="#1a2e42" stroke-width="1.5" marker-end="url(#arrow-dark)"/>
-
-            <!-- Output table -->
-            <rect x="322" y="80" width="138" height="180" rx="8" fill="white" stroke="#c8dde9" stroke-width="1.5"/>
-            <rect x="322" y="80" width="138" height="26" rx="8" fill="#1d9fd5"/>
-            <rect x="322" y="94" width="138" height="12" rx="0" fill="#1d9fd5"/>
-            <text x="391" y="97" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="white" font-weight="600">REDLINE REPORT</text>
-
-            <!-- Unchanged row -->
-            <rect x="330" y="116" width="122" height="18" rx="3" fill="#f4f8fd"/>
-            <text x="338" y="128" font-family="Manrope, sans-serif" font-size="8.5" fill="#4a6778">SWR-001: Login feature</text>
-
-            <!-- Modified row -->
-            <rect x="330" y="138" width="122" height="18" rx="3" fill="#fff3e0"/>
-            <text x="338" y="150" font-family="Manrope, sans-serif" font-size="8.5" fill="#e8a000">SWR-002: Auth module v2</text>
-
-            <!-- Added row (green) -->
-            <rect x="330" y="160" width="122" height="18" rx="3" fill="#e8f9f0"/>
-            <text x="338" y="172" font-family="Manrope, sans-serif" font-size="8.5" fill="#1a9e60">+ SWR-004: Dashboard</text>
-
-            <!-- Deleted row (red) -->
-            <rect x="330" y="182" width="122" height="18" rx="3" fill="#fef0f0"/>
-            <text x="338" y="193" font-family="Manrope, sans-serif" font-size="8" fill="#d94f4f" text-decoration="line-through">- SWR-003: Reporting</text>
-
-            <!-- Legend -->
-            <rect x="330" y="212" width="10" height="10" rx="2" fill="#e8f9f0" stroke="#1a9e60" stroke-width="1"/>
-            <text x="344" y="221" font-family="Manrope, sans-serif" font-size="8" fill="#4a6778">Added</text>
-            <rect x="380" y="212" width="10" height="10" rx="2" fill="#fef0f0" stroke="#d94f4f" stroke-width="1"/>
-            <text x="394" y="221" font-family="Manrope, sans-serif" font-size="8" fill="#4a6778">Removed</text>
-
-            <!-- Arrow markers -->
-            <defs>
-              <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-                <path d="M0,0 L0,6 L8,3 z" fill="#1d9fd5"/>
-              </marker>
-              <marker id="arrow-teal" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-                <path d="M0,0 L0,6 L8,3 z" fill="#00a898"/>
-              </marker>
-              <marker id="arrow-dark" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-                <path d="M0,0 L0,6 L8,3 z" fill="#1a2e42"/>
-              </marker>
-            </defs>
-
-            <!-- Platform label -->
-            <text x="240" y="318" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#adc3d4">Siemens Polarion ALM — Apache Velocity Engine</text>
-          </svg>
+          <img src="redline_widget_data_flow.svg" alt="Redline Report Widget — Data Flow" style="width:100%;height:auto;display:block;border-radius:12px;" />
         </div>
       </div>
     </div>
@@ -337,27 +249,8 @@
         <h2 class="section-title">How it works</h2>
         <p class="section-sub" style="margin:0 auto;">Four clean architectural layers from configuration to rendered output.</p>
       </div>
-      <div class="arch-steps reveal-up">
-        <div class="arch-step">
-          <div class="arch-step__num">01</div>
-          <div class="arch-step__title">Configuration Layer</div>
-          <p class="arch-step__desc">parameters.vm defines project work item types, hierarchy mapping, display fields, and query filters — a single file controls all widget behaviour.</p>
-        </div>
-        <div class="arch-step">
-          <div class="arch-step__num">02</div>
-          <div class="arch-step__title">Data Retrieval Layer</div>
-          <p class="arch-step__desc">The Polarion Collections API fetches work items from both selected collection revisions, applying configured Lucene query filters and type constraints.</p>
-        </div>
-        <div class="arch-step">
-          <div class="arch-step__num">03</div>
-          <div class="arch-step__title">Comparison Engine</div>
-          <p class="arch-step__desc">Field-level diff logic classifies every work item as unchanged, added, deleted, or modified — computing both old and new values for changed fields.</p>
-        </div>
-        <div class="arch-step">
-          <div class="arch-step__num">04</div>
-          <div class="arch-step__title">Rendering Layer</div>
-          <p class="arch-step__desc">Apache Velocity macros transform the diff output into HTML with colour-coded redline styling, injected directly into the Polarion Live Report page.</p>
-        </div>
+      <div class="reveal-up" style="max-width:780px;margin:0 auto;">
+        <img src="redline_widget_architecture.svg" alt="Redline Report Widget — Architecture Diagram" style="width:100%;height:auto;display:block;border-radius:12px;" />
       </div>
     </div>
   </section>
@@ -760,7 +653,7 @@
         <div class="footer__col">
           <h4>Company</h4>
           <ul>
-            <li><a href="index.html#what-is-alm">Why ALM</a></li>
+            <li><a href="why-alm.html">Why ALM</a></li>
             <li><a href="index.html#about">About</a></li>
             <li><a href="index.html#process">Our Process</a></li>
             <li><a href="webinars.html">Webinars</a></li>
@@ -779,6 +672,7 @@
     </div>
   </footer>
 
+  <script src="transitions.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

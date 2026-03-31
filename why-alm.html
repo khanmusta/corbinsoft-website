@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why ALM? — Corbinsoft | Polarion ALM Experts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,300;1,9..144,400&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="corbinsoft-logo.svg" alt="Corbinsoft — The ALM Experts" class="nav__logo-img" />
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html#services" class="nav__link">Services</a></li>
+        <li><a href="index.html#industries" class="nav__link">Industries</a></li>
+        <li><a href="why-alm.html" class="nav__link active">Why ALM</a></li>
+        <li><a href="index.html#about" class="nav__link">About</a></li>
+        <li><a href="index.html#process" class="nav__link">Process</a></li>
+        <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+        <li><a href="webinars.html" class="nav__link">Webinars</a></li>
+        <li><a href="blog-compliance-advantage.html" class="nav__link">Blog</a></li>
+        <li class="nav__dropdown">
+          <a href="products.html" class="nav__link nav__dropdown-link">Products <svg class="nav__caret" viewBox="0 0 10 6" fill="none" width="10" height="10"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <ul class="nav__submenu">
+            <li><a href="product-redline-report-widget.html">Redline Report Widget</a></li>
+            <li><a href="product-cvss-calculator.html">CVSS Calculator <span class="nav__coming-soon">Soon</span></a></li>
+            <li><a href="product-java21-save-hook.html">Java 21 Save Hook <span class="nav__coming-soon">Soon</span></a></li>
+          </ul>
+        </li>
+      </ul>
+      <a href="index.html#contact" class="btn btn--nav">Request a Consultation</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="docs-page">
+
+    <!-- Article Header -->
+    <header class="docs-header">
+      <div class="container">
+        <nav class="docs-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span>Why ALM</span>
+        </nav>
+        <h1 class="docs-title">Why Application Lifecycle Management?</h1>
+        <p class="docs-lead">A practical guide for engineers and compliance leads in regulated industries — understanding what ALM is, why it matters, and how Polarion solves it.</p>
+        <div class="docs-meta">
+          <span>7 min read</span>
+          <span>·</span>
+          <span>Corbinsoft Technical Series</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Layout: sidebar TOC + article -->
+    <div class="docs-layout">
+      <div class="container docs-layout__inner">
+
+        <!-- Sidebar TOC -->
+        <aside class="docs-toc" aria-label="Table of contents">
+          <div class="docs-toc__inner">
+            <p class="docs-toc__title">In this guide</p>
+            <ol class="docs-toc__list">
+              <li><a href="#what-is-alm" class="toc-link">What is ALM?</a></li>
+              <li><a href="#why-it-matters" class="toc-link">Why it matters</a></li>
+              <li><a href="#disconnected-tools" class="toc-link">Cost of disconnected tools</a></li>
+              <li><a href="#alm-capabilities" class="toc-link">Core ALM capabilities</a></li>
+              <li><a href="#why-polarion" class="toc-link">Why Polarion ALM</a></li>
+              <li><a href="#why-corbinsoft" class="toc-link">Why Corbinsoft</a></li>
+            </ol>
+          </div>
+        </aside>
+
+        <!-- Article -->
+        <article class="docs-article">
+
+          <!-- 1. What is ALM -->
+          <section class="docs-section" id="what-is-alm">
+            <h2>What is ALM?</h2>
+            <p>
+              <strong>Application Lifecycle Management (ALM)</strong> is the practice of governing a software product across its entire life — from the first requirement through design, development, verification, release, and post-market maintenance. Every decision is recorded. Every change is traceable. Every compliance question has a documented answer.
+            </p>
+
+            <div class="docs-callout">
+              <strong>Definition</strong>
+              ALM is not a single tool — it is a discipline. The coordinated management of requirements, design, code, tests, and compliance artefacts in a unified, connected system that maintains integrity as the product evolves.
+            </div>
+
+            <p>
+              In practice, ALM means that your systems engineers, developers, testers, and regulatory team all work from the same live repository. Requirements are written once and linked — automatically — to design elements, source code, test cases, and verification evidence. When something changes, the impact is visible immediately, not discovered during an audit.
+            </p>
+
+            <h3>What does ALM cover?</h3>
+            <ul>
+              <li><strong>Requirements management</strong> — capture, baseline, and control stakeholder and technical requirements</li>
+              <li><strong>Change management</strong> — govern every modification with workflow-controlled approvals and impact analysis</li>
+              <li><strong>Traceability</strong> — maintain bidirectional links from customer need through to verified test evidence</li>
+              <li><strong>Test management</strong> — plan, execute, and record verification and validation activities</li>
+              <li><strong>Defect &amp; issue tracking</strong> — connect reported defects back to requirements and affected baselines</li>
+              <li><strong>Compliance reporting</strong> — generate audit-ready documentation on demand, not weeks before an inspection</li>
+            </ul>
+          </section>
+
+          <!-- 2. Why it matters -->
+          <section class="docs-section" id="why-it-matters">
+            <h2>Why ALM matters in regulated industries</h2>
+            <p>
+              In consumer software development, a missed requirement causes a bad user experience. In regulated industries, a missed requirement can delay market approval, trigger a product recall, or result in patient harm. The stakes demand a different level of discipline.
+            </p>
+            <p>
+              Regulatory frameworks such as <strong>IEC 62304</strong> (medical device software), <strong>ISO 26262</strong> (automotive functional safety), <strong>DO-178C</strong> (airborne systems), and <strong>FDA 21 CFR Part 11</strong> (electronic records) all share a common expectation: you must be able to demonstrate, at any point, that every requirement has been designed, implemented, tested, and verified — and that you know when, why, and by whom any change was made.
+            </p>
+
+            <div class="docs-callout">
+              <strong>Regulatory reality</strong>
+              FDA inspectors and notified bodies do not ask you to describe your process. They ask you to show them evidence. ALM is how you produce that evidence without a fire-drill.
+            </div>
+
+            <p>
+              Without ALM, these activities happen in isolation — requirements in Word documents, tests in spreadsheets, defects in email threads. Connecting them at audit time is manual, error-prone, and expensive. With ALM, traceability is built into every action your engineers take, continuously.
+            </p>
+          </section>
+
+          <!-- 3. Cost of disconnected tools -->
+          <section class="docs-section" id="disconnected-tools">
+            <h2>The cost of disconnected tools</h2>
+            <p>
+              Most organisations that have not adopted a formal ALM platform are managing product lifecycle with a combination of familiar tools: Microsoft Word for requirements, Excel for traceability matrices, JIRA for defects, SharePoint for document storage, and email for approvals. This approach has real, measurable costs.
+            </p>
+
+            <table class="docs-table">
+              <thead>
+                <tr>
+                  <th>Challenge</th>
+                  <th>With disconnected tools</th>
+                  <th>With ALM</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Traceability</td>
+                  <td>Manual matrices in Excel; stale within days</td>
+                  <td class="check">Live, auto-maintained links</td>
+                </tr>
+                <tr>
+                  <td>Change impact</td>
+                  <td>Unknown downstream effects; discovered late</td>
+                  <td class="check">Impact analysis before approval</td>
+                </tr>
+                <tr>
+                  <td>Audit preparation</td>
+                  <td>Weeks of manual document assembly</td>
+                  <td class="check">On-demand report generation</td>
+                </tr>
+                <tr>
+                  <td>Version control</td>
+                  <td>Email chains; "v2_final_FINAL.docx"</td>
+                  <td class="check">Baseline-controlled, timestamped</td>
+                </tr>
+                <tr>
+                  <td>Cross-team visibility</td>
+                  <td>Siloed; decisions made on stale data</td>
+                  <td class="check">Single source of truth for all roles</td>
+                </tr>
+                <tr>
+                  <td>Regulatory submission</td>
+                  <td>Last-minute scramble; gaps discovered under pressure</td>
+                  <td class="check">Continuous readiness</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="docs-callout docs-callout--warning">
+              <strong>Industry data point</strong>
+              According to industry research, organisations in regulated engineering spend 20–35% of project time on compliance documentation when working with disconnected tools. Integrated ALM platforms typically reduce this to under 10%.
+            </div>
+          </section>
+
+          <!-- 4. Core capabilities -->
+          <section class="docs-section" id="alm-capabilities">
+            <h2>Core ALM capabilities</h2>
+            <p>A mature ALM platform provides five interconnected capabilities. Each one delivers standalone value, but the compound effect — when they share the same data model — is what makes ALM transformative for regulated development.</p>
+
+            <div class="docs-caps-grid">
+              <div class="docs-cap">
+                <div class="docs-cap__title">
+                  <svg viewBox="0 0 20 20" fill="none" width="16" height="16" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M3 5h14M3 9h10M3 13h12M3 17h8"/></svg>
+                  Requirements Management
+                </div>
+                <p>Capture, structure, baseline, and version stakeholder and system requirements. Apply workflow-controlled review and approval.</p>
+              </div>
+              <div class="docs-cap">
+                <div class="docs-cap__title">
+                  <svg viewBox="0 0 20 20" fill="none" width="16" height="16" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v14M3 10h14"/></svg>
+                  End-to-End Traceability
+                </div>
+                <p>Maintain bidirectional links from User Need → System Requirement → Software Requirement → Test Case → Defect. Auto-updated on every change.</p>
+              </div>
+              <div class="docs-cap">
+                <div class="docs-cap__title">
+                  <svg viewBox="0 0 20 20" fill="none" width="16" height="16" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="14" height="14" rx="2"/><path d="M7 10l2 2 4-4"/></svg>
+                  Governed Change Control
+                </div>
+                <p>Every change goes through a defined approval workflow. Impact analysis identifies which downstream items are affected before a change is committed.</p>
+              </div>
+              <div class="docs-cap">
+                <div class="docs-cap__title">
+                  <svg viewBox="0 0 20 20" fill="none" width="16" height="16" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l3 2"/></svg>
+                  Test Management
+                </div>
+                <p>Plan test cases, record execution results, and link evidence directly to requirements. Verification status is always visible, always current.</p>
+              </div>
+              <div class="docs-cap">
+                <div class="docs-cap__title">
+                  <svg viewBox="0 0 20 20" fill="none" width="16" height="16" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15l4-4 3 3 5-6"/></svg>
+                  Compliance Reporting
+                </div>
+                <p>Generate traceability matrices, audit trails, and regulatory evidence packages on demand — for FDA, ISO 26262, IEC 62304, DO-178C, or ASPICE.</p>
+              </div>
+              <div class="docs-cap">
+                <div class="docs-cap__title">
+                  <svg viewBox="0 0 20 20" fill="none" width="16" height="16" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M5 10h10M5 6h6M5 14h8"/></svg>
+                  Baseline Management
+                </div>
+                <p>Snapshot product state at any milestone. Compare revisions, review what changed between releases, and reproduce the exact configuration used for any submission.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 5. Why Polarion -->
+          <section class="docs-section" id="why-polarion">
+            <h2>Why Polarion ALM</h2>
+            <p>
+              Polarion ALM, developed by Siemens Digital Industries Software, is the dominant ALM platform in regulated engineering. It was purpose-built for the traceability and compliance demands of automotive, medical device, and aerospace industries — not adapted from a general-purpose project management tool.
+            </p>
+
+            <h3>What sets Polarion apart</h3>
+            <ul>
+              <li><strong>Role-based Live Reports</strong> — every stakeholder sees the product state in context, from executive dashboards to engineer-level traceability views, all from the same live data</li>
+              <li><strong>Document-centric authoring</strong> — requirements engineers work in familiar document layouts while the underlying data model maintains full ALM structure and traceability</li>
+              <li><strong>Polarion Collections &amp; Baselines</strong> — immutable snapshots of product state, essential for regulatory submissions and parallel development</li>
+              <li><strong>Configurable workflow engine</strong> — approval workflows, electronic signatures, and audit trails configurable to match FDA 21 CFR Part 11 and ASPICE process requirements</li>
+              <li><strong>Siemens Digital Thread integration</strong> — native integration with Teamcenter PLM and NX CAD for end-to-end digital thread from requirement to physical design</li>
+              <li><strong>Apache Velocity scripting</strong> — highly extensible reporting and widget framework enabling custom compliance artefacts without modifying the platform core</li>
+            </ul>
+
+            <div class="docs-callout">
+              <strong>Siemens backing</strong>
+              Polarion is developed and maintained by Siemens, one of the world's largest industrial software companies. This means long-term product investment, enterprise-grade security, and roadmap alignment with the Xcelerator portfolio — critical factors when selecting a platform that will anchor your regulatory strategy for years.
+            </div>
+
+            <h3>Polarion across regulated industries</h3>
+            <ol>
+              <li><strong>Medical devices</strong> — IEC 62304 lifecycle management, FDA 21 CFR Part 11 electronic records, ISO 14971 risk management integration</li>
+              <li><strong>Automotive</strong> — ISO 26262 functional safety, ASPICE process assessment, Automotive SPICE traceability</li>
+              <li><strong>Aerospace &amp; defense</strong> — DO-178C software levels, ARP 4754A system development, FACE and SOSA compliance evidence</li>
+              <li><strong>Industrial &amp; electronics</strong> — IEC 61508 functional safety, CE marking technical documentation, design history files</li>
+            </ol>
+          </section>
+
+          <!-- 6. Why Corbinsoft -->
+          <section class="docs-section" id="why-corbinsoft">
+            <h2>Why Corbinsoft</h2>
+            <p>
+              Corbinsoft is a certified Siemens Digital Industries Software Partner focused exclusively on Polarion ALM. We do not offer a catalogue of tools or generalist consulting. Every engagement we take on is a Polarion engagement, and every consultant we deploy has implemented Polarion in a live regulated programme.
+            </p>
+
+            <h3>What that means for your project</h3>
+            <ul>
+              <li>No learning curve on the platform — we arrive knowing Polarion's data model, scripting engine, and compliance patterns inside out</li>
+              <li>Regulatory depth — our consultants understand the standards (IEC 62304, ISO 26262, FDA 21 CFR Part 11) well enough to configure Polarion to satisfy them, not just to describe them</li>
+              <li>Direct Siemens partner relationship — access to product support, roadmap discussions, and escalation paths that generic system integrators do not have</li>
+              <li>120+ Polarion deployments across medical device, automotive, and aerospace organisations — accumulated patterns we apply to your environment from day one</li>
+            </ul>
+
+            <div class="docs-cta">
+              <div class="docs-cta__text">
+                <h3>Ready to see how ALM fits your programme?</h3>
+                <p>Talk to a Polarion specialist about your compliance requirements, current toolset, and what a structured ALM implementation would look like for your team.</p>
+              </div>
+              <a href="index.html#contact" class="btn btn--primary" style="white-space:nowrap;flex-shrink:0;">Request a Consultation</a>
+            </div>
+          </section>
+
+        </article>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo-link">
+          <img src="corbinsoft-logo.svg" alt="Corbinsoft — The ALM Experts" class="footer__logo-img" />
+        </a>
+        <p>Certified Siemens Digital Industries Software Partner. Polarion ALM implementation, validation, and technical consulting for regulated industries worldwide.</p>
+      </div>
+      <div class="footer__links">
+        <div class="footer__col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="index.html#services">Polarion Implementation</a></li>
+            <li><a href="index.html#services">Compliance &amp; Validation</a></li>
+            <li><a href="index.html#services">Digital Thread &amp; Scripting</a></li>
+            <li><a href="index.html#services">Training Programs</a></li>
+            <li><a href="index.html#services">DOORS Migration</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Industries</h4>
+          <ul>
+            <li><a href="index.html#industries">Medical Devices</a></li>
+            <li><a href="index.html#industries">Automotive</a></li>
+            <li><a href="index.html#industries">Aerospace &amp; Defense</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="why-alm.html">Why ALM</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#process">Our Process</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Corbinsoft. All rights reserved.</p>
+      <div class="footer__bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="transitions.js"></script>
+  <script>
+    // Mobile nav toggle
+    var toggle = document.getElementById('navToggle');
+    var navLinks = document.getElementById('navLinks');
+    if (toggle) {
+      toggle.addEventListener('click', function () {
+        navLinks.classList.toggle('open');
+      });
+    }
+
+    // TOC active link on scroll
+    var sections = document.querySelectorAll('.docs-section[id]');
+    var tocLinks = document.querySelectorAll('.toc-link');
+    function updateToc() {
+      var scrollY = window.scrollY + 120;
+      var current = '';
+      sections.forEach(function (sec) {
+        if (sec.offsetTop <= scrollY) current = sec.id;
+      });
+      tocLinks.forEach(function (a) {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    }
+    window.addEventListener('scroll', updateToc, { passive: true });
+    updateToc();
+  </script>
+</body>
+</html>
