@@ -27,10 +27,10 @@
   --clr-teal-light: #00c4b4;
 
   /* Text */
-  --clr-text:       #1a2e42;   /* deep navy, never neutral grey */
-  --clr-text-mid:   #4a6778;
-  --clr-text-muted: #7a9ab2;
-  --clr-text-dim:   #adc3d4;
+  --clr-text:       #111e2d;   /* deep navy, never neutral grey */
+  --clr-text-mid:   #2d4459;
+  --clr-text-muted: #526a7e;
+  --clr-text-dim:   #8aaabf;
   --clr-white:      #ffffff;
 
   /* Borders */
@@ -74,9 +74,10 @@ body {
   font-family: var(--font-body);
   background: var(--clr-bg);
   color: var(--clr-text);
-  line-height: 1.65;
+  line-height: 1.7;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  font-weight: 450;
 }
 
 /* Grain — very light, adds premium texture */
