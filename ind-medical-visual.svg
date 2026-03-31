@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" fill="none">
+  <defs>
+    <marker id="ab" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M1 1.5 L7 4 L1 6.5" stroke="#1d9fd5" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="at" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M1 1.5 L7 4 L1 6.5" stroke="#00c4b4" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="as" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M1 1.5 L7 4 L1 6.5" stroke="#3d5a80" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- Card background -->
+  <rect width="480" height="320" rx="16" fill="#f4f8fd"/>
+
+  <!-- Top label strip -->
+  <rect width="480" height="38" rx="16" fill="#1d9fd5" opacity="0.08"/>
+  <rect y="22" width="480" height="16" fill="#1d9fd5" opacity="0.08"/>
+  <text x="240" y="23" text-anchor="middle" font-family="'Courier New',monospace" font-size="10" font-weight="700" fill="#1d9fd5" letter-spacing="1.5">IEC 62304 · FDA · ISO 14971 — LIFECYCLE TRACEABILITY</text>
+
+  <!-- ── ROW 1: User Needs → System Reqs ── -->
+
+  <!-- User Needs box -->
+  <rect x="16" y="48" width="136" height="86" rx="9" fill="white" stroke="#1d9fd5" stroke-width="1.5"/>
+  <rect x="16" y="48" width="136" height="4" rx="4" fill="#1d9fd5"/>
+  <!-- icon: person/heart hybrid -->
+  <circle cx="36" cy="72" r="8" fill="rgba(29,159,213,0.1)" stroke="#1d9fd5" stroke-width="1.2"/>
+  <path d="M32 72 q4-5 8 0" stroke="#1d9fd5" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <text x="50" y="69" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#1d9fd5">User Needs</text>
+  <text x="50" y="81" font-family="system-ui,sans-serif" font-size="8.5" fill="#526a7e">URS / UNS</text>
+  <text x="24" y="99" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">18 items defined</text>
+  <text x="24" y="112" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">↔ Risk linked</text>
+  <!-- status badge -->
+  <rect x="98" y="116" width="46" height="14" rx="5" fill="rgba(0,196,180,0.12)"/>
+  <text x="121" y="126" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7.5" font-weight="700" fill="#00a898">✓ Traced</text>
+
+  <!-- Arrow → -->
+  <line x1="154" y1="91" x2="173" y2="91" stroke="#1d9fd5" stroke-width="1.5" marker-end="url(#ab)"/>
+
+  <!-- System Requirements box -->
+  <rect x="176" y="48" width="136" height="86" rx="9" fill="white" stroke="#1d9fd5" stroke-width="1.5"/>
+  <rect x="176" y="48" width="136" height="4" rx="4" fill="#1d9fd5"/>
+  <!-- icon: list -->
+  <rect x="190" y="65" width="12" height="2" rx="1" fill="#1d9fd5"/>
+  <rect x="190" y="70" width="9" height="2" rx="1" fill="#1d9fd5"/>
+  <rect x="190" y="75" width="11" height="2" rx="1" fill="#1d9fd5"/>
+  <text x="208" y="69" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#1d9fd5">System Reqs</text>
+  <text x="208" y="81" font-family="system-ui,sans-serif" font-size="8.5" fill="#526a7e">Risk-linked items</text>
+  <text x="184" y="99" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">42 requirements</text>
+  <text x="184" y="112" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">ISO 14971 FMEA</text>
+  <rect x="258" y="116" width="46" height="14" rx="5" fill="rgba(0,196,180,0.12)"/>
+  <text x="281" y="126" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7.5" font-weight="700" fill="#00a898">✓ Traced</text>
+
+  <!-- Arrow → -->
+  <line x1="314" y1="91" x2="333" y2="91" stroke="#1d9fd5" stroke-width="1.5" marker-end="url(#ab)"/>
+
+  <!-- SW Requirements box -->
+  <rect x="336" y="48" width="128" height="86" rx="9" fill="white" stroke="#1d9fd5" stroke-width="1.5"/>
+  <rect x="336" y="48" width="128" height="4" rx="4" fill="#1d9fd5"/>
+  <text x="352" y="69" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#1d9fd5">SW Requirements</text>
+  <text x="352" y="81" font-family="system-ui,sans-serif" font-size="8.5" fill="#526a7e">Class A · B · C</text>
+  <text x="344" y="99" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">127 items · SRS</text>
+  <text x="344" y="112" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">Baseline controlled</text>
+  <rect x="418" y="116" width="38" height="14" rx="5" fill="rgba(0,196,180,0.12)"/>
+  <text x="437" y="126" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7.5" font-weight="700" fill="#00a898">✓ Live</text>
+
+  <!-- Vertical arrows down (col 1→row2, col2→row2, col3→row2) -->
+  <line x1="84" y1="136" x2="84" y2="155" stroke="#1d9fd5" stroke-width="1.5" marker-end="url(#ab)"/>
+  <line x1="244" y1="136" x2="244" y2="155" stroke="#3d5a80" stroke-width="1.5" marker-end="url(#as)"/>
+  <line x1="400" y1="136" x2="400" y2="155" stroke="#3d5a80" stroke-width="1.5" marker-end="url(#as)"/>
+
+  <!-- ── ROW 2: Risk Items | Architecture | Test Cases ── -->
+
+  <!-- Risk Items (dashed) -->
+  <rect x="16" y="158" width="136" height="74" rx="9" fill="rgba(29,159,213,0.04)" stroke="#1d9fd5" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <text x="84" y="178" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#1d9fd5">Risk Items</text>
+  <text x="84" y="191" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8.5" fill="#526a7e">ISO 14971 FMEA</text>
+  <text x="84" y="205" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">31 items · linked</text>
+  <text x="84" y="219" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">to SW requirements</text>
+
+  <!-- Architecture -->
+  <rect x="176" y="158" width="136" height="74" rx="9" fill="white" stroke="#3d5a80" stroke-width="1.5"/>
+  <rect x="176" y="158" width="136" height="4" rx="4" fill="#3d5a80"/>
+  <text x="244" y="178" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#3d5a80">Architecture</text>
+  <text x="244" y="191" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8.5" fill="#526a7e">SDD · Module Spec</text>
+  <text x="244" y="205" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">68 design items</text>
+  <text x="244" y="219" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">Versioned baseline</text>
+
+  <!-- Test Cases -->
+  <rect x="336" y="158" width="128" height="74" rx="9" fill="white" stroke="#00c4b4" stroke-width="1.5"/>
+  <rect x="336" y="158" width="128" height="4" rx="4" fill="#00c4b4"/>
+  <text x="400" y="178" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#00a898">Test Cases</text>
+  <text x="400" y="191" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8.5" fill="#526a7e">Unit · Integ · System</text>
+  <text x="400" y="205" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">204 cases auto-linked</text>
+  <text x="400" y="219" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">FDA Part 11 signed</text>
+
+  <!-- Arrows from row 2 down to DHF -->
+  <line x1="84" y1="234" x2="84" y2="256" stroke="#1d9fd5" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="244" y1="234" x2="244" y2="256" stroke="#3d5a80" stroke-width="1.5" marker-end="url(#as)"/>
+  <line x1="400" y1="234" x2="400" y2="256" stroke="#00c4b4" stroke-width="1.5" marker-end="url(#at)"/>
+
+  <!-- ── DHF Footer ── -->
+  <rect x="16" y="258" width="448" height="46" rx="10" fill="white" stroke="#1d9fd5" stroke-width="1.5"/>
+  <rect x="16" y="258" width="5" height="46" rx="3" fill="#1d9fd5"/>
+  <text x="32" y="279" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#1d9fd5">Design History File — Auto-Generated</text>
+  <text x="32" y="294" font-family="system-ui,sans-serif" font-size="8.5" fill="#526a7e">All artefacts linked · FDA 510(k) / PMA ready · CE marking evidence complete</text>
+  <!-- check circle -->
+  <circle cx="447" cy="281" r="13" fill="rgba(0,196,180,0.1)" stroke="#00c4b4" stroke-width="1.5"/>
+  <path d="M441 281 l4 4 7-7" stroke="#00c4b4" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

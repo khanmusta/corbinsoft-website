@@ -1985,6 +1985,32 @@ a.industry-card:hover .industry-card__arrow { gap: 10px; }
   border-radius: var(--radius-xs);
 }
 
+/* ── Hero two-column layout ─────────────────────────────── */
+.ind-hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.ind-hero__text { min-width: 0; }
+.ind-hero__visual {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.ind-hero__visual img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(15,50,80,0.06), 0 12px 40px rgba(29,159,213,0.10);
+}
+@media (max-width: 920px) {
+  .ind-hero__inner { grid-template-columns: 1fr; gap: 40px; }
+  .ind-hero__visual { justify-content: center; order: -1; }
+  .ind-hero__visual img { max-width: 480px; }
+}
+
 /* ── Challenge section ───────────────────────────────────── */
 .ind-challenge { background: var(--clr-bg2); }
 .ind-challenge__grid {

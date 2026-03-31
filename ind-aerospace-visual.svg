@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" fill="none">
+  <defs>
+    <marker id="ab" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M1 1.5 L7 4 L1 6.5" stroke="#1d9fd5" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="at" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M1 1.5 L7 4 L1 6.5" stroke="#00c4b4" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="as" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M1 1.5 L7 4 L1 6.5" stroke="#3d5a80" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- Card background -->
+  <rect width="480" height="320" rx="16" fill="#f4f8fd"/>
+
+  <!-- Top label -->
+  <rect width="480" height="38" rx="16" fill="#1d9fd5" opacity="0.08"/>
+  <rect y="22" width="480" height="16" fill="#1d9fd5" opacity="0.08"/>
+  <text x="240" y="23" text-anchor="middle" font-family="'Courier New',monospace" font-size="10" font-weight="700" fill="#1d9fd5" letter-spacing="1.5">DO-178C · DO-254 · ARP4754A — CERTIFICATION CHAIN</text>
+
+  <!-- ── LEFT COLUMN: Requirement Hierarchy ── -->
+
+  <!-- ARP4754A System box -->
+  <rect x="16" y="48" width="204" height="60" rx="9" fill="white" stroke="#1d9fd5" stroke-width="1.5"/>
+  <rect x="16" y="48" width="204" height="4" rx="4" fill="#1d9fd5"/>
+  <rect x="168" y="53" width="44" height="14" rx="4" fill="rgba(29,159,213,0.15)"/>
+  <text x="190" y="63" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7.5" font-weight="700" fill="#1d9fd5">ARP4754A</text>
+  <text x="24" y="72" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#1d9fd5">Aircraft System (FHA / PASA)</text>
+  <text x="24" y="86" font-family="system-ui,sans-serif" font-size="8.5" fill="#526a7e">System safety assessment · DAL allocation</text>
+  <text x="24" y="99" font-family="system-ui,sans-serif" font-size="8" fill="#8aaabf">Development Assurance Level A–E assigned</text>
+
+  <!-- Arrow down -->
+  <line x1="118" y1="110" x2="118" y2="128" stroke="#1d9fd5" stroke-width="1.5" marker-end="url(#ab)"/>
+
+  <!-- DO-178C Software Level A box -->
+  <rect x="16" y="131" width="204" height="58" rx="9" fill="white" stroke="#1d9fd5" stroke-width="1.5"/>
+  <rect x="16" y="131" width="204" height="4" rx="4" fill="#1d9fd5"/>
+  <rect x="158" y="136" width="54" height="14" rx="4" fill="#1d9fd5"/>
+  <text x="185" y="146" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7.5" font-weight="700" fill="white">LEVEL A</text>
+  <text x="24" y="155" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#1d9fd5">SW Component (DO-178C)</text>
+  <text x="24" y="169" font-family="system-ui,sans-serif" font-size="8.5" fill="#526a7e">Safety-critical · full independence</text>
+  <text x="24" y="182" font-family="system-ui,sans-serif" font-size="8" fill="#8aaabf">PSAC approved · SDP in Polarion</text>
+
+  <!-- Arrow down -->
+  <line x1="118" y1="191" x2="118" y2="209" stroke="#3d5a80" stroke-width="1.5" marker-end="url(#as)"/>
+
+  <!-- HLR box -->
+  <rect x="16" y="212" width="94" height="54" rx="9" fill="white" stroke="#3d5a80" stroke-width="1.5"/>
+  <rect x="16" y="212" width="94" height="4" rx="4" fill="#3d5a80"/>
+  <text x="63" y="231" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#3d5a80">HLR</text>
+  <text x="63" y="245" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">High-Level Reqs</text>
+  <text x="63" y="258" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7.5" fill="#8aaabf">84 items</text>
+
+  <!-- Arrow right to LLR -->
+  <line x1="112" y1="239" x2="130" y2="239" stroke="#3d5a80" stroke-width="1.5" marker-end="url(#as)"/>
+
+  <!-- LLR box -->
+  <rect x="132" y="212" width="88" height="54" rx="9" fill="white" stroke="#3d5a80" stroke-width="1.5"/>
+  <rect x="132" y="212" width="88" height="4" rx="4" fill="#3d5a80"/>
+  <text x="176" y="231" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#3d5a80">LLR</text>
+  <text x="176" y="245" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">Low-Level Reqs</text>
+  <text x="176" y="258" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7.5" fill="#8aaabf">263 items</text>
+
+  <!-- Source code box -->
+  <rect x="16" y="278" width="204" height="30" rx="7" fill="rgba(61,90,128,0.08)" stroke="#3d5a80" stroke-width="1.2"/>
+  <text x="118" y="298" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#3d5a80">Source Code — Version Controlled · Traced to LLR</text>
+
+  <!-- vertical arrow to source code -->
+  <line x1="118" y1="268" x2="118" y2="276" stroke="#3d5a80" stroke-width="1.2" marker-end="url(#as)"/>
+
+  <!-- ── RIGHT COLUMN: Certification Evidence ── -->
+
+  <!-- Evidence column header -->
+  <rect x="232" y="48" width="232" height="22" rx="7" fill="rgba(0,196,180,0.08)"/>
+  <text x="348" y="62" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8.5" font-weight="700" fill="#00a898" letter-spacing="1">CERTIFICATION EVIDENCE</text>
+
+  <!-- PSAC -->
+  <rect x="232" y="78" width="104" height="40" rx="7" fill="white" stroke="#00c4b4" stroke-width="1.5"/>
+  <rect x="232" y="78" width="4" height="40" rx="2" fill="#00c4b4"/>
+  <text x="243" y="95" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#00a898">PSAC</text>
+  <text x="243" y="108" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">Plan for SW Aspects</text>
+
+  <!-- SDP -->
+  <rect x="348" y="78" width="116" height="40" rx="7" fill="white" stroke="#00c4b4" stroke-width="1.5"/>
+  <rect x="348" y="78" width="4" height="40" rx="2" fill="#00c4b4"/>
+  <text x="359" y="95" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#00a898">SDP</text>
+  <text x="359" y="108" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">SW Dev. Plan · live</text>
+
+  <!-- SRS -->
+  <rect x="232" y="128" width="104" height="40" rx="7" fill="white" stroke="#3d5a80" stroke-width="1.5"/>
+  <rect x="232" y="128" width="4" height="40" rx="2" fill="#3d5a80"/>
+  <text x="243" y="145" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#3d5a80">SRS</text>
+  <text x="243" y="158" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">SW Requirements Spec</text>
+
+  <!-- SVP -->
+  <rect x="348" y="128" width="116" height="40" rx="7" fill="white" stroke="#3d5a80" stroke-width="1.5"/>
+  <rect x="348" y="128" width="4" height="40" rx="2" fill="#3d5a80"/>
+  <text x="359" y="145" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#3d5a80">SVP</text>
+  <text x="359" y="158" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">Verification Plan + Cases</text>
+
+  <!-- SDD -->
+  <rect x="232" y="178" width="104" height="40" rx="7" fill="white" stroke="#3d5a80" stroke-width="1.2"/>
+  <rect x="232" y="178" width="4" height="40" rx="2" fill="#3d5a80" opacity="0.5"/>
+  <text x="243" y="195" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#3d5a80">SDD</text>
+  <text x="243" y="208" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">Design Description</text>
+
+  <!-- SCM Records -->
+  <rect x="348" y="178" width="116" height="40" rx="7" fill="white" stroke="#3d5a80" stroke-width="1.2"/>
+  <rect x="348" y="178" width="4" height="40" rx="2" fill="#3d5a80" opacity="0.5"/>
+  <text x="359" y="195" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#3d5a80">SCM Records</text>
+  <text x="359" y="208" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">Config. Management</text>
+
+  <!-- SAS footer (generated) -->
+  <rect x="232" y="228" width="232" height="54" rx="9" fill="white" stroke="#00c4b4" stroke-width="1.5"/>
+  <rect x="232" y="228" width="5" height="54" rx="3" fill="#00c4b4"/>
+  <text x="248" y="248" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#00a898">SAS — Software Accomplishment Summary</text>
+  <text x="248" y="263" font-family="system-ui,sans-serif" font-size="8.5" fill="#526a7e">Auto-generated from Polarion live data</text>
+  <text x="248" y="276" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">DER / FAA / EASA submission package ready</text>
+  <!-- check mark -->
+  <circle cx="449" cy="255" r="13" fill="rgba(0,196,180,0.1)" stroke="#00c4b4" stroke-width="1.5"/>
+  <path d="M443 255 l4 4 7-7" stroke="#00c4b4" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Connecting lines from left hierarchy to right evidence column -->
+  <line x1="222" y1="78" x2="230" y2="98" stroke="#1d9fd5" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+  <line x1="222" y1="161" x2="230" y2="148" stroke="#3d5a80" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+  <line x1="222" y1="239" x2="230" y2="248" stroke="#3d5a80" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+
+  <!-- Vertical connectors within evidence column -->
+  <line x1="284" y1="120" x2="284" y2="126" stroke="#00c4b4" stroke-width="1" opacity="0.5"/>
+  <line x1="406" y1="120" x2="406" y2="126" stroke="#00c4b4" stroke-width="1" opacity="0.5"/>
+  <line x1="284" y1="170" x2="284" y2="176" stroke="#3d5a80" stroke-width="1" opacity="0.5"/>
+  <line x1="406" y1="170" x2="406" y2="176" stroke="#3d5a80" stroke-width="1" opacity="0.5"/>
+  <line x1="284" y1="220" x2="284" y2="226" stroke="#3d5a80" stroke-width="1" opacity="0.4"/>
+  <line x1="406" y1="220" x2="406" y2="226" stroke="#3d5a80" stroke-width="1" opacity="0.4"/>
+</svg>

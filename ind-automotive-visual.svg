@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" fill="none">
+  <defs>
+    <marker id="ab" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M1 1.5 L7 4 L1 6.5" stroke="#1d9fd5" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="at" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M1 1.5 L7 4 L1 6.5" stroke="#00c4b4" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="as" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M1 1.5 L7 4 L1 6.5" stroke="#3d5a80" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- Card background -->
+  <rect width="480" height="320" rx="16" fill="#f4f8fd"/>
+
+  <!-- Top label -->
+  <rect width="480" height="38" rx="16" fill="#1d9fd5" opacity="0.08"/>
+  <rect y="22" width="480" height="16" fill="#1d9fd5" opacity="0.08"/>
+  <text x="240" y="23" text-anchor="middle" font-family="'Courier New',monospace" font-size="10" font-weight="700" fill="#1d9fd5" letter-spacing="1.5">ISO 26262 · ASPICE — SAFETY TRACEABILITY CHAIN</text>
+
+  <!-- ── LEFT COLUMN: Define (OEM / System level) ── -->
+
+  <!-- HARA / Safety Goals box -->
+  <rect x="16" y="48" width="144" height="80" rx="9" fill="white" stroke="#1d9fd5" stroke-width="1.5"/>
+  <rect x="16" y="48" width="144" height="4" rx="4" fill="#1d9fd5"/>
+  <!-- ASIL-D badge -->
+  <rect x="122" y="53" width="30" height="14" rx="4" fill="#1d9fd5"/>
+  <text x="137" y="63" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7.5" font-weight="700" fill="white">ASIL D</text>
+  <text x="25" y="73" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#1d9fd5">HARA + Safety Goals</text>
+  <text x="25" y="86" font-family="system-ui,sans-serif" font-size="8.5" fill="#526a7e">Hazard analysis · Risk</text>
+  <text x="25" y="100" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">Item definition complete</text>
+  <text x="25" y="112" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">12 safety goals defined</text>
+
+  <!-- Arrow down -->
+  <line x1="88" y1="130" x2="88" y2="148" stroke="#1d9fd5" stroke-width="1.5" marker-end="url(#ab)"/>
+
+  <!-- Functional Safety Reqs -->
+  <rect x="16" y="151" width="144" height="80" rx="9" fill="white" stroke="#3d5a80" stroke-width="1.5"/>
+  <rect x="16" y="151" width="144" height="4" rx="4" fill="#3d5a80"/>
+  <rect x="116" y="156" width="36" height="14" rx="4" fill="#3d5a80" opacity="0.8"/>
+  <text x="134" y="166" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7.5" font-weight="700" fill="white">ASIL C-D</text>
+  <text x="25" y="175" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#3d5a80">Functional Safety Reqs</text>
+  <text x="25" y="188" font-family="system-ui,sans-serif" font-size="8.5" fill="#526a7e">FSR decomposed · linked</text>
+  <text x="25" y="202" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">to safety goals above</text>
+  <text x="25" y="215" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">48 FSRs · propagated</text>
+
+  <!-- Arrow down -->
+  <line x1="88" y1="233" x2="88" y2="251" stroke="#3d5a80" stroke-width="1.5" marker-end="url(#as)"/>
+
+  <!-- Technical Safety Reqs -->
+  <rect x="16" y="254" width="144" height="50" rx="9" fill="white" stroke="#3d5a80" stroke-width="1.2"/>
+  <rect x="16" y="254" width="144" height="4" rx="4" fill="#3d5a80" opacity="0.5"/>
+  <text x="88" y="274" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#3d5a80">Technical Safety Reqs</text>
+  <text x="88" y="287" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8.5" fill="#526a7e">TSR — ASIL allocated · 142 items</text>
+
+  <!-- ── MIDDLE COLUMN: Multi-tier supply chain ── -->
+
+  <!-- OEM label -->
+  <rect x="174" y="48" width="132" height="54" rx="9" fill="rgba(29,159,213,0.05)" stroke="#1d9fd5" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <text x="240" y="69" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#1d9fd5">OEM</text>
+  <text x="240" y="83" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8.5" fill="#526a7e">Vehicle-level HARA</text>
+  <text x="240" y="96" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7.5" fill="#8aaabf">ReqIF export ↓</text>
+
+  <!-- Down arrow -->
+  <line x1="240" y1="104" x2="240" y2="122" stroke="#1d9fd5" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#ab)"/>
+
+  <!-- Tier 1 -->
+  <rect x="174" y="125" width="132" height="54" rx="9" fill="white" stroke="#3d5a80" stroke-width="1.5"/>
+  <rect x="174" y="125" width="132" height="4" rx="4" fill="#3d5a80"/>
+  <text x="240" y="145" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#3d5a80">Tier 1 Supplier</text>
+  <text x="240" y="159" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8.5" fill="#526a7e">ASPICE Level 2-3</text>
+  <text x="240" y="172" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7.5" fill="#8aaabf">ReqIF back ↕</text>
+
+  <!-- Down arrow -->
+  <line x1="240" y1="181" x2="240" y2="199" stroke="#3d5a80" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#as)"/>
+
+  <!-- Tier 2 -->
+  <rect x="174" y="202" width="132" height="50" rx="9" fill="white" stroke="#3d5a80" stroke-width="1.2"/>
+  <rect x="174" y="202" width="132" height="4" rx="4" fill="#3d5a80" opacity="0.4"/>
+  <text x="240" y="222" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#3d5a80">Tier 2 Supplier</text>
+  <text x="240" y="236" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8.5" fill="#526a7e">Sub-component · linked back</text>
+
+  <!-- AUTOSAR / Simulink note -->
+  <rect x="174" y="264" width="132" height="40" rx="8" fill="rgba(0,196,180,0.07)" stroke="#00c4b4" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="240" y="281" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8.5" font-weight="700" fill="#00a898">Simulink + AUTOSAR</text>
+  <text x="240" y="294" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7.5" fill="#526a7e">Model elements traced to reqs</text>
+
+  <!-- ── RIGHT COLUMN: Verify ── -->
+
+  <!-- Validation Tests -->
+  <rect x="320" y="48" width="144" height="80" rx="9" fill="white" stroke="#00c4b4" stroke-width="1.5"/>
+  <rect x="320" y="48" width="144" height="4" rx="4" fill="#00c4b4"/>
+  <text x="392" y="68" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#00a898">Validation Tests</text>
+  <text x="392" y="81" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8.5" fill="#526a7e">System + Vehicle level</text>
+  <text x="392" y="95" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">Test cases trace to FSRs</text>
+  <text x="392" y="108" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">Automated evidence export</text>
+
+  <!-- down arrow -->
+  <line x1="392" y1="130" x2="392" y2="148" stroke="#00c4b4" stroke-width="1.5" marker-end="url(#at)"/>
+
+  <!-- ASPICE Evidence -->
+  <rect x="320" y="151" width="144" height="80" rx="9" fill="white" stroke="#00c4b4" stroke-width="1.5"/>
+  <rect x="320" y="151" width="144" height="4" rx="4" fill="#00c4b4"/>
+  <text x="392" y="171" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#00a898">ASPICE Evidence</text>
+  <text x="392" y="184" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8.5" fill="#526a7e">Process artefacts live</text>
+  <text x="392" y="198" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">Level 2 → Level 3 ready</text>
+  <text x="392" y="212" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">Audit trail generated</text>
+
+  <!-- down arrow -->
+  <line x1="392" y1="233" x2="392" y2="251" stroke="#00c4b4" stroke-width="1.5" marker-end="url(#at)"/>
+
+  <!-- Functional Safety Audit Trail -->
+  <rect x="320" y="254" width="144" height="50" rx="9" fill="rgba(0,196,180,0.07)" stroke="#00c4b4" stroke-width="1.5"/>
+  <text x="392" y="274" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#00a898">Safety Audit Trail</text>
+  <text x="392" y="288" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#526a7e">TÜV · IATF · ISO 26262 ready</text>
+
+  <!-- Horizontal connectors between columns -->
+  <line x1="162" y1="88" x2="172" y2="88" stroke="#1d9fd5" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#ab)"/>
+  <line x1="162" y1="191" x2="172" y2="191" stroke="#3d5a80" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#as)"/>
+  <line x1="162" y1="279" x2="172" y2="279" stroke="#3d5a80" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#as)"/>
+  <line x1="308" y1="88" x2="318" y2="88" stroke="#1d9fd5" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#at)"/>
+  <line x1="308" y1="191" x2="318" y2="191" stroke="#3d5a80" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#at)"/>
+  <line x1="308" y1="279" x2="318" y2="279" stroke="#00c4b4" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#at)"/>
+</svg>
