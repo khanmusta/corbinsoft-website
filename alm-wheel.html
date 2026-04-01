@@ -468,10 +468,10 @@
     /* ── Layout constants ────────────────────────────────── */
     var CX = 440, CY = 440;
     var ORBIT   = 282;   // node centre orbit radius
-    var NODE_R  = 62;    // node circle radius (resting)
+    var NODE_R  = 84;    // node circle radius (resting) — max ~96 before touching
     var HUB_R   = 108;   // centre hub radius
-    var LABEL_R = ORBIT + NODE_R + 34;  // label text radius
-    var ICON_SIZE = 26;
+    var LABEL_R = ORBIT + NODE_R + 30;  // label text radius
+    var ICON_SIZE = 34;
 
     /* ── Build SVG ───────────────────────────────────────── */
     var svg = document.getElementById('almWheel');
@@ -687,7 +687,7 @@
           'dominant-baseline': 'middle',
           fill: node.color,
           'font-family': 'Manrope, system-ui, sans-serif',
-          'font-size': '13',
+          'font-size': '13.5',
           'font-weight': i === 0 ? '700' : '500'
         });
         t.textContent = line;
