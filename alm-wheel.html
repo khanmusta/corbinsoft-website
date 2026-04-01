@@ -577,16 +577,16 @@
 
       // Spoke
       var spokeStartR = HUB_R + 10;
-      var spokeEndR   = ORBIT - NODE_R - 10;
+      var spokeEndR   = ORBIT - NODE_R - 8;
       svg.appendChild(el('line', {
         x1: CX + spokeStartR * Math.cos(rad),
         y1: CY + spokeStartR * Math.sin(rad),
         x2: CX + spokeEndR   * Math.cos(rad),
         y2: CY + spokeEndR   * Math.sin(rad),
         stroke: node.color,
-        'stroke-width': '1.5',
-        'stroke-dasharray': '5 6',
-        opacity: '0.45'
+        'stroke-width': '3',
+        'stroke-linecap': 'round',
+        opacity: '0.7'
       }));
 
       // Node group
@@ -607,33 +607,17 @@
       });
       g.appendChild(glow);
 
-      // Node circle
+      // Node circle — clean, consistent full circumference
       var circle = el('circle', {
         cx: nx, cy: ny, r: NODE_R,
         fill: 'white',
         stroke: node.color,
-        'stroke-width': '2.5'
+        'stroke-width': '3.5'
       });
       g.appendChild(circle);
 
-      // Cap arc (top portion highlight)
-      var capAngle = Math.PI * 0.9;
-      var capR = NODE_R;
-      var startA = node.angle * Math.PI / 180 - capAngle / 2 - Math.PI / 2;
-      var endA   = startA + capAngle;
-      var x1 = nx + capR * Math.cos(startA);
-      var y1 = ny + capR * Math.sin(startA);
-      var x2 = nx + capR * Math.cos(endA);
-      var y2 = ny + capR * Math.sin(endA);
-      var arc = el('path', {
-        d: 'M ' + x1 + ' ' + y1 + ' A ' + capR + ' ' + capR + ' 0 0 1 ' + x2 + ' ' + y2,
-        fill: 'none',
-        stroke: node.color,
-        'stroke-width': '5',
-        'stroke-linecap': 'round',
-        opacity: '0.32'
-      });
-      g.appendChild(arc);
+      // Placeholder so arc var still exists for hover restore
+      var arc = circle;
 
       // Inner tint fill
       var innerFill = el('circle', {
@@ -699,11 +683,11 @@
 
       function onEnter(e) {
         isHovered = true;
-        circle.setAttribute('r', String(NODE_R * 1.2));
-        circle.setAttribute('fill', node.color + '12');
-        glow.setAttribute('opacity', '0.4');
-        innerFill.setAttribute('opacity', '0.13');
-        arc.setAttribute('opacity', '0.65');
+        circle.setAttribute('r', String(NODE_R * 1.12));
+        circle.setAttribute('fill', node.color + '18');
+        circle.setAttribute('stroke-width', '4');
+        glow.setAttribute('opacity', '0.5');
+        innerFill.setAttribute('opacity', '0.12');
         showTooltip(node);
         if (e && e.clientX) positionTooltip(e);
         svg.style.cursor = 'pointer';
@@ -712,9 +696,9 @@
         isHovered = false;
         circle.setAttribute('r', String(NODE_R));
         circle.setAttribute('fill', 'white');
+        circle.setAttribute('stroke-width', '3.5');
         glow.setAttribute('opacity', '0');
         innerFill.setAttribute('opacity', '0.06');
-        arc.setAttribute('opacity', '0.32');
         hideTooltip();
         svg.style.cursor = 'default';
       }
