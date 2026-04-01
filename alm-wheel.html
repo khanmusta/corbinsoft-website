@@ -3,93 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ALM Capabilities — Corbinsoft | Polarion ALM Experts</title>
+  <title>ALM Platform — Corbinsoft | Polarion ALM Experts</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,300&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* ── ALM Wheel Landing Page ─────────────────────────────────── */
-    .wheel-page { background: var(--clr-bg); }
+    /* ── ALM Wheel Landing Page ───────────────────────────────── */
 
+    /* Full-viewport hero */
     .wheel-hero {
-      min-height: calc(100vh - 72px);
-      padding: 108px 0 56px;
-      display: flex;
-      align-items: center;
-    }
-    .wheel-hero__inner {
-      display: grid;
-      grid-template-columns: 420px 1fr;
-      gap: 56px;
-      align-items: center;
-      width: 100%;
-    }
-
-    /* Left column */
-    .wheel-hero__title {
-      font-family: var(--font-display);
-      font-size: clamp(34px, 4vw, 58px);
-      font-weight: 800;
-      color: var(--clr-text);
-      line-height: 1.03;
-      letter-spacing: -0.03em;
-      margin-bottom: 20px;
-      font-variation-settings: 'opsz' 72, 'WONK' 1;
-    }
-    .wheel-hero__sub {
-      font-size: 15.5px;
-      color: var(--clr-text-mid);
-      line-height: 1.72;
-      margin-bottom: 32px;
-      max-width: 400px;
-    }
-    .wheel-caps-list {
-      list-style: none;
+      min-height: 100vh;
+      padding-top: 72px;
       display: flex;
       flex-direction: column;
-      gap: 9px;
-      margin-bottom: 36px;
-    }
-    .wheel-caps-list li {
-      display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      color: var(--clr-text-mid);
-      line-height: 1.4;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--clr-bg);
     }
-    .cap-dot {
-      width: 9px; height: 9px;
-      border-radius: 50%;
-      flex-shrink: 0;
-      transition: transform 0.2s;
-    }
-    .wheel-caps-list li:hover .cap-dot { transform: scale(1.4); }
-    .wheel-hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; }
 
-    /* Right column: wheel stage */
+    /* Subtle radial gradient behind the wheel */
+    .wheel-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 55%, rgba(29,159,213,0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 50% 55%, rgba(0,196,180,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Top eyebrow + headline */
+    .wheel-headline {
+      text-align: center;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .wheel-headline .section-label {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .wheel-headline h1 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3.5vw, 52px);
+      font-weight: 800;
+      color: var(--clr-text);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      font-variation-settings: 'opsz' 72, 'WONK' 1;
+      margin: 0;
+    }
+    .wheel-headline h1 span {
+      color: var(--clr-blue);
+    }
+
+    /* Wheel stage – the focal element */
     .wheel-stage {
       position: relative;
+      z-index: 1;
+      width: min(88vw, 88vh, 860px);
       display: flex;
       flex-direction: column;
       align-items: center;
     }
     .wheel-svg {
       width: 100%;
-      max-width: 680px;
       height: auto;
       overflow: visible;
       cursor: default;
+      display: block;
     }
     .wheel-hint {
       font-family: var(--font-mono);
       font-size: 10px;
       color: var(--clr-text-dim);
-      letter-spacing: 2px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      margin-top: 12px;
       text-align: center;
+      margin-top: 10px;
+    }
+
+    /* CTAs below wheel */
+    .wheel-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 24px;
+      position: relative;
+      z-index: 1;
     }
 
     /* Tooltip */
@@ -99,20 +104,20 @@
       border: 1px solid var(--clr-border-mid);
       border-radius: 12px;
       padding: 16px 18px;
-      width: 252px;
+      width: 268px;
       pointer-events: none;
       opacity: 0;
-      transform: translateY(4px);
-      transition: opacity 0.15s ease, transform 0.15s ease;
-      box-shadow: 0 4px 12px rgba(15,50,80,0.08), 0 16px 48px rgba(15,50,80,0.1);
-      z-index: 1000;
+      transform: translateY(6px);
+      transition: opacity 0.14s ease, transform 0.14s ease;
+      box-shadow: 0 4px 16px rgba(15,50,80,0.08), 0 20px 56px rgba(15,50,80,0.11);
+      z-index: 2000;
     }
     .alm-tooltip.visible {
       opacity: 1;
       transform: translateY(0);
     }
     .alm-tooltip__title {
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 700;
       margin-bottom: 6px;
       line-height: 1.35;
@@ -120,7 +125,7 @@
     .alm-tooltip__desc {
       font-size: 11.5px;
       color: var(--clr-text-muted);
-      line-height: 1.6;
+      line-height: 1.65;
       margin-bottom: 10px;
     }
     .alm-tooltip__cta {
@@ -193,13 +198,12 @@
     }
 
     /* Responsive */
-    @media (max-width: 1080px) {
-      .wheel-hero__inner { grid-template-columns: 1fr; gap: 40px; }
-      .wheel-hero__title, .wheel-hero__sub { max-width: 100%; }
+    @media (max-width: 900px) {
+      .wheel-stage { width: min(96vw, 96vh); }
       .wheel-explore__grid { grid-template-columns: repeat(2, 1fr); }
     }
-    @media (max-width: 640px) {
-      .wheel-hero { padding: 96px 0 48px; }
+    @media (max-width: 600px) {
+      .wheel-headline h1 { font-size: 24px; }
       .wheel-explore__grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -215,7 +219,8 @@
       <ul class="nav__links" id="navLinks">
         <li><a href="index.html#services" class="nav__link">Services</a></li>
         <li><a href="index.html#industries" class="nav__link">Industries</a></li>
-        <li><a href="why-alm.html" class="nav__link active">Why ALM</a></li>
+        <li><a href="why-alm.html" class="nav__link">Why ALM</a></li>
+        <li><a href="alm-wheel.html" class="nav__link active">ALM Platform</a></li>
         <li><a href="index.html#about" class="nav__link">About</a></li>
         <li><a href="index.html#process" class="nav__link">Process</a></li>
         <li><a href="index.html#contact" class="nav__link">Contact</a></li>
@@ -235,36 +240,27 @@
     </div>
   </nav>
 
-  <main class="wheel-page">
+  <main>
 
-    <!-- ── HERO ── -->
+    <!-- ── HERO: WHEEL ── -->
     <section class="wheel-hero">
-      <div class="container">
-        <div class="wheel-hero__inner">
 
-          <!-- Left: Text -->
-          <div class="wheel-hero__text">
-            <span class="section-label">Polarion ALM Platform</span>
-            <h1 class="wheel-hero__title">One Platform.<br />Every Phase.</h1>
-            <p class="wheel-hero__sub">Polarion ALM unifies nine interconnected capabilities into a single governed system — connecting every decision, change, and compliance artefact across your regulated product lifecycle.</p>
-
-            <ul class="wheel-caps-list" id="capsList">
-              <!-- Populated by JS with matching colors -->
-            </ul>
-
-            <div class="wheel-hero__ctas">
-              <a href="why-alm.html" class="btn btn--primary">Explore the ALM Guide</a>
-              <a href="index.html#contact" class="btn btn--ghost">Request a Demo</a>
-            </div>
-          </div>
-
-          <!-- Right: Wheel -->
-          <div class="wheel-stage">
-            <svg id="almWheel" viewBox="0 0 880 880" class="wheel-svg" role="img" aria-label="Polarion ALM capabilities wheel diagram"></svg>
-            <p class="wheel-hint">Hover each node &nbsp;·&nbsp; Click to explore</p>
-          </div>
-        </div>
+      <div class="wheel-headline">
+        <span class="section-label">Polarion ALM Platform</span>
+        <h1>One Platform. <span>Every Phase.</span></h1>
       </div>
+
+      <div class="wheel-stage">
+        <svg id="almWheel" viewBox="0 0 880 880" class="wheel-svg"
+             role="img" aria-label="Polarion ALM capabilities wheel diagram"></svg>
+        <p class="wheel-hint">Hover each node &nbsp;·&nbsp; Click to explore</p>
+      </div>
+
+      <div class="wheel-ctas">
+        <a href="why-alm.html" class="btn btn--primary">Explore the ALM Guide</a>
+        <a href="index.html#contact" class="btn btn--ghost">Request a Demo</a>
+      </div>
+
     </section>
 
     <!-- Tooltip (fixed, outside SVG) -->
@@ -310,7 +306,7 @@
           <a href="why-alm.html#why-polarion" class="wheel-explore__card reveal-up" data-delay="80">
             <span class="wheel-explore__card__num">05 · PLATFORM</span>
             <h3>Why Polarion ALM</h3>
-            <p>Purpose-built for regulated engineering by Siemens — not adapted from a general-purpose PM tool. The dominant platform in automotive, medical, and aerospace.</p>
+            <p>Purpose-built for regulated engineering by Siemens — not adapted from a general-purpose PM tool.</p>
             <span class="wheel-explore__card__arrow">Read section →</span>
           </a>
           <a href="why-alm.html#why-corbinsoft" class="wheel-explore__card reveal-up" data-delay="160">
@@ -346,6 +342,7 @@
         </ul></div>
         <div class="footer__col"><h4>Company</h4><ul>
           <li><a href="why-alm.html">Why ALM</a></li>
+          <li><a href="alm-wheel.html">ALM Platform</a></li>
           <li><a href="index.html#about">About</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul></div>
@@ -360,7 +357,6 @@
   <script src="transitions.js"></script>
   <script src="script.js"></script>
   <script>
-    // Nav
     var toggle = document.getElementById('navToggle');
     var navLinks = document.getElementById('navLinks');
     if (toggle) toggle.addEventListener('click', function(){ navLinks.classList.toggle('open'); });
@@ -368,7 +364,7 @@
     window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 20); }, { passive: true });
   </script>
 
-  <!-- ── ALM WHEEL ───────────────────────────────────────────────── -->
+  <!-- ── ALM WHEEL ─────────────────────────────────────────────── -->
   <script>
   (function () {
     'use strict';
@@ -395,7 +391,7 @@
       },
       {
         id: 'agile',
-        lines: ['Agile / Hybrid', 'Project Management'],
+        lines: ['Agile / Hybrid', 'Project Mgmt'],
         color: '#7a8fa8',
         href: 'why-alm.html#what-is-alm',
         desc: 'Support Scrum, SAFe, and hybrid methodologies with sprint boards, backlog management, and compliance integration in one platform.',
@@ -404,7 +400,7 @@
       },
       {
         id: 'planning',
-        lines: ['Planning &', 'Resource Management'],
+        lines: ['Planning &', 'Resource Mgmt'],
         color: '#d44c4c',
         href: 'why-alm.html#why-it-matters',
         desc: 'Plan programme milestones, allocate workload across teams, and track delivery against regulatory schedules and gate reviews.',
@@ -458,7 +454,7 @@
       }
     ];
 
-    /* ── SVG helpers ───────────────────────────────────────── */
+    /* ── SVG helpers ─────────────────────────────────────── */
     var NS = 'http://www.w3.org/2000/svg';
     function el(tag, attrs) {
       var e = document.createElementNS(NS, tag);
@@ -467,91 +463,91 @@
     }
     function deg2rad(d) { return d * Math.PI / 180; }
 
-    /* ── Layout constants ──────────────────────────────────── */
+    /* ── Layout constants ────────────────────────────────── */
     var CX = 440, CY = 440;
-    var ORBIT = 262;     // node centre orbit radius
-    var NODE_R = 54;     // node circle radius (resting)
-    var HUB_R = 88;      // centre hub radius
-    var LABEL_R = ORBIT + NODE_R + 30;  // label text radius
-    var ICON_SIZE = 22;  // icon bounding box (24-unit path scaled to this)
+    var ORBIT   = 282;   // node centre orbit radius
+    var NODE_R  = 62;    // node circle radius (resting)
+    var HUB_R   = 108;   // centre hub radius
+    var LABEL_R = ORBIT + NODE_R + 34;  // label text radius
+    var ICON_SIZE = 26;
 
-    /* ── Build SVG ─────────────────────────────────────────── */
+    /* ── Build SVG ───────────────────────────────────────── */
     var svg = document.getElementById('almWheel');
 
     // Decorative background rings
-    [170, 210, ORBIT, ORBIT + 20].forEach(function(r, i) {
+    [180, 222, ORBIT, ORBIT + 22].forEach(function(r, i) {
       svg.appendChild(el('circle', {
         cx: CX, cy: CY, r: r,
         fill: 'none',
         stroke: 'rgba(29,159,213,0.07)',
-        'stroke-width': i < 2 ? '1' : '1',
-        'stroke-dasharray': i < 2 ? '0' : '6 8'
+        'stroke-width': '1',
+        'stroke-dasharray': i < 2 ? '0' : '6 9'
       }));
     });
 
-    // Centre hub glow
-    svg.appendChild(el('circle', { cx: CX, cy: CY, r: HUB_R + 14,
-      fill: 'rgba(29,159,213,0.06)', stroke: 'none' }));
+    // Hub ambient glow
+    svg.appendChild(el('circle', {
+      cx: CX, cy: CY, r: HUB_R + 22,
+      fill: 'rgba(29,159,213,0.055)', stroke: 'none'
+    }));
 
-    // Centre hub circle
+    // Hub circle
     var hubCircle = el('circle', {
       cx: CX, cy: CY, r: HUB_R,
       fill: 'white',
-      stroke: 'rgba(29,159,213,0.3)',
-      'stroke-width': '1.5'
+      stroke: '#1d9fd5',
+      'stroke-width': '2'
     });
     svg.appendChild(hubCircle);
 
-    // Centre hub text
-    var hubLines = ['Collaboration', 'Traceability', 'Workflow'];
-    var hubTextY = CY - 13;
-    hubLines.forEach(function(line, i) {
-      var t = el('text', {
-        x: CX, y: hubTextY + i * 16,
-        'text-anchor': 'middle',
-        'dominant-baseline': 'middle',
-        fill: '#1d9fd5',
-        'font-family': 'Manrope, system-ui, sans-serif',
-        'font-size': i === 0 ? '11' : i === 1 ? '12.5' : '11',
-        'font-weight': i === 1 ? '700' : '500',
-        'letter-spacing': '0.5'
-      });
-      t.textContent = line;
-      svg.appendChild(t);
-    });
+    // Hub inner ring (decorative)
+    svg.appendChild(el('circle', {
+      cx: CX, cy: CY, r: HUB_R - 10,
+      fill: 'none',
+      stroke: 'rgba(29,159,213,0.18)',
+      'stroke-width': '1'
+    }));
 
-    // Siemens/Polarion badge on hub
-    var badge = el('text', {
-      x: CX, y: CY + 46,
+    // Hub text: "POLARION" line 1
+    var hubLine1 = el('text', {
+      x: CX, y: CY - 14,
       'text-anchor': 'middle',
       'dominant-baseline': 'middle',
-      fill: 'rgba(29,159,213,0.55)',
-      'font-family': "'Courier New', monospace",
-      'font-size': '8.5',
-      'font-weight': '600',
-      'letter-spacing': '2'
+      fill: '#1a3a52',
+      'font-family': 'Manrope, system-ui, sans-serif',
+      'font-size': '19',
+      'font-weight': '800',
+      'letter-spacing': '1.5'
     });
-    badge.textContent = 'POLARION ALM';
-    svg.appendChild(badge);
+    hubLine1.textContent = 'POLARION';
+    svg.appendChild(hubLine1);
 
-    /* ── Tooltip ───────────────────────────────────────────── */
-    var tooltip = document.getElementById('almTooltip');
+    // Hub text: "ALM" line 2
+    var hubLine2 = el('text', {
+      x: CX, y: CY + 14,
+      'text-anchor': 'middle',
+      'dominant-baseline': 'middle',
+      fill: '#1d9fd5',
+      'font-family': 'Manrope, system-ui, sans-serif',
+      'font-size': '22',
+      'font-weight': '800',
+      'letter-spacing': '4'
+    });
+    hubLine2.textContent = 'ALM';
+    svg.appendChild(hubLine2);
+
+    /* ── Tooltip ─────────────────────────────────────────── */
+    var tooltip  = document.getElementById('almTooltip');
     var tipTitle = document.getElementById('tipTitle');
-    var tipDesc = document.getElementById('tipDesc');
-    var tipCta = document.getElementById('tipCta');
-    var currentMouseX = 0, currentMouseY = 0;
-
-    document.addEventListener('mousemove', function(e) {
-      currentMouseX = e.clientX;
-      currentMouseY = e.clientY;
-    });
+    var tipDesc  = document.getElementById('tipDesc');
+    var tipCta   = document.getElementById('tipCta');
 
     function showTooltip(node) {
       tipTitle.textContent = node.lines.join(' ');
       tipTitle.style.color = node.color;
-      tipDesc.textContent = node.desc;
-      tipCta.textContent = 'Click to explore →';
-      tipCta.style.color = node.color;
+      tipDesc.textContent  = node.desc;
+      tipCta.textContent   = 'Click to explore →';
+      tipCta.style.color   = node.color;
       tooltip.classList.add('visible');
       tooltip.setAttribute('aria-hidden', 'false');
     }
@@ -561,62 +557,47 @@
     }
     function positionTooltip(e) {
       var x = e.clientX, y = e.clientY;
-      var tw = 252, pad = 16;
-      var left = x + 18;
-      if (left + tw + pad > window.innerWidth) left = x - tw - 18;
-      var top = y - 60;
+      var tw = 268, pad = 16;
+      var left = x + 20;
+      if (left + tw + pad > window.innerWidth) left = x - tw - 20;
+      var top = y - 64;
       if (top < pad) top = pad;
-      if (top + 130 > window.innerHeight - pad) top = window.innerHeight - 130 - pad;
+      if (top + 140 > window.innerHeight - pad) top = window.innerHeight - 140 - pad;
       tooltip.style.left = left + 'px';
-      tooltip.style.top = top + 'px';
+      tooltip.style.top  = top  + 'px';
     }
 
-    /* ── Build caps list (left column) ────────────────────── */
-    var capsList = document.getElementById('capsList');
-    NODES.forEach(function(node) {
-      var li = document.createElement('li');
-      var dot = document.createElement('span');
-      dot.className = 'cap-dot';
-      dot.style.background = node.color;
-      var span = document.createElement('span');
-      span.textContent = node.lines.join(' ');
-      li.appendChild(dot);
-      li.appendChild(span);
-      li.style.cursor = 'pointer';
-      li.addEventListener('click', function() {
-        document.body.classList.add('page-exit');
-        setTimeout(function() { window.location.href = node.href; }, 220);
-      });
-      capsList.appendChild(li);
-    });
-
-    /* ── Draw nodes ────────────────────────────────────────── */
+    /* ── Draw nodes ──────────────────────────────────────── */
     NODES.forEach(function(node, idx) {
       var rad = deg2rad(node.angle);
-      var nx = CX + ORBIT * Math.cos(rad);
-      var ny = CY + ORBIT * Math.sin(rad);
+      var nx  = CX + ORBIT * Math.cos(rad);
+      var ny  = CY + ORBIT * Math.sin(rad);
 
-      // Spoke line (hub edge → node edge)
-      var spokeStartR = HUB_R + 8;
-      var spokeEndR = ORBIT - NODE_R - 8;
+      // Spoke
+      var spokeStartR = HUB_R + 10;
+      var spokeEndR   = ORBIT - NODE_R - 10;
       svg.appendChild(el('line', {
         x1: CX + spokeStartR * Math.cos(rad),
         y1: CY + spokeStartR * Math.sin(rad),
-        x2: CX + spokeEndR * Math.cos(rad),
-        y2: CY + spokeEndR * Math.sin(rad),
+        x2: CX + spokeEndR   * Math.cos(rad),
+        y2: CY + spokeEndR   * Math.sin(rad),
         stroke: node.color,
         'stroke-width': '1.5',
         'stroke-dasharray': '5 6',
-        opacity: '0.5'
+        opacity: '0.45'
       }));
 
-      // Node group (interactive)
-      var g = el('g', { class: 'wheel-node', tabindex: '0', role: 'button',
-        'aria-label': node.lines.join(' ') });
+      // Node group
+      var g = el('g', {
+        class: 'wheel-node',
+        tabindex: '0',
+        role: 'button',
+        'aria-label': node.lines.join(' ')
+      });
 
-      // Glow ring (shown on hover via JS)
+      // Outer glow ring (hover only)
       var glow = el('circle', {
-        cx: nx, cy: ny, r: NODE_R + 12,
+        cx: nx, cy: ny, r: NODE_R + 14,
         fill: 'none',
         stroke: node.color,
         'stroke-width': '2',
@@ -629,16 +610,15 @@
         cx: nx, cy: ny, r: NODE_R,
         fill: 'white',
         stroke: node.color,
-        'stroke-width': '2'
+        'stroke-width': '2.5'
       });
       g.appendChild(circle);
 
-      // Coloured cap arc (top portion of circle)
-      var capAngle = Math.PI * 0.9; // ~162° arc
+      // Cap arc (top portion highlight)
+      var capAngle = Math.PI * 0.9;
       var capR = NODE_R;
-      // Arc from angle -120° to 120° around the node (top fill cap)
       var startA = node.angle * Math.PI / 180 - capAngle / 2 - Math.PI / 2;
-      var endA = startA + capAngle;
+      var endA   = startA + capAngle;
       var x1 = nx + capR * Math.cos(startA);
       var y1 = ny + capR * Math.sin(startA);
       var x2 = nx + capR * Math.cos(endA);
@@ -647,92 +627,83 @@
         d: 'M ' + x1 + ' ' + y1 + ' A ' + capR + ' ' + capR + ' 0 0 1 ' + x2 + ' ' + y2,
         fill: 'none',
         stroke: node.color,
-        'stroke-width': '4',
+        'stroke-width': '5',
         'stroke-linecap': 'round',
-        opacity: '0.35'
+        opacity: '0.32'
       });
       g.appendChild(arc);
 
-      // Inner circle fill (subtle tint)
+      // Inner tint fill
       var innerFill = el('circle', {
         cx: nx, cy: ny, r: NODE_R - 4,
         fill: node.color,
-        opacity: '0.07'
+        opacity: '0.06'
       });
       g.appendChild(innerFill);
 
-      // Icon (scaled from 24x24 path → ICON_SIZE)
+      // Icon
       var iconScale = ICON_SIZE / 24;
       var iconTx = nx - ICON_SIZE / 2;
-      var iconTy = ny - ICON_SIZE / 2 - 4; // slightly above centre to leave room for number
+      var iconTy = ny - ICON_SIZE / 2 - 5;
       var iconPath = el('path', {
         d: node.icon,
         fill: 'none',
         stroke: node.color,
-        'stroke-width': '1.75',
+        'stroke-width': '1.7',
         'stroke-linecap': 'round',
         'stroke-linejoin': 'round',
         transform: 'translate(' + iconTx + ',' + iconTy + ') scale(' + iconScale + ')'
       });
       g.appendChild(iconPath);
 
-      // Node index number (small, bottom of circle)
+      // Index number
       var numText = el('text', {
-        x: nx, y: ny + NODE_R - 12,
+        x: nx, y: ny + NODE_R - 13,
         'text-anchor': 'middle',
         'dominant-baseline': 'middle',
         fill: node.color,
         'font-family': "'Courier New', monospace",
-        'font-size': '9',
+        'font-size': '9.5',
         'font-weight': '700',
         'letter-spacing': '0.5',
-        opacity: '0.7'
+        opacity: '0.65'
       });
       numText.textContent = String(idx + 1).padStart(2, '0');
       g.appendChild(numText);
 
-      // Label text (outside the circle)
-      var labelRad = rad;
-      var lx = CX + LABEL_R * Math.cos(labelRad);
-      var ly = CY + LABEL_R * Math.sin(labelRad);
-
-      // Determine text-anchor and baseline offset based on angle
-      var cosA = Math.cos(rad);
-      var sinA = Math.sin(rad);
+      // Label (outside circle)
+      var lx     = CX + LABEL_R * Math.cos(rad);
+      var ly     = CY + LABEL_R * Math.sin(rad);
+      var cosA   = Math.cos(rad);
       var anchor = Math.abs(cosA) < 0.15 ? 'middle' : (cosA > 0 ? 'start' : 'end');
 
-      var labelGroup = el('g', {});
       node.lines.forEach(function(line, i) {
         var t = el('text', {
           x: lx,
-          y: ly + (i - (node.lines.length - 1) / 2) * 15,
+          y: ly + (i - (node.lines.length - 1) / 2) * 16,
           'text-anchor': anchor,
           'dominant-baseline': 'middle',
           fill: node.color,
           'font-family': 'Manrope, system-ui, sans-serif',
-          'font-size': '12.5',
+          'font-size': '13',
           'font-weight': i === 0 ? '700' : '500'
         });
         t.textContent = line;
-        labelGroup.appendChild(t);
+        g.appendChild(t);
       });
-      g.appendChild(labelGroup);
 
-      // ── Interaction ────────────────────────────────────── //
+      /* ── Interactions ──────────────────────────────────── */
       var isHovered = false;
 
       function onEnter(e) {
         isHovered = true;
-        // Grow node
-        circle.setAttribute('r', String(NODE_R * 1.22));
-        circle.setAttribute('fill', node.color + '15');
-        glow.setAttribute('opacity', '0.35');
-        innerFill.setAttribute('opacity', '0.14');
-        arc.setAttribute('opacity', '0.7');
-        // Bold spoke
-        // Show tooltip
+        circle.setAttribute('r', String(NODE_R * 1.2));
+        circle.setAttribute('fill', node.color + '12');
+        glow.setAttribute('opacity', '0.4');
+        innerFill.setAttribute('opacity', '0.13');
+        arc.setAttribute('opacity', '0.65');
         showTooltip(node);
-        positionTooltip(e);
+        if (e && e.clientX) positionTooltip(e);
         svg.style.cursor = 'pointer';
       }
       function onLeave() {
@@ -740,8 +711,8 @@
         circle.setAttribute('r', String(NODE_R));
         circle.setAttribute('fill', 'white');
         glow.setAttribute('opacity', '0');
-        innerFill.setAttribute('opacity', '0.07');
-        arc.setAttribute('opacity', '0.35');
+        innerFill.setAttribute('opacity', '0.06');
+        arc.setAttribute('opacity', '0.32');
         hideTooltip();
         svg.style.cursor = 'default';
       }
@@ -752,46 +723,42 @@
 
       g.addEventListener('mouseenter', onEnter);
       g.addEventListener('mouseleave', onLeave);
-      g.addEventListener('mousemove', function(e) {
-        if (isHovered) positionTooltip(e);
-      });
+      g.addEventListener('mousemove', function(e) { if (isHovered) positionTooltip(e); });
       g.addEventListener('click', onClick);
       g.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick(); }
       });
-      g.addEventListener('focus', function(e) { onEnter(e); });
+      g.addEventListener('focus', onEnter);
       g.addEventListener('blur', onLeave);
 
       svg.appendChild(g);
     });
 
-    /* ── Animate hub ring pulse ────────────────────────────── */
-    var pulseRings = [0, 1200].map(function(delay) {
+    /* ── Hub pulse animation ─────────────────────────────── */
+    [0, 1300].forEach(function(delay) {
       var r = el('circle', {
         cx: CX, cy: CY, r: HUB_R,
         fill: 'none',
-        stroke: 'rgba(29,159,213,0.25)',
+        stroke: 'rgba(29,159,213,0.28)',
         'stroke-width': '2'
       });
-      svg.insertBefore(r, svg.firstChild.nextSibling); // behind nodes
+      svg.insertBefore(r, svg.firstChild.nextSibling);
       var start = null;
-      var dur = 2600;
+      var dur = 2800;
       function frame(ts) {
         if (!start) start = ts + delay;
         var elapsed = (ts - start) % dur;
         if (elapsed < 0) { requestAnimationFrame(frame); return; }
-        var progress = elapsed / dur;
-        var scale = 1 + progress * 0.65;
-        var opacity = 0.35 * (1 - progress);
-        r.setAttribute('r', String(HUB_R * scale));
-        r.setAttribute('opacity', String(opacity));
+        var p = elapsed / dur;
+        r.setAttribute('r', String(HUB_R * (1 + p * 0.7)));
+        r.setAttribute('opacity', String(0.38 * (1 - p)));
         requestAnimationFrame(frame);
       }
       requestAnimationFrame(frame);
-      return r;
     });
 
   })();
   </script>
+
 </body>
 </html>
