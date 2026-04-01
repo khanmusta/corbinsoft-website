@@ -8,6 +8,100 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,300;1,9..144,400&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── ALM Wheel Hero (index) ───────────────────────────────── */
+    .wheel-hero {
+      min-height: 100vh;
+      padding-top: 180px;
+      padding-bottom: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      background: var(--clr-bg);
+    }
+    .wheel-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 55%, rgba(29,159,213,0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 50% 55%, rgba(0,196,180,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .wheel-headline {
+      text-align: center;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .wheel-headline h1 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3.5vw, 52px);
+      font-weight: 800;
+      color: var(--clr-text);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-variation-settings: 'opsz' 72, 'WONK' 1;
+      margin: 0;
+    }
+    .wheel-headline h1 span { color: var(--clr-blue); }
+    .wheel-stage {
+      position: relative;
+      z-index: 1;
+      width: min(88vw, 88vh, 860px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .wheel-svg {
+      width: 100%;
+      height: auto;
+      overflow: visible;
+      cursor: default;
+      display: block;
+    }
+    .wheel-hint {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--clr-text-dim);
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .wheel-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .alm-tooltip {
+      position: fixed;
+      background: #fff;
+      border: 1px solid var(--clr-border-mid);
+      border-radius: 12px;
+      padding: 16px 18px;
+      width: 268px;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.14s ease, transform 0.14s ease;
+      box-shadow: 0 4px 16px rgba(15,50,80,0.08), 0 20px 56px rgba(15,50,80,0.11);
+      z-index: 2000;
+    }
+    .alm-tooltip.visible { opacity: 1; transform: translateY(0); }
+    .alm-tooltip__title { font-size: 13px; font-weight: 700; margin-bottom: 6px; line-height: 1.35; }
+    .alm-tooltip__desc  { font-size: 11.5px; color: var(--clr-text-muted); line-height: 1.65; margin-bottom: 10px; }
+    .alm-tooltip__cta   { font-family: var(--font-mono); font-size: 9.5px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+    .wheel-node { cursor: pointer; }
+    @media (max-width: 900px) { .wheel-stage { width: min(96vw, 96vh); } }
+    @media (max-width: 600px) { .wheel-headline h1 { font-size: 24px; } }
+  </style>
 </head>
 <body>
 
@@ -43,46 +137,32 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <canvas id="heroCanvas"></canvas>
-    <div class="hero__content">
-      <div class="hero__title-wrap reveal-up">
-        <h1 class="hero__title">Polarion ALM</h1>
-        <p class="hero__typed-for">for</p>
-        <p class="hero__typed-line"><span class="gradient-text typed-text" id="typedText"></span></p>
-      </div>
-      <p class="hero__sub reveal-up">
-        Expert implementation, validation, and technical consulting for
-        <strong>Polarion ALM</strong> — helping regulated industries deliver
-        compliant, traceable software at speed.
-      </p>
-      <div class="hero__actions reveal-up">
-        <a href="#contact" class="btn btn--primary">Request a Consultation</a>
-        <a href="#services" class="btn btn--ghost">Our Services</a>
-      </div>
-      <div class="hero__stats reveal-up">
-        <div class="stat">
-          <span class="stat__num" data-target="120">0</span><span>+</span>
-          <p>Polarion Deployments</p>
-        </div>
-        <div class="stat__divider"></div>
-        <div class="stat">
-          <span class="stat__num" data-target="15">0</span><span>+</span>
-          <p>Years ALM Experience</p>
-        </div>
-        <div class="stat__divider"></div>
-        <div class="stat">
-          <span class="stat__num" data-target="3">0</span><span></span>
-          <p>Regulated Verticals</p>
-        </div>
-      </div>
+  <!-- HERO: ALM WHEEL -->
+  <section class="wheel-hero" id="hero">
+
+    <div class="wheel-headline">
+      <h1>Manage Product Development<br>Lifecycle <span>in One Place</span></h1>
     </div>
-    <div class="hero__scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
+
+    <div class="wheel-stage">
+      <svg id="almWheel" viewBox="0 0 880 880" class="wheel-svg"
+           role="img" aria-label="Polarion ALM capabilities wheel diagram"></svg>
+      <p class="wheel-hint">Hover each node &nbsp;·&nbsp; Click to explore</p>
     </div>
+
+    <div class="wheel-ctas">
+      <a href="#contact" class="btn btn--primary">Request a Consultation</a>
+      <a href="#services" class="btn btn--ghost">Our Services</a>
+    </div>
+
   </section>
+
+  <!-- Tooltip -->
+  <div id="almTooltip" class="alm-tooltip" role="tooltip" aria-hidden="true">
+    <div class="alm-tooltip__title" id="tipTitle"></div>
+    <div class="alm-tooltip__desc"  id="tipDesc"></div>
+    <div class="alm-tooltip__cta"   id="tipCta"></div>
+  </div>
 
   <!-- PARTNER BANNER -->
   <div class="partner-banner">
@@ -640,5 +720,70 @@
 
   <script src="transitions.js"></script>
   <script src="script.js"></script>
+
+  <!-- ── ALM WHEEL ─────────────────────────────────────────────── -->
+  <script>
+  (function () {
+    'use strict';
+    var NODES = [
+      { id:'requirements',  lines:['Requirements','Management'],       color:'#1d9fd5', href:'why-alm.html#alm-capabilities', desc:'Capture, baseline, and version-control all stakeholder and technical requirements in a single governed system with workflow-enforced approvals.', angle:-90,  icon:'M3 5h14M3 9h10M3 13h12M3 17h8' },
+      { id:'build-release', lines:['Build & Release','Management'],    color:'#6f52c0', href:'why-alm.html#why-polarion',      desc:'Coordinate software builds and release trains with full configuration control, automated triggers, and traceable links back to requirements.',      angle:-50,  icon:'M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z' },
+      { id:'agile',         lines:['Agile / Hybrid','Project Mgmt'],   color:'#7a8fa8', href:'why-alm.html#what-is-alm',       desc:'Support Scrum, SAFe, and hybrid methodologies with sprint boards, backlog management, and compliance integration in one platform.',               angle:-10,  icon:'M3 3h5v5H3zM16 3h5v5h-5zM3 16h5v5H3zM16 16h5v5h-5zM8 6h8M6 8v8M18 8v8M8 18h8' },
+      { id:'planning',      lines:['Planning &','Resource Mgmt'],      color:'#d44c4c', href:'why-alm.html#why-it-matters',    desc:'Plan programme milestones, allocate workload across teams, and track delivery against regulatory schedules and gate reviews.',                     angle:30,   icon:'M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z' },
+      { id:'audits',        lines:['Audits & Metrics','Reports'],       color:'#d4842a', href:'why-alm.html#disconnected-tools',desc:'Generate traceability matrices, compliance dashboards, and audit-ready evidence packages on demand — not assembled under inspection pressure.',  angle:70,   icon:'M18 20V10M12 20V4M6 20v-6' },
+      { id:'issue-risk',    lines:['Issue & Risk','Management'],        color:'#00a898', href:'why-alm.html#alm-capabilities', desc:'Track defects, risks, and non-conformances with direct links to the requirements, baselines, and test records they affect.',                    angle:110,  icon:'M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z' },
+      { id:'test-quality',  lines:['Test & Quality','Management'],      color:'#2db570', href:'why-alm.html#alm-capabilities', desc:'Plan test cases, record execution results, and link verification evidence directly to requirements. Coverage metrics always live and always current.', angle:150,  icon:'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
+      { id:'reuse-branch',  lines:['Reuse & Branch','Management'],      color:'#8b5cf6', href:'why-alm.html#why-polarion',      desc:'Manage product variants and shared requirement modules across platform configurations, with full traceability per variant.',                      angle:190,  icon:'M6 3v12M18 3v12M6 15a3 3 0 006 0M18 15a3 3 0 01-6 0M12 15v6' },
+      { id:'change-config', lines:['Change &','Configuration Mgmt'],   color:'#5f7d9e', href:'why-alm.html#alm-capabilities', desc:'Govern every change with workflow-controlled approvals, impact analysis identifying downstream effects, and immutable baseline snapshots.',       angle:230,  icon:'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065zM15 12a3 3 0 11-6 0 3 3 0 016 0z' }
+    ];
+    var NS = 'http://www.w3.org/2000/svg';
+    function el(tag, attrs) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+    function deg2rad(d) { return d * Math.PI / 180; }
+    var CX = 440, CY = 440, ORBIT = 282, NODE_R = 84, HUB_R = 108, LABEL_R = ORBIT + NODE_R + 30, ICON_SIZE = 34;
+    var svg = document.getElementById('almWheel');
+    [180, 222, ORBIT, ORBIT + 22].forEach(function(r, i) {
+      svg.appendChild(el('circle', { cx:CX, cy:CY, r:r, fill:'none', stroke:'rgba(29,159,213,0.07)', 'stroke-width':'1', 'stroke-dasharray': i < 2 ? '0' : '6 9' }));
+    });
+    svg.appendChild(el('circle', { cx:CX, cy:CY, r:HUB_R+22, fill:'rgba(29,159,213,0.055)', stroke:'none' }));
+    svg.appendChild(el('circle', { cx:CX, cy:CY, r:HUB_R, fill:'white', stroke:'#1d9fd5', 'stroke-width':'2' }));
+    svg.appendChild(el('circle', { cx:CX, cy:CY, r:HUB_R-10, fill:'none', stroke:'rgba(29,159,213,0.18)', 'stroke-width':'1' }));
+    var t1 = el('text', { x:CX, y:CY-14, 'text-anchor':'middle', 'dominant-baseline':'middle', fill:'#1a3a52', 'font-family':'Manrope,system-ui,sans-serif', 'font-size':'19', 'font-weight':'800', 'letter-spacing':'1.5' }); t1.textContent = 'POLARION'; svg.appendChild(t1);
+    var t2 = el('text', { x:CX, y:CY+14, 'text-anchor':'middle', 'dominant-baseline':'middle', fill:'#1d9fd5', 'font-family':'Manrope,system-ui,sans-serif', 'font-size':'22', 'font-weight':'800', 'letter-spacing':'4' }); t2.textContent = 'ALM'; svg.appendChild(t2);
+    var tooltip = document.getElementById('almTooltip'), tipTitle = document.getElementById('tipTitle'), tipDesc = document.getElementById('tipDesc'), tipCta = document.getElementById('tipCta');
+    function showTooltip(n) { tipTitle.textContent = n.lines.join(' '); tipTitle.style.color = n.color; tipDesc.textContent = n.desc; tipCta.textContent = 'Click to explore →'; tipCta.style.color = n.color; tooltip.classList.add('visible'); tooltip.setAttribute('aria-hidden','false'); }
+    function hideTooltip() { tooltip.classList.remove('visible'); tooltip.setAttribute('aria-hidden','true'); }
+    function positionTooltip(e) { var x=e.clientX,y=e.clientY,tw=268,pad=16,left=x+20; if(left+tw+pad>window.innerWidth) left=x-tw-20; var top=y-64; if(top<pad) top=pad; if(top+140>window.innerHeight-pad) top=window.innerHeight-140-pad; tooltip.style.left=left+'px'; tooltip.style.top=top+'px'; }
+    NODES.forEach(function(node, idx) {
+      var rad=deg2rad(node.angle), nx=CX+ORBIT*Math.cos(rad), ny=CY+ORBIT*Math.sin(rad);
+      svg.appendChild(el('line', { x1:CX+(HUB_R+10)*Math.cos(rad), y1:CY+(HUB_R+10)*Math.sin(rad), x2:CX+(ORBIT-NODE_R-8)*Math.cos(rad), y2:CY+(ORBIT-NODE_R-8)*Math.sin(rad), stroke:node.color, 'stroke-width':'3', 'stroke-linecap':'round', opacity:'0.7' }));
+      var g = el('g', { class:'wheel-node', tabindex:'0', role:'button', 'aria-label':node.lines.join(' ') });
+      var glow = el('circle', { cx:nx, cy:ny, r:NODE_R+14, fill:'none', stroke:node.color, 'stroke-width':'2', opacity:'0' }); g.appendChild(glow);
+      var circle = el('circle', { cx:nx, cy:ny, r:NODE_R, fill:'white', stroke:node.color, 'stroke-width':'3.5' }); g.appendChild(circle);
+      var innerFill = el('circle', { cx:nx, cy:ny, r:NODE_R-4, fill:node.color, opacity:'0.06' }); g.appendChild(innerFill);
+      var isc=ICON_SIZE/24, itx=nx-ICON_SIZE/2, ity=ny-ICON_SIZE/2-5;
+      g.appendChild(el('path', { d:node.icon, fill:'none', stroke:node.color, 'stroke-width':'1.7', 'stroke-linecap':'round', 'stroke-linejoin':'round', transform:'translate('+itx+','+ity+') scale('+isc+')' }));
+      var nt=el('text',{x:nx,y:ny+NODE_R-13,'text-anchor':'middle','dominant-baseline':'middle',fill:node.color,'font-family':"'Courier New',monospace",'font-size':'9.5','font-weight':'700','letter-spacing':'0.5',opacity:'0.65'}); nt.textContent=String(idx+1).padStart(2,'0'); g.appendChild(nt);
+      var lx=CX+LABEL_R*Math.cos(rad), ly=CY+LABEL_R*Math.sin(rad), cosA=Math.cos(rad), anchor=Math.abs(cosA)<0.15?'middle':(cosA>0?'start':'end');
+      node.lines.forEach(function(line,i){ var t=el('text',{x:lx,y:ly+(i-(node.lines.length-1)/2)*16,'text-anchor':anchor,'dominant-baseline':'middle',fill:node.color,'font-family':'Manrope,system-ui,sans-serif','font-size':'13.5','font-weight':i===0?'700':'500'}); t.textContent=line; g.appendChild(t); });
+      var isHovered=false;
+      function onEnter(e){ isHovered=true; circle.setAttribute('r',String(NODE_R*1.12)); circle.setAttribute('fill',node.color+'18'); circle.setAttribute('stroke-width','4'); glow.setAttribute('opacity','0.5'); innerFill.setAttribute('opacity','0.12'); showTooltip(node); if(e&&e.clientX) positionTooltip(e); svg.style.cursor='pointer'; }
+      function onLeave(){ isHovered=false; circle.setAttribute('r',String(NODE_R)); circle.setAttribute('fill','white'); circle.setAttribute('stroke-width','3.5'); glow.setAttribute('opacity','0'); innerFill.setAttribute('opacity','0.06'); hideTooltip(); svg.style.cursor='default'; }
+      function onClick(){ document.body.classList.add('page-exit'); setTimeout(function(){ window.location.href=node.href; },220); }
+      g.addEventListener('mouseenter',onEnter); g.addEventListener('mouseleave',onLeave);
+      g.addEventListener('mousemove',function(e){ if(isHovered) positionTooltip(e); });
+      g.addEventListener('click',onClick);
+      g.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); onClick(); } });
+      g.addEventListener('focus',onEnter); g.addEventListener('blur',onLeave);
+      svg.appendChild(g);
+    });
+    [0,1300].forEach(function(delay){
+      var r=el('circle',{cx:CX,cy:CY,r:HUB_R,fill:'none',stroke:'rgba(29,159,213,0.28)','stroke-width':'2'});
+      svg.insertBefore(r,svg.firstChild.nextSibling);
+      var start=null,dur=2800;
+      function frame(ts){ if(!start) start=ts+delay; var elapsed=(ts-start)%dur; if(elapsed<0){requestAnimationFrame(frame);return;} var p=elapsed/dur; r.setAttribute('r',String(HUB_R*(1+p*0.7))); r.setAttribute('opacity',String(0.38*(1-p))); requestAnimationFrame(frame); }
+      requestAnimationFrame(frame);
+    });
+  })();
+  </script>
 </body>
 </html>
