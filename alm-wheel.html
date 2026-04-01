@@ -11,14 +11,21 @@
   <style>
     /* ── ALM Wheel Landing Page ───────────────────────────────── */
 
-    /* Full-viewport hero */
+    /* Lock nav opaque on this page — overrides script.js scroll toggle */
+    #nav {
+      background: var(--clr-bg) !important;
+      box-shadow: 0 1px 0 var(--clr-border) !important;
+    }
+
+    /* Full-viewport hero — fixed top padding so content never slides under nav */
     .wheel-hero {
       min-height: 100vh;
-      padding-top: 140px;
+      padding-top: 120px;
+      padding-bottom: 48px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       position: relative;
       overflow: hidden;
       background: var(--clr-bg);
@@ -248,7 +255,7 @@
     <section class="wheel-hero">
 
       <div class="wheel-headline">
-        <h1>Manage Product Development Lifecycle <span>in One Place</span></h1>
+        <h1>Manage Product Development<br>Lifecycle <span>in One Place</span></h1>
       </div>
 
       <div class="wheel-stage">
