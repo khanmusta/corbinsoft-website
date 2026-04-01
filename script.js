@@ -482,15 +482,12 @@ document.querySelectorAll('.service-card').forEach(card => {
 });
 
 // ------ Contact form submit ------
-const WEB3FORMS_KEY = '66cabd36-4bf0-487c-8b6b-f03e851a6ead'; // ← replace with key from web3forms.com
-
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', async e => {
+  contactForm.addEventListener('submit', e => {
     e.preventDefault();
     const form = e.target;
     const btn  = form.querySelector('button[type="submit"]');
-    const orig = btn.textContent;
 
     // Client-side validation
     const nameVal    = form.querySelector('#name')?.value.trim();
@@ -501,50 +498,31 @@ if (contactForm) {
       return;
     }
 
-    btn.textContent = 'Sending…';
-    btn.disabled    = true;
+    const serviceVal  = form.querySelector('#service')?.value  || '(not selected)';
+    const industryVal = form.querySelector('#industry')?.value || '(not selected)';
 
-    const payload = {
-      access_key:  WEB3FORMS_KEY,
-      subject:     `New Corbinsoft Enquiry from ${nameVal}`,
-      from_name:   'Corbinsoft Website',
-      replyto:     emailVal,
-      name:        nameVal,
-      email:       emailVal,
-      service:     form.querySelector('#service')?.value  || '(not selected)',
-      industry:    form.querySelector('#industry')?.value || '(not selected)',
-      message:     messageVal,
-    };
+    const subject = `New Corbinsoft Enquiry from ${nameVal}`;
+    const body = [
+      `Name:     ${nameVal}`,
+      `Email:    ${emailVal}`,
+      `Service:  ${serviceVal}`,
+      `Industry: ${industryVal}`,
+      ``,
+      `Message:`,
+      messageVal,
+    ].join('\n');
 
-    try {
-      const res  = await fetch('https://api.web3forms.com/submit', {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body:    JSON.stringify(payload),
-      });
-      const json = await res.json();
-      if (json.success) {
-        btn.textContent   = '✓ Message Sent';
-        btn.style.background = 'linear-gradient(135deg, #0ea5a0, #059669)';
-        form.reset();
-        setTimeout(() => {
-          btn.textContent      = orig;
-          btn.disabled         = false;
-          btn.style.background = '';
-        }, 3500);
-      } else {
-        throw new Error(json.message || 'Submission failed');
-      }
-    } catch (err) {
-      console.error('Contact form error:', err);
-      btn.textContent      = 'Failed — Please try again';
-      btn.style.background = 'linear-gradient(135deg, #dc2626, #b91c1c)';
-      setTimeout(() => {
-        btn.textContent      = orig;
-        btn.disabled         = false;
-        btn.style.background = '';
-      }, 3500);
-    }
+    const mailto = `mailto:hello@corbinsoft.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+
+    // Visual confirmation
+    btn.textContent      = '✓ Opening your email client…';
+    btn.style.background = 'linear-gradient(135deg, #0ea5a0, #059669)';
+    form.reset();
+    setTimeout(() => {
+      btn.textContent      = 'Send Message';
+      btn.style.background = '';
+    }, 4000);
   });
 }
 
