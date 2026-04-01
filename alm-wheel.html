@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALM Capabilities — Corbinsoft | Polarion ALM Experts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,300&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── ALM Wheel Landing Page ─────────────────────────────────── */
+    .wheel-page { background: var(--clr-bg); }
+
+    .wheel-hero {
+      min-height: calc(100vh - 72px);
+      padding: 108px 0 56px;
+      display: flex;
+      align-items: center;
+    }
+    .wheel-hero__inner {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 56px;
+      align-items: center;
+      width: 100%;
+    }
+
+    /* Left column */
+    .wheel-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(34px, 4vw, 58px);
+      font-weight: 800;
+      color: var(--clr-text);
+      line-height: 1.03;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+      font-variation-settings: 'opsz' 72, 'WONK' 1;
+    }
+    .wheel-hero__sub {
+      font-size: 15.5px;
+      color: var(--clr-text-mid);
+      line-height: 1.72;
+      margin-bottom: 32px;
+      max-width: 400px;
+    }
+    .wheel-caps-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      margin-bottom: 36px;
+    }
+    .wheel-caps-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--clr-text-mid);
+      line-height: 1.4;
+    }
+    .cap-dot {
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .wheel-caps-list li:hover .cap-dot { transform: scale(1.4); }
+    .wheel-hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    /* Right column: wheel stage */
+    .wheel-stage {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .wheel-svg {
+      width: 100%;
+      max-width: 680px;
+      height: auto;
+      overflow: visible;
+      cursor: default;
+    }
+    .wheel-hint {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--clr-text-dim);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    /* Tooltip */
+    .alm-tooltip {
+      position: fixed;
+      background: #fff;
+      border: 1px solid var(--clr-border-mid);
+      border-radius: 12px;
+      padding: 16px 18px;
+      width: 252px;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.15s ease, transform 0.15s ease;
+      box-shadow: 0 4px 12px rgba(15,50,80,0.08), 0 16px 48px rgba(15,50,80,0.1);
+      z-index: 1000;
+    }
+    .alm-tooltip.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .alm-tooltip__title {
+      font-size: 12.5px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      line-height: 1.35;
+    }
+    .alm-tooltip__desc {
+      font-size: 11.5px;
+      color: var(--clr-text-muted);
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    .alm-tooltip__cta {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* SVG node cursor */
+    .wheel-node { cursor: pointer; }
+
+    /* Explore cards section */
+    .wheel-explore {
+      background: var(--clr-bg2);
+      border-top: 1px solid var(--clr-border);
+      padding: 80px 0;
+    }
+    .wheel-explore__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .wheel-explore__card {
+      background: white;
+      border: 1px solid var(--clr-border);
+      border-radius: 12px;
+      padding: 28px 26px;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.22s, box-shadow 0.22s, transform 0.22s;
+    }
+    .wheel-explore__card:hover {
+      border-color: var(--clr-border-mid);
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+    }
+    .wheel-explore__card__num {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: var(--clr-blue);
+      display: block;
+      margin-bottom: 10px;
+    }
+    .wheel-explore__card h3 {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--clr-text);
+      margin-bottom: 8px;
+      font-variation-settings: 'opsz' 24, 'WONK' 1;
+    }
+    .wheel-explore__card p {
+      font-size: 12.5px;
+      color: var(--clr-text-muted);
+      line-height: 1.65;
+    }
+    .wheel-explore__card__arrow {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--clr-blue);
+      letter-spacing: 1px;
+      margin-top: 16px;
+      display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 1080px) {
+      .wheel-hero__inner { grid-template-columns: 1fr; gap: 40px; }
+      .wheel-hero__title, .wheel-hero__sub { max-width: 100%; }
+      .wheel-explore__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .wheel-hero { padding: 96px 0 48px; }
+      .wheel-explore__grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="corbinsoft-logo.svg" alt="Corbinsoft — The ALM Experts" class="nav__logo-img" />
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html#services" class="nav__link">Services</a></li>
+        <li><a href="index.html#industries" class="nav__link">Industries</a></li>
+        <li><a href="why-alm.html" class="nav__link active">Why ALM</a></li>
+        <li><a href="index.html#about" class="nav__link">About</a></li>
+        <li><a href="index.html#process" class="nav__link">Process</a></li>
+        <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+        <li><a href="webinars.html" class="nav__link">Webinars</a></li>
+        <li><a href="blog-compliance-advantage.html" class="nav__link">Blog</a></li>
+        <li class="nav__dropdown">
+          <a href="products.html" class="nav__link nav__dropdown-link">Products <svg class="nav__caret" viewBox="0 0 10 6" fill="none" width="10" height="10"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <ul class="nav__submenu">
+            <li><a href="product-redline-report-widget.html">Redline Report Widget</a></li>
+            <li><a href="product-cvss-calculator.html">CVSS Calculator <span class="nav__coming-soon">Soon</span></a></li>
+            <li><a href="product-java21-save-hook.html">Java 21 Save Hook <span class="nav__coming-soon">Soon</span></a></li>
+          </ul>
+        </li>
+      </ul>
+      <a href="index.html#contact" class="btn btn--nav">Request a Consultation</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main class="wheel-page">
+
+    <!-- ── HERO ── -->
+    <section class="wheel-hero">
+      <div class="container">
+        <div class="wheel-hero__inner">
+
+          <!-- Left: Text -->
+          <div class="wheel-hero__text">
+            <span class="section-label">Polarion ALM Platform</span>
+            <h1 class="wheel-hero__title">One Platform.<br />Every Phase.</h1>
+            <p class="wheel-hero__sub">Polarion ALM unifies nine interconnected capabilities into a single governed system — connecting every decision, change, and compliance artefact across your regulated product lifecycle.</p>
+
+            <ul class="wheel-caps-list" id="capsList">
+              <!-- Populated by JS with matching colors -->
+            </ul>
+
+            <div class="wheel-hero__ctas">
+              <a href="why-alm.html" class="btn btn--primary">Explore the ALM Guide</a>
+              <a href="index.html#contact" class="btn btn--ghost">Request a Demo</a>
+            </div>
+          </div>
+
+          <!-- Right: Wheel -->
+          <div class="wheel-stage">
+            <svg id="almWheel" viewBox="0 0 880 880" class="wheel-svg" role="img" aria-label="Polarion ALM capabilities wheel diagram"></svg>
+            <p class="wheel-hint">Hover each node &nbsp;·&nbsp; Click to explore</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tooltip (fixed, outside SVG) -->
+    <div id="almTooltip" class="alm-tooltip" role="tooltip" aria-hidden="true">
+      <div class="alm-tooltip__title" id="tipTitle"></div>
+      <div class="alm-tooltip__desc" id="tipDesc"></div>
+      <div class="alm-tooltip__cta" id="tipCta"></div>
+    </div>
+
+    <!-- ── EXPLORE CARDS ── -->
+    <section class="section wheel-explore">
+      <div class="container">
+        <div class="section-header reveal-up" style="text-align:center;">
+          <span class="section-label">ALM Guide</span>
+          <h2 class="section-title">Six sections to explore</h2>
+          <p class="section-sub" style="margin:0 auto;">Click any card to jump directly to that section of the Why ALM guide.</p>
+        </div>
+        <div class="wheel-explore__grid">
+          <a href="why-alm.html#what-is-alm" class="wheel-explore__card reveal-up">
+            <span class="wheel-explore__card__num">01 · DEFINITION</span>
+            <h3>What is ALM?</h3>
+            <p>The coordinated management of requirements, design, code, tests, and compliance artefacts in a unified, connected system.</p>
+            <span class="wheel-explore__card__arrow">Read section →</span>
+          </a>
+          <a href="why-alm.html#why-it-matters" class="wheel-explore__card reveal-up" data-delay="80">
+            <span class="wheel-explore__card__num">02 · REGULATION</span>
+            <h3>Why it Matters</h3>
+            <p>FDA, IEC 62304, ISO 26262, and DO-178C all demand evidence — not descriptions. ALM is how you produce it without a fire-drill.</p>
+            <span class="wheel-explore__card__arrow">Read section →</span>
+          </a>
+          <a href="why-alm.html#disconnected-tools" class="wheel-explore__card reveal-up" data-delay="160">
+            <span class="wheel-explore__card__num">03 · COST</span>
+            <h3>The Cost of Disconnection</h3>
+            <p>Word, Excel, email, and SharePoint look free until an inspection. The real cost is 20–35% of project time on compliance assembly.</p>
+            <span class="wheel-explore__card__arrow">Read section →</span>
+          </a>
+          <a href="why-alm.html#alm-capabilities" class="wheel-explore__card reveal-up">
+            <span class="wheel-explore__card__num">04 · CAPABILITIES</span>
+            <h3>Core ALM Capabilities</h3>
+            <p>Five interconnected disciplines: requirements, traceability, change control, test management, and compliance reporting.</p>
+            <span class="wheel-explore__card__arrow">Read section →</span>
+          </a>
+          <a href="why-alm.html#why-polarion" class="wheel-explore__card reveal-up" data-delay="80">
+            <span class="wheel-explore__card__num">05 · PLATFORM</span>
+            <h3>Why Polarion ALM</h3>
+            <p>Purpose-built for regulated engineering by Siemens — not adapted from a general-purpose PM tool. The dominant platform in automotive, medical, and aerospace.</p>
+            <span class="wheel-explore__card__arrow">Read section →</span>
+          </a>
+          <a href="why-alm.html#why-corbinsoft" class="wheel-explore__card reveal-up" data-delay="160">
+            <span class="wheel-explore__card__num">06 · PARTNER</span>
+            <h3>Why Corbinsoft</h3>
+            <p>Certified Polarion specialists with deep regulatory expertise. 120+ deployments across medical, automotive, and aerospace organisations.</p>
+            <span class="wheel-explore__card__arrow">Read section →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo-link"><img src="corbinsoft-logo.svg" alt="Corbinsoft" class="footer__logo-img" /></a>
+        <p>Certified Siemens Digital Industries Software Partner. Polarion ALM implementation, validation, and technical consulting for regulated industries worldwide.</p>
+      </div>
+      <div class="footer__links">
+        <div class="footer__col"><h4>Industries</h4><ul>
+          <li><a href="industry-medical-devices.html">Medical Devices</a></li>
+          <li><a href="industry-automotive.html">Automotive</a></li>
+          <li><a href="industry-aerospace.html">Aerospace &amp; Defense</a></li>
+          <li><a href="industry-oil-gas.html">Oil &amp; Gas</a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Services</h4><ul>
+          <li><a href="index.html#services">Polarion Implementation</a></li>
+          <li><a href="index.html#services">Compliance &amp; Validation</a></li>
+          <li><a href="index.html#services">DOORS Migration</a></li>
+        </ul></div>
+        <div class="footer__col"><h4>Company</h4><ul>
+          <li><a href="why-alm.html">Why ALM</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Corbinsoft. All rights reserved.</p>
+      <div class="footer__bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </footer>
+
+  <script src="transitions.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Nav
+    var toggle = document.getElementById('navToggle');
+    var navLinks = document.getElementById('navLinks');
+    if (toggle) toggle.addEventListener('click', function(){ navLinks.classList.toggle('open'); });
+    var nav = document.getElementById('nav');
+    window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 20); }, { passive: true });
+  </script>
+
+  <!-- ── ALM WHEEL ───────────────────────────────────────────────── -->
+  <script>
+  (function () {
+    'use strict';
+
+    /* ── Node data ─────────────────────────────────────────── */
+    var NODES = [
+      {
+        id: 'requirements',
+        lines: ['Requirements', 'Management'],
+        color: '#1d9fd5',
+        href: 'why-alm.html#alm-capabilities',
+        desc: 'Capture, baseline, and version-control all stakeholder and technical requirements in a single governed system with workflow-enforced approvals.',
+        angle: -90,
+        icon: 'M3 5h14M3 9h10M3 13h12M3 17h8'
+      },
+      {
+        id: 'build-release',
+        lines: ['Build & Release', 'Management'],
+        color: '#6f52c0',
+        href: 'why-alm.html#why-polarion',
+        desc: 'Coordinate software builds and release trains with full configuration control, automated triggers, and traceable links back to requirements.',
+        angle: -50,
+        icon: 'M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z'
+      },
+      {
+        id: 'agile',
+        lines: ['Agile / Hybrid', 'Project Management'],
+        color: '#7a8fa8',
+        href: 'why-alm.html#what-is-alm',
+        desc: 'Support Scrum, SAFe, and hybrid methodologies with sprint boards, backlog management, and compliance integration in one platform.',
+        angle: -10,
+        icon: 'M3 3h5v5H3zM16 3h5v5h-5zM3 16h5v5H3zM16 16h5v5h-5zM8 6h8M6 8v8M18 8v8M8 18h8'
+      },
+      {
+        id: 'planning',
+        lines: ['Planning &', 'Resource Management'],
+        color: '#d44c4c',
+        href: 'why-alm.html#why-it-matters',
+        desc: 'Plan programme milestones, allocate workload across teams, and track delivery against regulatory schedules and gate reviews.',
+        angle: 30,
+        icon: 'M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z'
+      },
+      {
+        id: 'audits',
+        lines: ['Audits & Metrics', 'Reports'],
+        color: '#d4842a',
+        href: 'why-alm.html#disconnected-tools',
+        desc: 'Generate traceability matrices, compliance dashboards, and audit-ready evidence packages on demand — not assembled under inspection pressure.',
+        angle: 70,
+        icon: 'M18 20V10M12 20V4M6 20v-6'
+      },
+      {
+        id: 'issue-risk',
+        lines: ['Issue & Risk', 'Management'],
+        color: '#00a898',
+        href: 'why-alm.html#alm-capabilities',
+        desc: 'Track defects, risks, and non-conformances with direct links to the requirements, baselines, and test records they affect.',
+        angle: 110,
+        icon: 'M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z'
+      },
+      {
+        id: 'test-quality',
+        lines: ['Test & Quality', 'Management'],
+        color: '#2db570',
+        href: 'why-alm.html#alm-capabilities',
+        desc: 'Plan test cases, record execution results, and link verification evidence directly to requirements. Coverage metrics always live and always current.',
+        angle: 150,
+        icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'
+      },
+      {
+        id: 'reuse-branch',
+        lines: ['Reuse & Branch', 'Management'],
+        color: '#8b5cf6',
+        href: 'why-alm.html#why-polarion',
+        desc: 'Manage product variants and shared requirement modules across platform configurations, with full traceability per variant.',
+        angle: 190,
+        icon: 'M6 3v12M18 3v12M6 15a3 3 0 006 0M18 15a3 3 0 01-6 0M12 15v6'
+      },
+      {
+        id: 'change-config',
+        lines: ['Change &', 'Configuration Mgmt'],
+        color: '#5f7d9e',
+        href: 'why-alm.html#alm-capabilities',
+        desc: 'Govern every change with workflow-controlled approvals, impact analysis identifying downstream effects, and immutable baseline snapshots.',
+        angle: 230,
+        icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065zM15 12a3 3 0 11-6 0 3 3 0 016 0z'
+      }
+    ];
+
+    /* ── SVG helpers ───────────────────────────────────────── */
+    var NS = 'http://www.w3.org/2000/svg';
+    function el(tag, attrs) {
+      var e = document.createElementNS(NS, tag);
+      for (var k in attrs) e.setAttribute(k, attrs[k]);
+      return e;
+    }
+    function deg2rad(d) { return d * Math.PI / 180; }
+
+    /* ── Layout constants ──────────────────────────────────── */
+    var CX = 440, CY = 440;
+    var ORBIT = 262;     // node centre orbit radius
+    var NODE_R = 54;     // node circle radius (resting)
+    var HUB_R = 88;      // centre hub radius
+    var LABEL_R = ORBIT + NODE_R + 30;  // label text radius
+    var ICON_SIZE = 22;  // icon bounding box (24-unit path scaled to this)
+
+    /* ── Build SVG ─────────────────────────────────────────── */
+    var svg = document.getElementById('almWheel');
+
+    // Decorative background rings
+    [170, 210, ORBIT, ORBIT + 20].forEach(function(r, i) {
+      svg.appendChild(el('circle', {
+        cx: CX, cy: CY, r: r,
+        fill: 'none',
+        stroke: 'rgba(29,159,213,0.07)',
+        'stroke-width': i < 2 ? '1' : '1',
+        'stroke-dasharray': i < 2 ? '0' : '6 8'
+      }));
+    });
+
+    // Centre hub glow
+    svg.appendChild(el('circle', { cx: CX, cy: CY, r: HUB_R + 14,
+      fill: 'rgba(29,159,213,0.06)', stroke: 'none' }));
+
+    // Centre hub circle
+    var hubCircle = el('circle', {
+      cx: CX, cy: CY, r: HUB_R,
+      fill: 'white',
+      stroke: 'rgba(29,159,213,0.3)',
+      'stroke-width': '1.5'
+    });
+    svg.appendChild(hubCircle);
+
+    // Centre hub text
+    var hubLines = ['Collaboration', 'Traceability', 'Workflow'];
+    var hubTextY = CY - 13;
+    hubLines.forEach(function(line, i) {
+      var t = el('text', {
+        x: CX, y: hubTextY + i * 16,
+        'text-anchor': 'middle',
+        'dominant-baseline': 'middle',
+        fill: '#1d9fd5',
+        'font-family': 'Manrope, system-ui, sans-serif',
+        'font-size': i === 0 ? '11' : i === 1 ? '12.5' : '11',
+        'font-weight': i === 1 ? '700' : '500',
+        'letter-spacing': '0.5'
+      });
+      t.textContent = line;
+      svg.appendChild(t);
+    });
+
+    // Siemens/Polarion badge on hub
+    var badge = el('text', {
+      x: CX, y: CY + 46,
+      'text-anchor': 'middle',
+      'dominant-baseline': 'middle',
+      fill: 'rgba(29,159,213,0.55)',
+      'font-family': "'Courier New', monospace",
+      'font-size': '8.5',
+      'font-weight': '600',
+      'letter-spacing': '2'
+    });
+    badge.textContent = 'POLARION ALM';
+    svg.appendChild(badge);
+
+    /* ── Tooltip ───────────────────────────────────────────── */
+    var tooltip = document.getElementById('almTooltip');
+    var tipTitle = document.getElementById('tipTitle');
+    var tipDesc = document.getElementById('tipDesc');
+    var tipCta = document.getElementById('tipCta');
+    var currentMouseX = 0, currentMouseY = 0;
+
+    document.addEventListener('mousemove', function(e) {
+      currentMouseX = e.clientX;
+      currentMouseY = e.clientY;
+    });
+
+    function showTooltip(node) {
+      tipTitle.textContent = node.lines.join(' ');
+      tipTitle.style.color = node.color;
+      tipDesc.textContent = node.desc;
+      tipCta.textContent = 'Click to explore →';
+      tipCta.style.color = node.color;
+      tooltip.classList.add('visible');
+      tooltip.setAttribute('aria-hidden', 'false');
+    }
+    function hideTooltip() {
+      tooltip.classList.remove('visible');
+      tooltip.setAttribute('aria-hidden', 'true');
+    }
+    function positionTooltip(e) {
+      var x = e.clientX, y = e.clientY;
+      var tw = 252, pad = 16;
+      var left = x + 18;
+      if (left + tw + pad > window.innerWidth) left = x - tw - 18;
+      var top = y - 60;
+      if (top < pad) top = pad;
+      if (top + 130 > window.innerHeight - pad) top = window.innerHeight - 130 - pad;
+      tooltip.style.left = left + 'px';
+      tooltip.style.top = top + 'px';
+    }
+
+    /* ── Build caps list (left column) ────────────────────── */
+    var capsList = document.getElementById('capsList');
+    NODES.forEach(function(node) {
+      var li = document.createElement('li');
+      var dot = document.createElement('span');
+      dot.className = 'cap-dot';
+      dot.style.background = node.color;
+      var span = document.createElement('span');
+      span.textContent = node.lines.join(' ');
+      li.appendChild(dot);
+      li.appendChild(span);
+      li.style.cursor = 'pointer';
+      li.addEventListener('click', function() {
+        document.body.classList.add('page-exit');
+        setTimeout(function() { window.location.href = node.href; }, 220);
+      });
+      capsList.appendChild(li);
+    });
+
+    /* ── Draw nodes ────────────────────────────────────────── */
+    NODES.forEach(function(node, idx) {
+      var rad = deg2rad(node.angle);
+      var nx = CX + ORBIT * Math.cos(rad);
+      var ny = CY + ORBIT * Math.sin(rad);
+
+      // Spoke line (hub edge → node edge)
+      var spokeStartR = HUB_R + 8;
+      var spokeEndR = ORBIT - NODE_R - 8;
+      svg.appendChild(el('line', {
+        x1: CX + spokeStartR * Math.cos(rad),
+        y1: CY + spokeStartR * Math.sin(rad),
+        x2: CX + spokeEndR * Math.cos(rad),
+        y2: CY + spokeEndR * Math.sin(rad),
+        stroke: node.color,
+        'stroke-width': '1.5',
+        'stroke-dasharray': '5 6',
+        opacity: '0.5'
+      }));
+
+      // Node group (interactive)
+      var g = el('g', { class: 'wheel-node', tabindex: '0', role: 'button',
+        'aria-label': node.lines.join(' ') });
+
+      // Glow ring (shown on hover via JS)
+      var glow = el('circle', {
+        cx: nx, cy: ny, r: NODE_R + 12,
+        fill: 'none',
+        stroke: node.color,
+        'stroke-width': '2',
+        opacity: '0'
+      });
+      g.appendChild(glow);
+
+      // Node circle
+      var circle = el('circle', {
+        cx: nx, cy: ny, r: NODE_R,
+        fill: 'white',
+        stroke: node.color,
+        'stroke-width': '2'
+      });
+      g.appendChild(circle);
+
+      // Coloured cap arc (top portion of circle)
+      var capAngle = Math.PI * 0.9; // ~162° arc
+      var capR = NODE_R;
+      // Arc from angle -120° to 120° around the node (top fill cap)
+      var startA = node.angle * Math.PI / 180 - capAngle / 2 - Math.PI / 2;
+      var endA = startA + capAngle;
+      var x1 = nx + capR * Math.cos(startA);
+      var y1 = ny + capR * Math.sin(startA);
+      var x2 = nx + capR * Math.cos(endA);
+      var y2 = ny + capR * Math.sin(endA);
+      var arc = el('path', {
+        d: 'M ' + x1 + ' ' + y1 + ' A ' + capR + ' ' + capR + ' 0 0 1 ' + x2 + ' ' + y2,
+        fill: 'none',
+        stroke: node.color,
+        'stroke-width': '4',
+        'stroke-linecap': 'round',
+        opacity: '0.35'
+      });
+      g.appendChild(arc);
+
+      // Inner circle fill (subtle tint)
+      var innerFill = el('circle', {
+        cx: nx, cy: ny, r: NODE_R - 4,
+        fill: node.color,
+        opacity: '0.07'
+      });
+      g.appendChild(innerFill);
+
+      // Icon (scaled from 24x24 path → ICON_SIZE)
+      var iconScale = ICON_SIZE / 24;
+      var iconTx = nx - ICON_SIZE / 2;
+      var iconTy = ny - ICON_SIZE / 2 - 4; // slightly above centre to leave room for number
+      var iconPath = el('path', {
+        d: node.icon,
+        fill: 'none',
+        stroke: node.color,
+        'stroke-width': '1.75',
+        'stroke-linecap': 'round',
+        'stroke-linejoin': 'round',
+        transform: 'translate(' + iconTx + ',' + iconTy + ') scale(' + iconScale + ')'
+      });
+      g.appendChild(iconPath);
+
+      // Node index number (small, bottom of circle)
+      var numText = el('text', {
+        x: nx, y: ny + NODE_R - 12,
+        'text-anchor': 'middle',
+        'dominant-baseline': 'middle',
+        fill: node.color,
+        'font-family': "'Courier New', monospace",
+        'font-size': '9',
+        'font-weight': '700',
+        'letter-spacing': '0.5',
+        opacity: '0.7'
+      });
+      numText.textContent = String(idx + 1).padStart(2, '0');
+      g.appendChild(numText);
+
+      // Label text (outside the circle)
+      var labelRad = rad;
+      var lx = CX + LABEL_R * Math.cos(labelRad);
+      var ly = CY + LABEL_R * Math.sin(labelRad);
+
+      // Determine text-anchor and baseline offset based on angle
+      var cosA = Math.cos(rad);
+      var sinA = Math.sin(rad);
+      var anchor = Math.abs(cosA) < 0.15 ? 'middle' : (cosA > 0 ? 'start' : 'end');
+
+      var labelGroup = el('g', {});
+      node.lines.forEach(function(line, i) {
+        var t = el('text', {
+          x: lx,
+          y: ly + (i - (node.lines.length - 1) / 2) * 15,
+          'text-anchor': anchor,
+          'dominant-baseline': 'middle',
+          fill: node.color,
+          'font-family': 'Manrope, system-ui, sans-serif',
+          'font-size': '12.5',
+          'font-weight': i === 0 ? '700' : '500'
+        });
+        t.textContent = line;
+        labelGroup.appendChild(t);
+      });
+      g.appendChild(labelGroup);
+
+      // ── Interaction ────────────────────────────────────── //
+      var isHovered = false;
+
+      function onEnter(e) {
+        isHovered = true;
+        // Grow node
+        circle.setAttribute('r', String(NODE_R * 1.22));
+        circle.setAttribute('fill', node.color + '15');
+        glow.setAttribute('opacity', '0.35');
+        innerFill.setAttribute('opacity', '0.14');
+        arc.setAttribute('opacity', '0.7');
+        // Bold spoke
+        // Show tooltip
+        showTooltip(node);
+        positionTooltip(e);
+        svg.style.cursor = 'pointer';
+      }
+      function onLeave() {
+        isHovered = false;
+        circle.setAttribute('r', String(NODE_R));
+        circle.setAttribute('fill', 'white');
+        glow.setAttribute('opacity', '0');
+        innerFill.setAttribute('opacity', '0.07');
+        arc.setAttribute('opacity', '0.35');
+        hideTooltip();
+        svg.style.cursor = 'default';
+      }
+      function onClick() {
+        document.body.classList.add('page-exit');
+        setTimeout(function() { window.location.href = node.href; }, 220);
+      }
+
+      g.addEventListener('mouseenter', onEnter);
+      g.addEventListener('mouseleave', onLeave);
+      g.addEventListener('mousemove', function(e) {
+        if (isHovered) positionTooltip(e);
+      });
+      g.addEventListener('click', onClick);
+      g.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick(); }
+      });
+      g.addEventListener('focus', function(e) { onEnter(e); });
+      g.addEventListener('blur', onLeave);
+
+      svg.appendChild(g);
+    });
+
+    /* ── Animate hub ring pulse ────────────────────────────── */
+    var pulseRings = [0, 1200].map(function(delay) {
+      var r = el('circle', {
+        cx: CX, cy: CY, r: HUB_R,
+        fill: 'none',
+        stroke: 'rgba(29,159,213,0.25)',
+        'stroke-width': '2'
+      });
+      svg.insertBefore(r, svg.firstChild.nextSibling); // behind nodes
+      var start = null;
+      var dur = 2600;
+      function frame(ts) {
+        if (!start) start = ts + delay;
+        var elapsed = (ts - start) % dur;
+        if (elapsed < 0) { requestAnimationFrame(frame); return; }
+        var progress = elapsed / dur;
+        var scale = 1 + progress * 0.65;
+        var opacity = 0.35 * (1 - progress);
+        r.setAttribute('r', String(HUB_R * scale));
+        r.setAttribute('opacity', String(opacity));
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+      return r;
+    });
+
+  })();
+  </script>
+</body>
+</html>
