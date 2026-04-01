@@ -1,5 +1,10 @@
 // Page transition — fade out on navigate, fade in on load (CSS handles the in)
 (function () {
+  // Remove page-exit when browser restores page from back/forward cache
+  window.addEventListener('pageshow', function (e) {
+    document.body.classList.remove('page-exit');
+  });
+
   document.addEventListener('click', function (e) {
     var link = e.target.closest('a[href]');
     if (!link) return;
