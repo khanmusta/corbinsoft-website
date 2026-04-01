@@ -248,7 +248,7 @@
     <section class="wheel-hero">
 
       <div class="wheel-headline">
-        <h1>One Platform. <span>Every Phase.</span></h1>
+        <h1>Manage Product Development Lifecycle <span>in One Place</span></h1>
       </div>
 
       <div class="wheel-stage">
@@ -361,8 +361,9 @@
     var toggle = document.getElementById('navToggle');
     var navLinks = document.getElementById('navLinks');
     if (toggle) toggle.addEventListener('click', function(){ navLinks.classList.toggle('open'); });
+    // Keep nav opaque at all times on this page — prevents overlap flicker on load
     var nav = document.getElementById('nav');
-    window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 20); }, { passive: true });
+    nav.classList.add('scrolled');
   </script>
 
   <!-- ── ALM WHEEL ─────────────────────────────────────────────── -->
