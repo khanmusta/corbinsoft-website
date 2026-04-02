@@ -482,23 +482,23 @@ document.querySelectorAll('.service-card').forEach(card => {
 });
 
 // ------ Contact form submit ------
+const WEB3FORMS_KEY = '66cabd36-4bf0-487c-8b6b-f03e851a6ead';
+
 const contactForm = document.getElementById('contactForm');
 
 // Clear form on every page load so browser autocomplete doesn't persist stale values
-if (contactForm) {
-  contactForm.reset();
-}
+if (contactForm) contactForm.reset();
 
 if (contactForm) {
-  contactForm.addEventListener('submit', e => {
+  contactForm.addEventListener('submit', async e => {
     e.preventDefault();
     const form = e.target;
     const btn  = form.querySelector('button[type="submit"]');
+    const orig = btn.textContent;
 
-    // Use getElementById — avoids id="name" conflicting with form.name in some browsers
-    const nameVal    = (document.getElementById('contactName')?.value   || '').trim();
-    const emailVal   = (document.getElementById('contactEmail')?.value  || '').trim();
-    const messageVal = (document.getElementById('contactMessage')?.value|| '').trim();
+    const nameVal    = (document.getElementById('contactName')?.value    || '').trim();
+    const emailVal   = (document.getElementById('contactEmail')?.value   || '').trim();
+    const messageVal = (document.getElementById('contactMessage')?.value || '').trim();
 
     if (!nameVal || !emailVal || !messageVal) {
       showContactError(form, 'Please fill in your name, email and message.');
@@ -508,34 +508,50 @@ if (contactForm) {
     const serviceVal  = (document.getElementById('contactService')?.value  || '') || '(not selected)';
     const industryVal = (document.getElementById('contactIndustry')?.value || '') || '(not selected)';
 
-    const subject = `New Corbinsoft Enquiry from ${nameVal}`;
-    const body = [
-      `Name:     ${nameVal}`,
-      `Email:    ${emailVal}`,
-      `Service:  ${serviceVal}`,
-      `Industry: ${industryVal}`,
-      ``,
-      `Message:`,
-      messageVal,
-    ].join('\n');
+    btn.textContent = 'Sending…';
+    btn.disabled    = true;
 
-    const mailto = `mailto:hello@corbinsoft.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const payload = {
+      access_key: WEB3FORMS_KEY,
+      subject:    `New Corbinsoft Enquiry from ${nameVal}`,
+      from_name:  'Corbinsoft Website',
+      replyto:    emailVal,
+      name:       nameVal,
+      email:      emailVal,
+      service:    serviceVal,
+      industry:   industryVal,
+      message:    messageVal,
+    };
 
-    // Open email client without navigating away
-    const a = document.createElement('a');
-    a.href = mailto;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-
-    // Visual confirmation + reset
-    btn.textContent      = '✓ Opening your email client…';
-    btn.style.background = 'linear-gradient(135deg, #0ea5a0, #059669)';
-    form.reset();
-    setTimeout(() => {
-      btn.textContent      = 'Send Message';
-      btn.style.background = '';
-    }, 4000);
+    try {
+      const res  = await fetch('https://api.web3forms.com/submit', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body:    JSON.stringify(payload),
+      });
+      const json = await res.json();
+      if (json.success) {
+        btn.textContent      = '✓ Message Sent';
+        btn.style.background = 'linear-gradient(135deg, #0ea5a0, #059669)';
+        form.reset();
+        setTimeout(() => {
+          btn.textContent      = orig;
+          btn.disabled         = false;
+          btn.style.background = '';
+        }, 3500);
+      } else {
+        throw new Error(json.message || 'Submission failed');
+      }
+    } catch (err) {
+      console.error('Contact form error:', err);
+      btn.textContent      = 'Failed — Please try again';
+      btn.style.background = 'linear-gradient(135deg, #dc2626, #b91c1c)';
+      btn.disabled         = false;
+      setTimeout(() => {
+        btn.textContent      = orig;
+        btn.style.background = '';
+      }, 3500);
+    }
   });
 }
 
