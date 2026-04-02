@@ -496,17 +496,18 @@ if (contactForm) {
     const btn  = form.querySelector('button[type="submit"]');
     const orig = btn.textContent;
 
-    const nameVal    = (document.getElementById('contactName')?.value    || '').trim();
-    const emailVal   = (document.getElementById('contactEmail')?.value   || '').trim();
-    const messageVal = (document.getElementById('contactMessage')?.value || '').trim();
+    const data        = new FormData(form);
+    const nameVal     = (data.get('name')     || '').trim();
+    const emailVal    = (data.get('email')    || '').trim();
+    const messageVal  = (data.get('message')  || '').trim();
 
     if (!nameVal || !emailVal || !messageVal) {
       showContactError(form, 'Please fill in your name, email and message.');
       return;
     }
 
-    const serviceVal  = (document.getElementById('contactService')?.value  || '') || '(not selected)';
-    const industryVal = (document.getElementById('contactIndustry')?.value || '') || '(not selected)';
+    const serviceVal  = (data.get('service')  || '') || '(not selected)';
+    const industryVal = (data.get('industry') || '') || '(not selected)';
 
     btn.textContent = 'Sending…';
     btn.disabled    = true;
