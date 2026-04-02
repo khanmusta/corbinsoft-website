@@ -483,23 +483,30 @@ document.querySelectorAll('.service-card').forEach(card => {
 
 // ------ Contact form submit ------
 const contactForm = document.getElementById('contactForm');
+
+// Clear form on every page load so browser autocomplete doesn't persist stale values
+if (contactForm) {
+  contactForm.reset();
+}
+
 if (contactForm) {
   contactForm.addEventListener('submit', e => {
     e.preventDefault();
     const form = e.target;
     const btn  = form.querySelector('button[type="submit"]');
 
-    // Client-side validation
-    const nameVal    = form.querySelector('#name')?.value.trim();
-    const emailVal   = form.querySelector('#email')?.value.trim();
-    const messageVal = form.querySelector('#message')?.value.trim();
+    // Use getElementById — avoids id="name" conflicting with form.name in some browsers
+    const nameVal    = (document.getElementById('contactName')?.value   || '').trim();
+    const emailVal   = (document.getElementById('contactEmail')?.value  || '').trim();
+    const messageVal = (document.getElementById('contactMessage')?.value|| '').trim();
+
     if (!nameVal || !emailVal || !messageVal) {
       showContactError(form, 'Please fill in your name, email and message.');
       return;
     }
 
-    const serviceVal  = form.querySelector('#service')?.value  || '(not selected)';
-    const industryVal = form.querySelector('#industry')?.value || '(not selected)';
+    const serviceVal  = (document.getElementById('contactService')?.value  || '') || '(not selected)';
+    const industryVal = (document.getElementById('contactIndustry')?.value || '') || '(not selected)';
 
     const subject = `New Corbinsoft Enquiry from ${nameVal}`;
     const body = [
@@ -513,9 +520,15 @@ if (contactForm) {
     ].join('\n');
 
     const mailto = `mailto:hello@corbinsoft.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
 
-    // Visual confirmation
+    // Open email client without navigating away
+    const a = document.createElement('a');
+    a.href = mailto;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    // Visual confirmation + reset
     btn.textContent      = '✓ Opening your email client…';
     btn.style.background = 'linear-gradient(135deg, #0ea5a0, #059669)';
     form.reset();

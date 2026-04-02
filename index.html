@@ -624,20 +624,20 @@
         </div>
       </div>
       <div class="contact__form-wrap reveal-right">
-        <form class="contact__form" id="contactForm">
+        <form class="contact__form" id="contactForm" autocomplete="off">
           <div class="form-row">
             <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" placeholder="Your name" required />
+              <label for="contactName">Name</label>
+              <input type="text" id="contactName" placeholder="Your name" required autocomplete="off" />
             </div>
             <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" placeholder="you@company.com" required />
+              <label for="contactEmail">Email</label>
+              <input type="email" id="contactEmail" placeholder="you@company.com" required autocomplete="off" />
             </div>
           </div>
           <div class="form-group">
-            <label for="service">Service Interest</label>
-            <select id="service">
+            <label for="contactService">Service Interest</label>
+            <select id="contactService">
               <option value="">Select a service...</option>
               <option>Polarion ALM Implementation</option>
               <option>Compliance &amp; Validation (IQ/OQ/PQ)</option>
@@ -648,8 +648,8 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="industry">Industry</label>
-            <select id="industry">
+            <label for="contactIndustry">Industry</label>
+            <select id="contactIndustry">
               <option value="">Select your industry...</option>
               <option>Medical Devices / Pharma</option>
               <option>Automotive</option>
@@ -659,8 +659,8 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="message">Tell us about your project</label>
-            <textarea id="message" rows="4" placeholder="e.g. We're migrating from DOORS and need Polarion validated for FDA submission..."></textarea>
+            <label for="contactMessage">Tell us about your project</label>
+            <textarea id="contactMessage" rows="4" placeholder="e.g. We're migrating from DOORS and need Polarion validated for FDA submission..." required></textarea>
           </div>
           <button type="submit" class="btn btn--primary btn--full">Send Message</button>
           <p class="form-note">No spam. We'll only contact you in response to this enquiry.</p>
