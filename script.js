@@ -486,9 +486,6 @@ const WEB3FORMS_KEY = '66cabd36-4bf0-487c-8b6b-f03e851a6ead';
 
 const contactForm = document.getElementById('contactForm');
 
-// Clear form on every page load so browser autocomplete doesn't persist stale values
-if (contactForm) contactForm.reset();
-
 if (contactForm) {
   contactForm.addEventListener('submit', async e => {
     e.preventDefault();
@@ -496,18 +493,13 @@ if (contactForm) {
     const btn  = form.querySelector('button[type="submit"]');
     const orig = btn.textContent;
 
-    const data        = new FormData(form);
-    const nameVal     = (data.get('name')     || '').trim();
-    const emailVal    = (data.get('email')    || '').trim();
-    const messageVal  = (data.get('message')  || '').trim();
-
-    if (!nameVal || !emailVal || !messageVal) {
-      showContactError(form, 'Please fill in your name, email and message.');
-      return;
-    }
-
-    const serviceVal  = (data.get('service')  || '') || '(not selected)';
-    const industryVal = (data.get('industry') || '') || '(not selected)';
+    // Fields all carry required — browser prevents submit if empty,
+    // so by the time this handler runs values are guaranteed to be present
+    const nameVal     = form.querySelector('[name="name"]').value.trim();
+    const emailVal    = form.querySelector('[name="email"]').value.trim();
+    const messageVal  = form.querySelector('[name="message"]').value.trim();
+    const serviceVal  = form.querySelector('[name="service"]').value  || '(not selected)';
+    const industryVal = form.querySelector('[name="industry"]').value || '(not selected)';
 
     btn.textContent = 'Sending…';
     btn.disabled    = true;
