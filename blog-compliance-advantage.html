@@ -82,7 +82,13 @@
         <li><a href="index.html#about" class="nav__link">About</a></li>
         <li><a href="index.html#process" class="nav__link">Process</a></li>
         <li><a href="index.html#contact" class="nav__link">Contact</a></li>
-        <li><a href="webinars.html" class="nav__link">Webinars</a></li>
+        <li class="nav__dropdown">
+          <a href="webinars.html" class="nav__link nav__dropdown-link">Webinars <svg class="nav__caret" viewBox="0 0 10 6" fill="none" width="10" height="10"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          <ul class="nav__submenu">
+            <li><a href="webinars.html">Recorded Webinars</a></li>
+            <li><a href="upcoming-webinars.html">Upcoming Webinars</a></li>
+          </ul>
+        </li>
         <li><a href="blog-compliance-advantage.html" class="nav__link active">Blog</a></li>
         <li class="nav__dropdown">
           <a href="products.html" class="nav__link nav__dropdown-link">Products <svg class="nav__caret" viewBox="0 0 10 6" fill="none" width="10" height="10"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
@@ -91,6 +97,8 @@
             <li><a href="product-cvss-calculator.html">CVSS Calculator <span class="nav__coming-soon">Soon</span></a></li>
             <li><a href="product-java21-save-hook.html">Java 21 Save Hook <span class="nav__coming-soon">Soon</span></a></li>
           </ul>
+        </li>
+      </ul>
         </li>
       </ul>
         </li>
